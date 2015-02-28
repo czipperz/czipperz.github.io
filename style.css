@@ -8,23 +8,33 @@ p {
 	margin-top:10px;
 	margin-bottom:5px;
 }
+p:hover {
+	color:#000;
+	background-color:#FFF;
+}
 #page {
-	margin-left:50px;
-	margin-right:50px;
+	margin-left:20px;
+	margin-right:20px;
 }
 #title {
 	font-size:55px;
 	margin:20px 0;
-	color:#0F0;
+	color:#08f;
+	padding:5px 0;
 }
-#menu ul li a:link, #menu ul li a:visited, #menu ul li a {
-	color:#FFF;
+#title:hover {
+	color:#000;
+	background-color:#08F;
 }
 #content {
 	padding-top:15px;
 }
 #content, #content a, #content a:link, #content a:visited {
 	color:#FFF;
+}
+#content a:hover, #content a:active {
+	color:#000;
+	background-color:#FFF;
 }
 #content .heading {
 	font-size:40px;
@@ -35,15 +45,18 @@ p {
 	width:400px;
 //	height:200px;
 	padding:5px;
+	padding-left:0;
 	margin:10px;
 	margin-left:0px;
-	border:1px solid #FFF;
+	margin-right:15px;
+//	border:1px solid #FFF;
 	float:left;
 }
 #content .project a {
 	font-size:20px;
 	display:block;
 	font-weight:bold;
+	width:auto;
 }
 #content h2 {
 	font-size:30px;
@@ -51,4 +64,15 @@ p {
 	text-decoration:none;
 	margin-top:0px;
 	margin-bottom:5px;
+}
+#content #contactdet {
+	margin-top:5px;
+	float:left;
+}
+#content #contactdet a, #content #contactdet a:link, #content #contactdet a:visited {
+	color:#08F;
+}
+#content h2:hover {
+	color:#000;
+	background-color:#0F0;
 }

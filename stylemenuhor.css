@@ -19,7 +19,7 @@
 	padding-left:4px;
 	text-decoration:none;
 }
-#menu a:link, #menu a:visited {
+#menu ul li a:link, #menu ul li a:visited, #menu ul li a {
 	color:#FFF;
 }
 #menu ul li a:hover, #menu ul li a:active {
