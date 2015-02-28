@@ -1,0 +1,28 @@
+#menu {
+	width:100%;
+	height:32px;
+}
+#menu ul {
+	padding:0px;
+	margin:0px;
+}
+#menu ul li {
+	display:inline;
+	height:30px;
+	float:left;
+	list-style:none;
+	margin-right:7px;
+}
+#menu a {
+	font-size:30px;
+	padding:3px 5px;
+	padding-left:4px;
+	text-decoration:none;
+}
+#menu a:link, #menu a:visited {
+	color:#FFF;
+}
+#menu ul li a:hover, #menu ul li a:active {
+	color:#000;
+	background-color:#FFF;
+}

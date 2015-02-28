@@ -1,0 +1,54 @@
+body {
+	background-color:#000;
+	color:#FFF;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+}
+p {
+	margin-top:10px;
+	margin-bottom:5px;
+}
+#page {
+	margin-left:50px;
+	margin-right:50px;
+}
+#title {
+	font-size:55px;
+	margin:20px 0;
+	color:#0F0;
+}
+#menu ul li a:link, #menu ul li a:visited, #menu ul li a {
+	color:#FFF;
+}
+#content {
+	padding-top:15px;
+}
+#content, #content a, #content a:link, #content a:visited {
+	color:#FFF;
+}
+#content .heading {
+	font-size:40px;
+	width:100%;
+	float:left;
+}
+#content .project {
+	width:400px;
+//	height:200px;
+	padding:5px;
+	margin:10px;
+	margin-left:0px;
+	border:1px solid #FFF;
+	float:left;
+}
+#content .project a {
+	font-size:20px;
+	display:block;
+	font-weight:bold;
+}
+#content h2 {
+	font-size:30px;
+	color:#0F0;
+	text-decoration:none;
+	margin-top:0px;
+	margin-bottom:5px;
+}
