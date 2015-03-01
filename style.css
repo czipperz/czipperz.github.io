@@ -21,6 +21,7 @@ p:hover {
 	margin:20px 0;
 	color:#08f;
 	padding:5px 0;
+	margin-bottom:10px;
 }
 #title:hover {
 	color:#000;
@@ -70,14 +71,23 @@ p:hover {
 	margin-top:0px;
 	margin-bottom:5px;
 }
-#content #contactdet {
-	margin-top:5px;
+#content #contactme {
 	float:left;
+	width:100%;
 }
-#content #contactdet a, #content #contactdet a:link, #content #contactdet a:visited {
+#content .contactdet {
+	margin-top:5px;
+}
+#content .contactdet a, #content .contactdet a:link, #content .contactdet a:visited {
 	color:#08F;
 }
 #content h2:hover {
 	color:#000;
 	background-color:#0F0;
+}
+.hidden {
+	display:hidden;
+}
+.hidden:hover {
+	display:block;
 }
