@@ -39,7 +39,12 @@ p:hover {
 #content .heading {
 	font-size:40px;
 	width:100%;
+	color:#08F;
 	float:left;
+}
+#content .heading:hover {
+	color:#000;
+	background-color:#08F;
 }
 #content .project {
 	width:400px;
