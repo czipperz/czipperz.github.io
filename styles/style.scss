@@ -1,7 +1,8 @@
 @import "stylemenuhor";
+@import "variables";
 body {
-	background-color:#000;
-	color:#FFF;
+	background-color:$body-background;
+	color:$body-default-color;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
 }
@@ -10,8 +11,8 @@ p {
 	margin-bottom:5px;
 	
 	&:hover {
-		color:#000;
-		background-color:#FFF;
+		color:$body-background;
+		background-color:$body-default-color;
 	}
 }
 #page {
@@ -21,34 +22,36 @@ p {
 #title {
 	font-size:55px;
 	margin:20px 0;
-	color:#08f;
+	color:$title-color;
 	padding:5px 0;
 	margin-bottom:10px;
 	&:hover {
-		color:#000;
+		color:$body-background;
 		background-color:#08F;
 	}
 }
 #content {
 	padding-top:15px;
-	color:#FFF;
-	
+	color:$body-default-color;
+	a {
+		width:100%;
+	}
 	a:link, a:visited {
-		color:#FFF;
+		color:$body-default-color;
 	}
 	a:hover, a:active {
-		color:#000;
-		background-color:#FFF;
+		color:$body-background;
+		background-color:$body-default-color;
 	}
 	.heading {
 		font-size:40px;
 		width:100%;
-		color:#08F;
+		color:$title-color;
 		float:left;
 	}
 	.heading:hover {
-		color:#000;
-		background-color:#08F;
+		color:$body-background;
+		background-color:$title-color;
 	}
 	.project {
 		width:400px;
@@ -64,29 +67,35 @@ p {
 			font-size:20px;
 			display:block;
 			font-weight:bold;
-			width:auto;
+			width:100%;
 		}
 	}
 	h2 {
 		font-size:30px;
-		color:#0F0;
+		color:$header-color;
 		text-decoration:none;
 		margin-top:0px;
 		margin-bottom:5px;
 	}
-	#contactme {
-		float:left;
-		width:100%;
-	}
-	.contactdet {
-		margin-top:5px;
-		a, a:link, a:visited {
-			color:#08F;
-		}
-	}
 	h2:hover {
 		color:#000;
-		background-color:#0F0;
+		background-color:$header-color;
+	}
+	
+	#contact {
+		float:left;
+		width:100%;
+		p {
+			margin-top:50px;
+			//width:100%;
+			&:hover {
+				background-color:$body-background;
+				color:$body-default-color;
+			}
+			a, a:link, a:visited {
+				color:$body-default-color;
+			}
+		}
 	}
 }
 .hidden {
