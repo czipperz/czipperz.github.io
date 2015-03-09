@@ -41,7 +41,7 @@ p {
 #title {
   font-size: 55px;
   margin: 20px 0;
-  color: #08f;
+  color: #08F;
   padding: 5px 0;
   margin-bottom: 10px; }
   #title:hover {
@@ -51,6 +51,8 @@ p {
 #content {
   padding-top: 15px;
   color: #FFF; }
+  #content a {
+    width: 100%; }
   #content a:link, #content a:visited {
     color: #FFF; }
   #content a:hover, #content a:active {
@@ -76,23 +78,26 @@ p {
       font-size: 20px;
       display: block;
       font-weight: bold;
-      width: auto; }
+      width: 100%; }
   #content h2 {
     font-size: 30px;
     color: #0F0;
     text-decoration: none;
     margin-top: 0px;
     margin-bottom: 5px; }
-  #content #contactme {
-    float: left;
-    width: 100%; }
-  #content .contactdet {
-    margin-top: 5px; }
-    #content .contactdet a, #content .contactdet a:link, #content .contactdet a:visited {
-      color: #08F; }
   #content h2:hover {
     color: #000;
     background-color: #0F0; }
+  #content #contact {
+    float: left;
+    width: 100%; }
+    #content #contact p {
+      margin-top: 50px; }
+      #content #contact p:hover {
+        background-color: #000;
+        color: #FFF; }
+      #content #contact p a, #content #contact p a:link, #content #contact p a:visited {
+        color: #FFF; }
 
 .hidden {
   display: none; }
