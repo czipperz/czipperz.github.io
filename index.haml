@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+%head
+	<link rel="stylesheet" type="text/css" href="css.css">
+	%title Chris Gregory's Site
+%body
+	#page
+		#top
+			%h1#title Chris Gregory's Site
+			#menu
+				%ul
+					%li
+						%a(href="#") Home
+					%li
+						%a(href="#projects") Projects
+					%li
+						%a(href="#contact") Contact
+		#content
+			%a#projects.heading Projects
+			.project
+				%h2 CLibrary
+				%a(href="https://github.com/czipperz/CLibrary/") Github
+				%p A library that assists in many tasks but mainly focuses on graphics on JFrames.
+			.project
+				%h2 New CHS Website
+				%a(href="https://github.com/czipperz/chsWebsiteDraft") Github
+				%p The current Corvallis High School website is pretty atrocious, so I decided to redesign it in my spare time.
+			#contact
+				%a.heading Contact
+				Email me:
+				%a(id="emailcont" href="mailto:czipperz@gmail.com") czipperz@gmail.com
+</html>
