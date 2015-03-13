@@ -28,7 +28,7 @@ body {
   font-weight: 300; }
 
 p {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 5px; }
   p:hover {
     color: #000;
@@ -78,29 +78,29 @@ p {
       font-size: 20px;
       display: block;
       font-weight: bold;
-      width: 100%; }
+      width: 100%;
+      padding: 2px 0; }
   #content h2 {
     font-size: 30px;
     color: #0F0;
     text-decoration: none;
     margin-top: 0px;
-    margin-bottom: 5px; }
+    margin-bottom: 0px; }
     #content h2:hover {
       color: #000;
       background-color: #0F0; }
   #content #contact {
     float: left;
     width: 100%; }
-    #content #contact p {
-      margin-top: 50px; }
-      #content #contact p:hover {
-        background-color: #000;
-        color: #FFF; }
-      #content #contact p a, #content #contact p a:link, #content #contact p a:visited {
-        color: #FFF; }
-      #content #contact p #emailcont:hover {
-        color: #000;
-        background-color: #FFF; }
+    #content #contact:hover {
+      background-color: #000;
+      color: #FFF; }
+    #content #contact a:link, #content #contact a:visited {
+      color: #FFF; }
+    #content #contact #emailcont:hover {
+      padding: 2px 2px;
+      color: #000;
+      background-color: #FFF; }
 
 .hidden {
   display: none; }
