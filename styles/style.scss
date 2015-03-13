@@ -1,6 +1,11 @@
 @import "stylemenuhor";
 @import "variables";
+@mixin standardhover() {
+	color:$body-background;
+	background-color:$body-default-color;
+}
 body {
+	
 	background-color:$body-background;
 	color:$body-default-color;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -9,10 +14,8 @@ body {
 p {
 	margin-top:10px;
 	margin-bottom:5px;
-	
 	&:hover {
-		color:$body-background;
-		background-color:$body-default-color;
+		@include standardhover();
 	}
 }
 #page {
@@ -27,7 +30,7 @@ p {
 	margin-bottom:10px;
 	&:hover {
 		color:$body-background;
-		background-color:#08F;
+		background-color:$title-color;
 	}
 }
 #content {
@@ -35,23 +38,23 @@ p {
 	color:$body-default-color;
 	a {
 		width:100%;
-	}
-	a:link, a:visited {
-		color:$body-default-color;
-	}
-	a:hover, a:active {
-		color:$body-background;
-		background-color:$body-default-color;
+		&:link, &:visited {
+			color:$body-default-color;
+		}
+		&:hover, &:active {
+			color:$body-background;
+			background-color:$body-default-color;
+		}
 	}
 	.heading {
 		font-size:40px;
 		width:100%;
 		color:$title-color;
 		float:left;
-	}
-	.heading:hover {
-		color:$body-background;
-		background-color:$title-color;
+		&:hover {
+			color:$body-background;
+			background-color:$title-color;
+		}
 	}
 	.project {
 		width:400px;
@@ -63,7 +66,8 @@ p {
 		margin-right:15px;
 	//	border:1px solid #FFF;
 		float:left;
-		.project a {
+
+		a {
 			font-size:20px;
 			display:block;
 			font-weight:bold;
@@ -76,10 +80,10 @@ p {
 		text-decoration:none;
 		margin-top:0px;
 		margin-bottom:5px;
-	}
-	h2:hover {
-		color:#000;
-		background-color:$header-color;
+		&:hover {
+			color:#000;
+			background-color:$header-color;
+		}
 	}
 	
 	#contact {
@@ -94,6 +98,9 @@ p {
 			}
 			a, a:link, a:visited {
 				color:$body-default-color;
+			}
+			#emailcont:hover {
+				@include standardhover();
 			}
 		}
 	}
