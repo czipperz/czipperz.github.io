@@ -15,11 +15,11 @@
         padding: 3px 5px;
         padding-left: 4px;
         text-decoration: none; }
-      #menu ul li a:link, #menu ul li a:visited, #menu ul li a {
-        color: #FFF; }
-      #menu ul li a:hover, #menu ul li a:active {
-        color: #000;
-        background-color: #FFF; }
+        #menu ul li a:link, #menu ul li a:visited {
+          color: #FFF; }
+        #menu ul li a:hover, #menu ul li a:active {
+          color: #000;
+          background-color: #FFF; }
 
 body {
   background-color: #000;
@@ -53,19 +53,19 @@ p {
   color: #FFF; }
   #content a {
     width: 100%; }
-  #content a:link, #content a:visited {
-    color: #FFF; }
-  #content a:hover, #content a:active {
-    color: #000;
-    background-color: #FFF; }
+    #content a:link, #content a:visited {
+      color: #FFF; }
+    #content a:hover, #content a:active {
+      color: #000;
+      background-color: #FFF; }
   #content .heading {
     font-size: 40px;
     width: 100%;
     color: #08F;
     float: left; }
-  #content .heading:hover {
-    color: #000;
-    background-color: #08F; }
+    #content .heading:hover {
+      color: #000;
+      background-color: #08F; }
   #content .project {
     width: 400px;
     padding: 5px;
@@ -74,7 +74,7 @@ p {
     margin-left: 0px;
     margin-right: 15px;
     float: left; }
-    #content .project .project a {
+    #content .project a {
       font-size: 20px;
       display: block;
       font-weight: bold;
@@ -85,9 +85,9 @@ p {
     text-decoration: none;
     margin-top: 0px;
     margin-bottom: 5px; }
-  #content h2:hover {
-    color: #000;
-    background-color: #0F0; }
+    #content h2:hover {
+      color: #000;
+      background-color: #0F0; }
   #content #contact {
     float: left;
     width: 100%; }
@@ -98,6 +98,9 @@ p {
         color: #FFF; }
       #content #contact p a, #content #contact p a:link, #content #contact p a:visited {
         color: #FFF; }
+      #content #contact p #emailcont:hover {
+        color: #000;
+        background-color: #FFF; }
 
 .hidden {
   display: none; }
