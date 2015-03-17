@@ -4,7 +4,7 @@
 var gulp =			require('gulp'),
 	autoprefixer =	require('gulp-autoprefixer'),
 	haml =			require('gulp-haml'),
-	postcss =		requrie('gulp-postcss'),
+	postcss =		require('gulp-postcss'),
 	sass =			require('gulp-sass'),
 	sourcemaps =	require('gulp-sourcemaps'),
 	stylus =		require('gulp-stylus');
