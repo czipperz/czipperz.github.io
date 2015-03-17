@@ -1,0 +1,17 @@
+body-background #000
+body-default-color #FFF
+title-color #08F
+header-color #0F0
+
+hover(c = body-default-color, b = body-background)
+	&:link, &:visited
+		color c
+		background b
+	&:hover, &:active
+		color b
+		background c
+
+paddingprojects(pad = 5px)
+	padding-left pad
+	padding-right pad
+	margin-left (-1 * pad)
