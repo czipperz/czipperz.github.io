@@ -1,4 +1,6 @@
 //see https://github.com/edravis/gulp-haml-sass/blob/master/gulpfile.js
+'use strict'
+
 var gulp =			require('gulp'),
 	autoprefixer =	require('gulp-autoprefixer'),
 	haml =			require('gulp-haml'),
@@ -6,9 +8,9 @@ var gulp =			require('gulp'),
 	stylus =		require('gulp-stylus');
 
 gulp.task('haml', function() {
-	gulp.src('haml/**/*.haml')
-		.pipe(haml())
-		.pipe(gulp.dest(''));
+	gulp.src('./haml/**/*.haml')
+		.pipe(haml())//{ compiler: 'creationix' }))
+		.pipe(gulp.dest('./html'));
 });
 
 gulp.task('sass', function() {
