@@ -4,7 +4,9 @@
 var gulp =			require('gulp'),
 	autoprefixer =	require('gulp-autoprefixer'),
 	haml =			require('gulp-haml'),
+	postcss =		requrie('gulp-postcss'),
 	sass =			require('gulp-sass'),
+	sourcemaps =	require('gulp-sourcemaps'),
 	stylus =		require('gulp-stylus');
 
 gulp.task('haml', function() {
@@ -14,22 +16,27 @@ gulp.task('haml', function() {
 });
 
 gulp.task('sass', function() {
-	gulp.src('sass/style.scss')
+	gulp.src('./sass/style.scss')
 		.pipe(sass())//{ style: 'compressed' }))
-		.pipe(autoprefixer('last 2 versions'))
-		.pipe(gulp.dest('css/'));
+		.pipe(sourcemaps.init())
+			.pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
+		.pipe(sourcemaps.write('./css/'))
+		.pipe(gulp.dest('./css/'));
 });
 
 gulp.task('stylus', function() {
-	gulp.src('stylus/style.styl')
+	gulp.src('./stylus/style.styl')
 		.pipe(stylus())
-		.pipe(autoprefixer('last 2 versions'))
-		.pipe(gulp.dest('css/'));
+		.pipe(sourcemaps.init())
+			.pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
+		.pipe(sourcemaps.write('./css/'))
+		.pipe(gulp.dest('./css/'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch('sass/style.scss', ['styles']);
-	gulp.watch('haml/**/*.haml', ['haml']);
+	gulp.watch('./sass/style.scss',		['sass']);
+	gulp.watch('./stylus/style.styl',	['stylus']);
+	gulp.watch('./haml/**/*.haml',		['haml']);
 });
 
 gulp.task('default', ['sass', 'haml'])
