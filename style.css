@@ -144,6 +144,9 @@ h1#title:hover {
   text-decoration: none;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
 }
 #content .project h2:link,
 #content .project h2:visited {
@@ -281,6 +284,9 @@ h1#title:hover {
   text-decoration: none;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
 }
 #content .project h2:link,
 #content .project h2:visited {
