@@ -178,20 +178,6 @@ h1#title:hover {
   float: left;
   width: 100%;
 }
-#content #contact:link,
-#content #contact:visited {
-  color: #fff;
-  background: #000;
-}
-#content #contact:hover,
-#content #contact:active {
-  color: #000;
-  background: #fff;
-}
-#content #contact a:link,
-#content #contact a:visited {
-  color: #fff;
-}
 #content #contact #email {
   padding-left: 5px;
   padding-right: 5px;
@@ -328,20 +314,6 @@ h1#title:hover {
 #content #contact {
   float: left;
   width: 100%;
-}
-#content #contact:link,
-#content #contact:visited {
-  color: #fff;
-  background: #000;
-}
-#content #contact:hover,
-#content #contact:active {
-  color: #000;
-  background: #fff;
-}
-#content #contact a:link,
-#content #contact a:visited {
-  color: #fff;
 }
 #content #contact #email {
   padding-left: 5px;
