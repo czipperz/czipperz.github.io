@@ -140,21 +140,24 @@ h1#title:hover {
   margin-right: 5px;
 }
 #content .project h2 {
-  font-size: 30px;
-  text-decoration: none;
+  color: #0f0;
   margin-top: 0;
   margin-bottom: 0;
+}
+#content .project h2 a {
+  font-size: 30px;
+  text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
   margin-left: -5px;
 }
-#content .project h2:link,
-#content .project h2:visited {
+#content .project h2 a:link,
+#content .project h2 a:visited {
   color: #0f0;
   background: #000;
 }
-#content .project h2:hover,
-#content .project h2:active {
+#content .project h2 a:hover,
+#content .project h2 a:active {
   color: #000;
   background: #0f0;
 }
@@ -280,21 +283,24 @@ h1#title:hover {
   margin-right: 5px;
 }
 #content .project h2 {
-  font-size: 30px;
-  text-decoration: none;
+  color: #0f0;
   margin-top: 0;
   margin-bottom: 0;
+}
+#content .project h2 a {
+  font-size: 30px;
+  text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
   margin-left: -5px;
 }
-#content .project h2:link,
-#content .project h2:visited {
+#content .project h2 a:link,
+#content .project h2 a:visited {
   color: #0f0;
   background: #000;
 }
-#content .project h2:hover,
-#content .project h2:active {
+#content .project h2 a:hover,
+#content .project h2 a:active {
   color: #000;
   background: #0f0;
 }

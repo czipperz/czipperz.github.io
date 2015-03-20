@@ -50,7 +50,7 @@
   padding: 0 4px;
   padding-top: 4px;
   width: 200px;
-  height: 180px;
+  height: 130px;
   overflow-x: auto;
   white-space: wrap;
   background-color: #5ea3d7;
@@ -184,7 +184,7 @@ div#navbar a:active {
   padding: 0 4px;
   padding-top: 4px;
   width: 200px;
-  height: 180px;
+  height: 130px;
   overflow-x: auto;
   white-space: wrap;
   background-color: #5ea3d7;
@@ -317,7 +317,7 @@ h2 {
   background-color: #093b62;
 }
 #header {
-  margin-top: -9px;
+  margin-top: 0px;
   text-decoration: none;
   padding: 1px 0px;
   width: 100%;
@@ -427,7 +427,7 @@ h2 {
   background-color: #093b62;
 }
 #header {
-  margin-top: -9px;
+  margin-top: 0px;
   text-decoration: none;
   padding: 1px 0px;
   width: 100%;
