@@ -141,6 +141,37 @@ div#navbar a:active {
     display: normal;
   }
 }
+@media handheld {
+  ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #093b62;
+  }
+  ul li {
+    list-style: none;
+    padding: 2px 0;
+    height: 30px;
+    width: 100%;
+  }
+  a {
+    padding: 5px;
+    display: block;
+    padding-left: 24px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  a:link,
+  a:visited {
+    color: #5ea3d7;
+  }
+  a:hover,
+  a:active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    background-color: #214b6b;
+  }
+}
 body {
   height: 100%;
   width: 100%;
@@ -359,6 +390,37 @@ div#navbar a:active {
     padding: 7px 8px;
     padding-top: 5px;
     display: normal;
+  }
+}
+@media handheld {
+  ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #093b62;
+  }
+  ul li {
+    list-style: none;
+    padding: 2px 0;
+    height: 30px;
+    width: 100%;
+  }
+  a {
+    padding: 5px;
+    display: block;
+    padding-left: 24px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  a:link,
+  a:visited {
+    color: #5ea3d7;
+  }
+  a:hover,
+  a:active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    background-color: #214b6b;
   }
 }
 body {
