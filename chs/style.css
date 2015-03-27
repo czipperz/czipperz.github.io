@@ -98,9 +98,13 @@ h2 {
   padding: 0px 5px;
 }
 #content h1 {
-  font-size: 2em;
   margin: 0;
   margin-top: 10px;
+}
+@media screen and (max-device-width: 590px) {
+  #content h1 {
+    font-size: 3em;
+  }
 }
 #content h2 {
   font-size: 30px;
