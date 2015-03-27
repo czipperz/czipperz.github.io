@@ -230,12 +230,12 @@ div#navbar a {
   padding: 5px;
   display: block;
   padding-left: 24px;
-  font-size: 1.428571428571429em;
+  font-size: 20px;
   text-decoration: none;
 }
 @media screen and (max-device-width: 590px) {
   div#navbar a {
-    font-size: 25px;
+    font-size: 45px;
   }
 }
 div#navbar a:link,
@@ -296,7 +296,7 @@ div#navbar a:active {
     padding: 5px;
     display: block;
     padding-left: 24px;
-    font-size: 1.428571428571429em;
+    font-size: 20px;
     text-decoration: none;
   }
   div#navbar a:link,
@@ -315,7 +315,7 @@ div#navbar a:active {
 }
 @media screen and (max-device-width: 590px) and (max-device-width: 590px) {
   a {
-    font-size: 25px;
+    font-size: 45px;
   }
 }
 
