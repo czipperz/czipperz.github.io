@@ -4,16 +4,15 @@
 }
 ::-webkit-scrollbar-thumb {
   height: 50pt;
+  background-color: #093b62;
   -webkit-border-radius: 5px;
   outline-offset: 5px;
-  background-color: #093b62;
 }
 ::-webkit-scrollbar-track-piece {
+  background-color: #fff;
   -webkit-border-radius: 0;
-  background-color: #5ea3d7;
 }
 .view-content {
-  padding-left: 5px;
   background-color: #fff;
   width: 100%;
   height: 100%;
@@ -49,8 +48,8 @@
   margin-left: 0;
   padding: 0 4px;
   padding-top: 4px;
-  width: 200px;
-  height: 130px;
+  width: 250px;
+  height: 140px;
   overflow-x: auto;
   white-space: wrap;
   background-color: #5ea3d7;
@@ -59,8 +58,8 @@
 .view-content div[class|="col"] a:active {
   color: #093b62;
 }
-div#top {
-  padding-bottom: 0px;
+#top {
+  padding-bottom: 0;
 }
 div#navbar {
   background-color: #093b62;
@@ -68,7 +67,7 @@ div#navbar {
 }
 @media screen and (min-width: 577px) {
   div#navbar {
-    height: 36px;
+    height: 33px;
   }
   div#navbar ul {
     padding: 0px;
@@ -95,8 +94,8 @@ div#navbar {
     padding-bottom: 6px;
   }
   div#navbar ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     width: 100%;
   }
   div#navbar ul li {
@@ -138,16 +137,15 @@ div#navbar a:active {
 }
 ::-webkit-scrollbar-thumb {
   height: 50pt;
+  background-color: #093b62;
   -webkit-border-radius: 5px;
   outline-offset: 5px;
-  background-color: #093b62;
 }
 ::-webkit-scrollbar-track-piece {
+  background-color: #fff;
   -webkit-border-radius: 0;
-  background-color: #5ea3d7;
 }
 .view-content {
-  padding-left: 5px;
   background-color: #fff;
   width: 100%;
   height: 100%;
@@ -183,8 +181,8 @@ div#navbar a:active {
   margin-left: 0;
   padding: 0 4px;
   padding-top: 4px;
-  width: 200px;
-  height: 130px;
+  width: 250px;
+  height: 140px;
   overflow-x: auto;
   white-space: wrap;
   background-color: #5ea3d7;
@@ -193,8 +191,8 @@ div#navbar a:active {
 .view-content div[class|="col"] a:active {
   color: #093b62;
 }
-div#top {
-  padding-bottom: 0px;
+#top {
+  padding-bottom: 0;
 }
 div#navbar {
   background-color: #093b62;
@@ -202,7 +200,7 @@ div#navbar {
 }
 @media screen and (min-width: 577px) {
   div#navbar {
-    height: 36px;
+    height: 33px;
   }
   div#navbar ul {
     padding: 0px;
@@ -229,8 +227,8 @@ div#navbar {
     padding-bottom: 6px;
   }
   div#navbar ul {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     width: 100%;
   }
   div#navbar ul li {
@@ -269,21 +267,11 @@ div#navbar a:active {
 body {
   height: 100%;
   width: 100%;
-  color: #cccfe0;
+  background-color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0;
   margin-right: 8px;
-}
-@media screen and (min-width: 577px) {
-  body {
-    background-color: #fff;
-  }
-}
-@media screen and (max-width: 577px) {
-  body {
-    background-color: #fff;
-  }
 }
 h2 {
   font-size: 19px;
@@ -302,29 +290,25 @@ h2 {
 .ld a:active {
   color: #093b62;
 }
-#content .breaker {
-  height: 8px;
-  background-color: #fff;
-  width: 100%;
-}
 #page {
   margin-left: 0;
-}
-#page margin-right 0 {
+  margin-right: 0;
   background-color: #fff;
 }
 #top {
   background-color: #093b62;
 }
 #header {
-  margin-top: 0px;
+  margin-top: 0;
   text-decoration: none;
   padding: 1px 0px;
   width: 100%;
+  background-color: #093b62;
 }
 #header h1 {
-  padding: 0 24px;
+  padding: 0px 24px;
   margin-bottom: 12px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 577px) {
   #header h1 {
@@ -347,53 +331,46 @@ h2 {
   color: #093b62;
   padding: 0px;
   width: 100%;
-}
-h1 {
   padding-left: 5px;
-  margin: 10px 0 0 0;
+}
+#content h1 {
+  margin: 0;
+  margin-top: 10px;
+}
+#content h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  margin-bottom: 2px;
 }
 #info {
   margin-top: -5px;
-  padding-left: 5px;
+  padding: 0px;
 }
 #info h2 {
   margin-top: 12px;
 }
-#content hr {
-  width: 100%;
-}
 #announcements {
-  padding-left: 5px;
   width: 100%;
-h2
 }
-ul {
-  padding: 0px;
-  margin: 0px;
+#announcements h2 {
+  margin-top: 15px;
 }
-ul li {
-  list-style: none;
+#announcements ul {
+  padding: 0;
+  margin: 0;
+}
+#announcements li {
   padding: 2px 0;
-  width: 100%;
 }
 body {
   height: 100%;
   width: 100%;
-  color: #cccfe0;
+  background-color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0;
   margin-right: 8px;
-}
-@media screen and (min-width: 577px) {
-  body {
-    background-color: #fff;
-  }
-}
-@media screen and (max-width: 577px) {
-  body {
-    background-color: #fff;
-  }
 }
 h2 {
   font-size: 19px;
@@ -412,29 +389,25 @@ h2 {
 .ld a:active {
   color: #093b62;
 }
-#content .breaker {
-  height: 8px;
-  background-color: #fff;
-  width: 100%;
-}
 #page {
   margin-left: 0;
-}
-#page margin-right 0 {
+  margin-right: 0;
   background-color: #fff;
 }
 #top {
   background-color: #093b62;
 }
 #header {
-  margin-top: 0px;
+  margin-top: 0;
   text-decoration: none;
   padding: 1px 0px;
   width: 100%;
+  background-color: #093b62;
 }
 #header h1 {
-  padding: 0 24px;
+  padding: 0px 24px;
   margin-bottom: 12px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 577px) {
   #header h1 {
@@ -457,33 +430,36 @@ h2 {
   color: #093b62;
   padding: 0px;
   width: 100%;
-}
-h1 {
   padding-left: 5px;
-  margin: 10px 0 0 0;
+}
+#content h1 {
+  margin: 0;
+  margin-top: 10px;
+}
+#content h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  margin-bottom: 2px;
 }
 #info {
   margin-top: -5px;
-  padding-left: 5px;
+  padding: 0px;
 }
 #info h2 {
   margin-top: 12px;
 }
-#content hr {
-  width: 100%;
-}
 #announcements {
-  padding-left: 5px;
   width: 100%;
-h2
 }
-ul {
-  padding: 0px;
-  margin: 0px;
+#announcements h2 {
+  margin-top: 15px;
 }
-ul li {
-  list-style: none;
+#announcements ul {
+  padding: 0;
+  margin: 0;
+}
+#announcements li {
   padding: 2px 0;
-  width: 100%;
 }
 
