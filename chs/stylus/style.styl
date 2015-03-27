@@ -1,0 +1,116 @@
+body
+	height 100%
+	width 100%
+	background-color body-background
+	font-family Arial, Helvetica, sans-serif
+	font-size 14px
+	margin 0
+	//margin-right 8px
+h2 {
+    font-size: 19px;
+	margin: 15px 0 2px 0;
+}
+
+.ld
+	font-weight bold
+	color plink-default-color
+	a:link, a:visited
+		text-decoration underline
+		color plink-default-color
+	a:hover, a:active
+		color plink-hover-color
+#page {
+	margin-right 10px
+	margin-left: 0;
+	margin-right: 0;
+	background-color: page-background-color;
+}
+
+
+
+#top {
+    background-color: header-background;
+}
+
+
+
+#header {
+    margin-top 0;
+    //background-color #093B62
+    text-decoration none;
+    padding 1px 0px;
+    width 100%;
+	background-color header-background;
+    h1 {
+		padding: 0px 24px;
+		margin-bottom 12px
+		@media screen and (min-width thresh) {
+			margin-bottom 12px;
+		}
+		@media screen and (max-device-width thresh) {
+			margin-bottom 12px;
+		}
+		margin-top 10px;
+
+		a {
+			font-size 40px;
+			text-decoration none;
+			&:link, &:visited {
+				color header-default-color
+			}
+			&:hover, &:active {
+				color header-hover-color
+			}
+		}
+	}
+}
+
+#content {
+    color: header-background;
+    padding: 0px 5px;
+	h1 {
+		margin 0;
+		margin-top 10px;
+	}
+	h2 {
+		contentheading()
+		font-size 19px
+		margin-bottom 2px
+	}
+}
+#info {
+	margin-top: -5px;
+	padding: 0px;
+	h2 {
+		margin-top: 12px;
+	}
+	float left
+	padding-right 5px
+	max-width thresh
+}
+#announcements {
+	padding-right 5px
+	max-width thresh
+	float left
+	h2 {
+		margin-top: 7px;
+	}
+	ul {
+		padding 0;
+		margin 0;
+		list-style none;
+	}
+	li {
+		padding 2px 0;
+	}
+}
+@media screen and (max-width thresh) {
+	#info {
+		padding-bottom 5px
+	}
+	#announcements {
+		h2 {
+			margin-top 0px
+		}
+	}
+}
