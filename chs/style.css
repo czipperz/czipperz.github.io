@@ -21,7 +21,7 @@
   height: 100%;
 }
 .view-content h3 {
-  font-size: 20px;
+  font-size: 1.428571428571429em;
   width: 100%;
   display: block;
   float: left;
@@ -88,7 +88,7 @@ div#navbar a {
   padding: 5px;
   display: block;
   padding-left: 24px;
-  font-size: 20px;
+  font-size: 1.428571428571429em;
   text-decoration: none;
 }
 div#navbar a:link,
@@ -149,7 +149,7 @@ div#navbar a:active {
     padding: 5px;
     display: block;
     padding-left: 24px;
-    font-size: 20px;
+    font-size: 1.428571428571429em;
     text-decoration: none;
   }
   div#navbar a:link,
@@ -163,7 +163,7 @@ div#navbar a:active {
     background-color: #214b6b;
   }
   div#navbar a {
-    font-size: 30px;
+    font-size: 1.25em;
   }
 }
 body {
@@ -174,8 +174,13 @@ body {
   font-size: 14px;
   margin: 0;
 }
+@media screen and (max-device-width: 590px) {
+  body {
+    font-size: 25px;
+  }
+}
 h2 {
-  font-size: 19px;
+  font-size: 1.357142857142857em;
   margin: 15px 0 2px 0;
 }
 .ld {
@@ -223,7 +228,7 @@ h2 {
   }
 }
 #header h1 a {
-  font-size: 40px;
+  font-size: 2.857142857142857em;
   text-decoration: none;
 }
 @media screen and (max-device-width: 590px) {
@@ -250,7 +255,7 @@ h2 {
 #content h2 {
   font-size: 30px;
   margin-bottom: 10px;
-  font-size: 19px;
+  font-size: 1.357142857142857em;
   margin-bottom: 2px;
 }
 #info {
@@ -265,7 +270,7 @@ h2 {
 }
 #announcements {
   padding-right: 5px;
-  max-width: 590px;
+  max-width: 565px;
   float: left;
 }
 #announcements h2 {
@@ -275,6 +280,7 @@ h2 {
   padding: 0;
   margin: 0;
   list-style: none;
+  margin-top: -2px;
 }
 #announcements li {
   padding: 2px 0;
