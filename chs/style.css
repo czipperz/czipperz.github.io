@@ -142,31 +142,38 @@ div#navbar a:active {
   }
 }
 @media screen and (max-device-width: 590px) {
-  ul {
+  div#navbar {
+    background-color: #093b62;
+    width: 100%;
+    height: auto;
+    margin-top: -10px;
+    padding-bottom: 4px;
+  }
+  div#navbar ul {
     padding: 0;
     margin: 0;
     width: 100%;
     background-color: #093b62;
   }
-  ul li {
+  div#navbar ul li {
     list-style: none;
     padding: 2px 0;
     height: 30px;
     width: 100%;
   }
-  a {
+  div#navbar a {
     padding: 5px;
     display: block;
     padding-left: 24px;
     font-size: 20px;
     text-decoration: none;
   }
-  a:link,
-  a:visited {
+  div#navbar a:link,
+  div#navbar a:visited {
     color: #5ea3d7;
   }
-  a:hover,
-  a:active {
+  div#navbar a:hover,
+  div#navbar a:active {
     color: #fff;
     border-bottom: 2px solid #fff;
     background-color: #214b6b;
@@ -393,31 +400,38 @@ div#navbar a:active {
   }
 }
 @media screen and (max-device-width: 590px) {
-  ul {
+  div#navbar {
+    background-color: #093b62;
+    width: 100%;
+    height: auto;
+    margin-top: -10px;
+    padding-bottom: 4px;
+  }
+  div#navbar ul {
     padding: 0;
     margin: 0;
     width: 100%;
     background-color: #093b62;
   }
-  ul li {
+  div#navbar ul li {
     list-style: none;
     padding: 2px 0;
     height: 30px;
     width: 100%;
   }
-  a {
+  div#navbar a {
     padding: 5px;
     display: block;
     padding-left: 24px;
     font-size: 20px;
     text-decoration: none;
   }
-  a:link,
-  a:visited {
+  div#navbar a:link,
+  div#navbar a:visited {
     color: #5ea3d7;
   }
-  a:hover,
-  a:active {
+  div#navbar a:hover,
+  div#navbar a:active {
     color: #fff;
     border-bottom: 2px solid #fff;
     background-color: #214b6b;
