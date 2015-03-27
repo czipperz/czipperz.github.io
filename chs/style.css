@@ -118,7 +118,7 @@ div#navbar a:active {
   border-bottom: 2px solid #fff;
   background-color: #214b6b;
 }
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 590px) {
   div#navbar {
     height: 38px;
     margin-top: 0;
@@ -191,7 +191,7 @@ h2 {
   margin-bottom: 12px;
   margin-top: 10px;
 }
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 590px) {
   #header h1 {
     margin-bottom: 12px;
   }
@@ -227,14 +227,14 @@ h2 {
   padding: 0px;
   float: left;
   padding-right: 5px;
-  max-width: 580px;
+  max-width: 590px;
 }
 #info h2 {
   margin-top: 12px;
 }
 #announcements {
   padding-right: 5px;
-  max-width: 580px;
+  max-width: 590px;
   float: left;
 }
 #announcements h2 {
@@ -248,7 +248,7 @@ h2 {
 #announcements li {
   padding: 2px 0;
 }
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 590px) {
   #info {
     padding-bottom: 5px;
   }
@@ -342,7 +342,7 @@ div#navbar a:active {
   border-bottom: 2px solid #fff;
   background-color: #214b6b;
 }
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 590px) {
   div#navbar {
     height: 38px;
     margin-top: 0;
@@ -415,7 +415,7 @@ h2 {
   margin-bottom: 12px;
   margin-top: 10px;
 }
-@media screen and (min-width: 580px) {
+@media screen and (min-width: 590px) {
   #header h1 {
     margin-bottom: 12px;
   }
@@ -451,14 +451,14 @@ h2 {
   padding: 0px;
   float: left;
   padding-right: 5px;
-  max-width: 580px;
+  max-width: 590px;
 }
 #info h2 {
   margin-top: 12px;
 }
 #announcements {
   padding-right: 5px;
-  max-width: 580px;
+  max-width: 590px;
   float: left;
 }
 #announcements h2 {
@@ -472,7 +472,7 @@ h2 {
 #announcements li {
   padding: 2px 0;
 }
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 590px) {
   #info {
     padding-bottom: 5px;
   }
