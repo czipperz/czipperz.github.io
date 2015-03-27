@@ -21,6 +21,9 @@ defaultnavbar() {
 		display block
 		padding-left 24px
 		font-size (20/14 em)
+		@media screen and (max-device-width thresh) {
+			font-size (30/14 em)
+		}
 		text-decoration none
 		&:link, &:visited {
 			color header-default-color

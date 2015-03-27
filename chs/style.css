@@ -233,6 +233,11 @@ div#navbar a {
   font-size: 1.428571428571429em;
   text-decoration: none;
 }
+@media screen and (max-device-width: 590px) {
+  div#navbar a {
+    font-size: 2.142857142857143em;
+  }
+}
 div#navbar a:link,
 div#navbar a:visited {
   color: #5ea3d7;
@@ -306,6 +311,11 @@ div#navbar a:active {
   }
   div#navbar a {
     font-size: 1.25em;
+  }
+}
+@media screen and (max-device-width: 590px) and (max-device-width: 590px) {
+  a {
+    font-size: 2.142857142857143em;
   }
 }
 
