@@ -122,6 +122,11 @@ h2 {
 #info h2 {
   margin-top: 12px;
 }
+@media screen and (max-device-width: 590px) {
+  #info {
+    min-width: 100%;
+  }
+}
 #announcements {
   padding-right: 5px;
   max-width: 565px;
@@ -138,6 +143,11 @@ h2 {
 }
 #announcements li {
   padding: 2px 0;
+}
+@media screen and (max-device-width: 590px) {
+  #announcements {
+    min-width: 100%;
+  }
 }
 @media screen and (max-width: 590px) {
   #info {
