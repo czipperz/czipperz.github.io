@@ -161,6 +161,9 @@ div#navbar a:active {
     border-bottom: 2px solid #fff;
     background-color: #214b6b;
   }
+  div#navbar ul {
+    background-color: #093b62;
+  }
 }
 body {
   height: 100%;
@@ -210,6 +213,11 @@ h2 {
   margin-top: 10px;
 }
 @media screen and (min-width: 590px) {
+  #header h1 {
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-device-width: 590px) {
   #header h1 {
     margin-bottom: 12px;
   }
