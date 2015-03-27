@@ -131,7 +131,7 @@ div#navbar a:active {
     height: 170px;
     margin-top: -10px;
     padding-bottom: 4px;
-    height: 400px;
+    height: 300px;
   }
   div#navbar ul {
     padding: 0;
@@ -161,6 +161,9 @@ div#navbar a:active {
     color: #fff;
     border-bottom: 2px solid #fff;
     background-color: #214b6b;
+  }
+  div#navbar a {
+    font-size: 30px;
   }
 }
 body {
