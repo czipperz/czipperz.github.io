@@ -68,7 +68,7 @@
 div#navbar {
   background-color: #093b62;
   width: 100%;
-  height: auto;
+  height: 170px;
   margin-top: -10px;
   padding-bottom: 4px;
 }
@@ -128,7 +128,7 @@ div#navbar a:active {
   div#navbar {
     background-color: #093b62;
     width: 100%;
-    height: auto;
+    height: 170px;
     margin-top: -10px;
     padding-bottom: 4px;
   }
@@ -160,9 +160,6 @@ div#navbar a:active {
     color: #fff;
     border-bottom: 2px solid #fff;
     background-color: #214b6b;
-  }
-  div#navbar ul {
-    background-color: #093b62;
   }
 }
 body {
