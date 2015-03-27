@@ -96,6 +96,9 @@ h2 {
 	float left
 	padding-right 5px
 	max-width thresh
+	@media screen and (max-device-width: thresh) {
+		min-width 100%
+	}
 }
 #announcements {
 	padding-right 5px
@@ -112,6 +115,9 @@ h2 {
 	}
 	li {
 		padding 2px 0;
+	}
+	@media screen and (max-device-width: thresh) {
+		min-width 100%
 	}
 }
 @media screen and (max-width thresh) {
