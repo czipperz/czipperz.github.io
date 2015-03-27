@@ -141,9 +141,28 @@ div#navbar a:active {
     display: normal;
   }
 }
-#content {
-  width: 100%;
-  margin-top: -6px;
+@media screen and (min-device-width: 590px) {
+  div#navbar {
+    height: 38px;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  div#navbar ul {
+    margin-left: 16px;
+    width: auto;
+  }
+  div#navbar ul li {
+    width: auto;
+    display: inline;
+    float: left;
+    margin-bottom: 6px;
+    padding: 0;
+  }
+  div#navbar a {
+    padding: 7px 8px;
+    padding-top: 5px;
+    display: normal;
+  }
 }
 body {
   height: 100%;
@@ -365,9 +384,28 @@ div#navbar a:active {
     display: normal;
   }
 }
-#content {
-  width: 100%;
-  margin-top: -6px;
+@media screen and (min-device-width: 590px) {
+  div#navbar {
+    height: 38px;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  div#navbar ul {
+    margin-left: 16px;
+    width: auto;
+  }
+  div#navbar ul li {
+    width: auto;
+    display: inline;
+    float: left;
+    margin-bottom: 6px;
+    padding: 0;
+  }
+  div#navbar a {
+    padding: 7px 8px;
+    padding-top: 5px;
+    display: normal;
+  }
 }
 body {
   height: 100%;
