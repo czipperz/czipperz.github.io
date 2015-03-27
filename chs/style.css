@@ -12,124 +12,8 @@
   background-color: #fff;
   -webkit-border-radius: 0;
 }
-.view-content {
-  background-color: #fff;
-  width: 100%;
-  height: 100%;
-}
-.view-content h3 {
-  width: 100%;
-  display: block;
-  float: left;
-  margin: 8px 0 -2px 0;
-}
-.view-content > div {
-  color: #093b62;
-  background-color: #fff;
-}
-.view-content > div #staff-name {
-  font-weight: bold;
-}
-.view-content a:link,
-.view-content a:visited {
-  color: #093b62;
-}
-.view-content a:hover,
-.view-content a:active {
-  color: #5ea3d7;
-}
-.view-content img {
-  float: left;
-  margin-right: 4px;
-}
-.view-content div[class|="col"] {
-  float: left;
-  margin: 5px 10px;
-  margin-left: 0;
-  padding: 0 4px;
-  padding-top: 4px;
-  width: 250px;
-  height: 140px;
-  overflow-x: auto;
-  white-space: wrap;
-  background-color: #5ea3d7;
-}
-.view-content div[class|="col"] a:hover,
-.view-content div[class|="col"] a:active {
-  color: #093b62;
-}
-#top {
-  padding-bottom: 0;
-}
-div#navbar {
-  background-color: #093b62;
-  width: 100%;
-}
-@media screen and (min-width: 577px) {
-  div#navbar {
-    height: 33px;
-  }
-  div#navbar ul {
-    padding: 0px;
-    margin: 0px;
-    margin-left: 16px;
-  }
-  div#navbar ul li {
-    width: auto;
-    display: inline;
-    height: 30px;
-    float: left;
-    list-style: none;
-    margin-bottom: 6px;
-  }
-  div#navbar a {
-    padding: 7px 8px;
-    display: normal;
-  }
-}
-@media screen and (max-width: 577px) {
-  div#navbar {
-    height: auto;
-    margin-top: -10px;
-    padding-bottom: 6px;
-  }
-  div#navbar ul {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-  div#navbar ul li {
-    list-style: none;
-    padding: 2px 0;
-    height: 30px;
-    width: 100%;
-  }
-  div#navbar a {
-    padding: 5px;
-    display: block;
-    padding-left: 24px;
-  }
-}
-div#navbar ul {
-  background-color: #093b62;
-}
-div#navbar a {
-  font-size: 20px;
-  text-decoration: none;
-}
-div#navbar a:link,
-div#navbar a:visited {
-  color: #5ea3d7;
-}
-div#navbar a:hover,
-div#navbar a:active {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-  background-color: #214b6b;
-}
-#content {
-  width: 100%;
-  margin-top: -6px;
+::-webkit-scrollbar:horizontal {
+  display: none;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -145,6 +29,9 @@ div#navbar a:active {
   background-color: #fff;
   -webkit-border-radius: 0;
 }
+::-webkit-scrollbar:horizontal {
+  display: none;
+}
 .view-content {
   background-color: #fff;
   width: 100%;
@@ -271,7 +158,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0;
-  margin-right: 8px;
 }
 h2 {
   font-size: 19px;
@@ -291,6 +177,7 @@ h2 {
   color: #093b62;
 }
 #page {
+  margin-right: 10px;
   margin-left: 0;
   margin-right: 0;
   background-color: #fff;
@@ -329,9 +216,7 @@ h2 {
 }
 #content {
   color: #093b62;
-  padding: 0px;
-  width: 100%;
-  padding-left: 5px;
+  padding: 0px 5px;
 }
 #content h1 {
   margin: 0;
@@ -346,22 +231,155 @@ h2 {
 #info {
   margin-top: -5px;
   padding: 0px;
+  float: left;
+  padding-right: 5px;
+  max-width: 577px;
 }
 #info h2 {
   margin-top: 12px;
 }
 #announcements {
-  width: 100%;
+  padding-right: 5px;
+  max-width: 577px;
+  float: left;
 }
 #announcements h2 {
-  margin-top: 15px;
+  margin-top: 7px;
 }
 #announcements ul {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 #announcements li {
   padding: 2px 0;
+}
+@media screen and (max-width: 577px) {
+  #info {
+    padding-bottom: 5px;
+  }
+  #announcements h2 {
+    margin-top: 0px;
+  }
+}
+.view-content {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.view-content h3 {
+  width: 100%;
+  display: block;
+  float: left;
+  margin: 8px 0 -2px 0;
+}
+.view-content > div {
+  color: #093b62;
+  background-color: #fff;
+}
+.view-content > div #staff-name {
+  font-weight: bold;
+}
+.view-content a:link,
+.view-content a:visited {
+  color: #093b62;
+}
+.view-content a:hover,
+.view-content a:active {
+  color: #5ea3d7;
+}
+.view-content img {
+  float: left;
+  margin-right: 4px;
+}
+.view-content div[class|="col"] {
+  float: left;
+  margin: 5px 10px;
+  margin-left: 0;
+  padding: 0 4px;
+  padding-top: 4px;
+  width: 250px;
+  height: 140px;
+  overflow-x: auto;
+  white-space: wrap;
+  background-color: #5ea3d7;
+}
+.view-content div[class|="col"] a:hover,
+.view-content div[class|="col"] a:active {
+  color: #093b62;
+}
+#top {
+  padding-bottom: 0;
+}
+div#navbar {
+  background-color: #093b62;
+  width: 100%;
+}
+@media screen and (min-width: 577px) {
+  div#navbar {
+    height: 33px;
+  }
+  div#navbar ul {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 16px;
+  }
+  div#navbar ul li {
+    width: auto;
+    display: inline;
+    height: 30px;
+    float: left;
+    list-style: none;
+    margin-bottom: 6px;
+  }
+  div#navbar a {
+    padding: 7px 8px;
+    display: normal;
+  }
+}
+@media screen and (max-width: 577px) {
+  div#navbar {
+    height: auto;
+    margin-top: -10px;
+    padding-bottom: 6px;
+  }
+  div#navbar ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  div#navbar ul li {
+    list-style: none;
+    padding: 2px 0;
+    height: 30px;
+    width: 100%;
+  }
+  div#navbar a {
+    padding: 5px;
+    display: block;
+    padding-left: 24px;
+  }
+}
+div#navbar ul {
+  background-color: #093b62;
+}
+div#navbar a {
+  font-size: 20px;
+  text-decoration: none;
+}
+div#navbar a:link,
+div#navbar a:visited {
+  color: #5ea3d7;
+}
+div#navbar a:hover,
+div#navbar a:active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  background-color: #214b6b;
+}
+#content {
+  width: 100%;
+  margin-top: -6px;
 }
 body {
   height: 100%;
@@ -370,7 +388,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0;
-  margin-right: 8px;
 }
 h2 {
   font-size: 19px;
@@ -390,6 +407,7 @@ h2 {
   color: #093b62;
 }
 #page {
+  margin-right: 10px;
   margin-left: 0;
   margin-right: 0;
   background-color: #fff;
@@ -428,9 +446,7 @@ h2 {
 }
 #content {
   color: #093b62;
-  padding: 0px;
-  width: 100%;
-  padding-left: 5px;
+  padding: 0px 5px;
 }
 #content h1 {
   margin: 0;
@@ -445,21 +461,35 @@ h2 {
 #info {
   margin-top: -5px;
   padding: 0px;
+  float: left;
+  padding-right: 5px;
+  max-width: 577px;
 }
 #info h2 {
   margin-top: 12px;
 }
 #announcements {
-  width: 100%;
+  padding-right: 5px;
+  max-width: 577px;
+  float: left;
 }
 #announcements h2 {
-  margin-top: 15px;
+  margin-top: 7px;
 }
 #announcements ul {
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 #announcements li {
   padding: 2px 0;
+}
+@media screen and (max-width: 577px) {
+  #info {
+    padding-bottom: 5px;
+  }
+  #announcements h2 {
+    margin-top: 0px;
+  }
 }
 
