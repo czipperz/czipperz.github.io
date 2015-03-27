@@ -108,8 +108,6 @@ h2 {
 }
 #content h2 {
   font-size: 30px;
-  margin-bottom: 10px;
-  font-size: 2.5em;
   margin-bottom: 2px;
 }
 #info {
@@ -233,11 +231,6 @@ div#navbar a {
   font-size: 20px;
   text-decoration: none;
 }
-@media screen and (max-device-width: 590px) {
-  div#navbar a {
-    font-size: 45px;
-  }
-}
 div#navbar a:link,
 div#navbar a:visited {
   color: #5ea3d7;
@@ -310,12 +303,7 @@ div#navbar a:active {
     background-color: #214b6b;
   }
   div#navbar a {
-    font-size: 1.25em;
-  }
-}
-@media screen and (max-device-width: 590px) and (max-device-width: 590px) {
-  a {
-    font-size: 45px;
+    font-size: 35px;
   }
 }
 
