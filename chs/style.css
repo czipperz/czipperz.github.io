@@ -131,6 +131,7 @@ div#navbar a:active {
     height: 170px;
     margin-top: -10px;
     padding-bottom: 4px;
+    height: 400px;
   }
   div#navbar ul {
     padding: 0;
