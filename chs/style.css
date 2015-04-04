@@ -199,7 +199,7 @@ div#navbar {
     height: 170px;
     margin-top: -10px;
     padding-bottom: 4px;
-    height: 200px; }
+    height: 300px; }
     div#navbar ul {
       padding: 0;
       margin: 0;
@@ -222,6 +222,8 @@ div#navbar {
         color: #FFFFFF;
         border-bottom: 2px solid #FFFFFF;
         background-color: #214B6B; }
+    div#navbar ul li {
+      height: 50px; }
     div#navbar a {
       font-size: 40px; } }
 ::-webkit-scrollbar {
