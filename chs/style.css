@@ -169,7 +169,7 @@ div#navbar a#currentPage {
 div#navbar {
   background-color: #093B62;
   width: 100%;
-  height: 170px;
+  height: 156px;
   margin-top: -10px;
   padding-bottom: 4px; }
   div#navbar ul {
@@ -179,15 +179,12 @@ div#navbar {
     background-color: #093B62; }
     div#navbar ul li {
       list-style: none;
-      padding: 2px 0;
-      height: 30px;
+      padding: 0;
+      height: 32px;
       width: 100%; }
   div#navbar a {
-    padding: 5px;
     display: block;
-    padding-left: 24px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 4px 5px 4px 24px;
     font-size: 20px;
     text-decoration: none; }
     div#navbar a:link, div#navbar a:visited {
@@ -221,7 +218,7 @@ div#navbar {
   div#navbar {
     background-color: #093B62;
     width: 100%;
-    height: 170px;
+    height: 156px;
     margin-top: -10px;
     padding-bottom: 4px;
     height: 296px; }
@@ -232,15 +229,12 @@ div#navbar {
       background-color: #093B62; }
       div#navbar ul li {
         list-style: none;
-        padding: 2px 0;
-        height: 30px;
+        padding: 0;
+        height: 32px;
         width: 100%; }
     div#navbar a {
-      padding: 5px;
       display: block;
-      padding-left: 24px;
-      padding-top: 2px;
-      padding-bottom: 2px;
+      padding: 4px 5px 4px 24px;
       font-size: 20px;
       text-decoration: none; }
       div#navbar a:link, div#navbar a:visited {
