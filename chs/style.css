@@ -48,7 +48,7 @@ h2 {
       #header h1 {
         margin-bottom: 12px; } }
     #header h1 a {
-      font-size: 2.14286 em;
+      font-size: 40px;
       text-decoration: none; }
       @media screen and (max-device-width: 590px) {
         #header h1 a {
@@ -61,6 +61,9 @@ h2 {
 #content {
   color: #093B62;
   padding: 0px 5px; }
+  #content h1 {
+    font-size: 35px;
+    display: none; }
   @media screen and (max-device-width: 590px) {
     #content {
       font-size: 35px; }
@@ -151,6 +154,11 @@ h2 {
 #top {
   padding-bottom: 0; }
 
+div#navbar a#currentPage {
+  color: #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  background-color: #214B6B; }
+
 div#navbar {
   background-color: #093B62;
   width: 100%;
@@ -171,14 +179,15 @@ div#navbar {
     padding: 5px;
     display: block;
     padding-left: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     font-size: 20px;
     text-decoration: none; }
     div#navbar a:link, div#navbar a:visited {
       color: #5EA3D7; }
     div#navbar a:hover, div#navbar a:active {
       color: #FFFFFF;
-      border-bottom: 2px solid #FFFFFF;
-      background-color: #214B6B; }
+      border-bottom: 2px solid #FFFFFF; }
 
 @media screen and (min-width: 590px) {
   div#navbar {
@@ -220,14 +229,15 @@ div#navbar {
       padding: 5px;
       display: block;
       padding-left: 24px;
+      padding-top: 2px;
+      padding-bottom: 2px;
       font-size: 20px;
       text-decoration: none; }
       div#navbar a:link, div#navbar a:visited {
         color: #5EA3D7; }
       div#navbar a:hover, div#navbar a:active {
         color: #FFFFFF;
-        border-bottom: 2px solid #FFFFFF;
-        background-color: #214B6B; }
+        border-bottom: 2px solid #FFFFFF; }
     div#navbar ul li {
       height: 50px; }
     div#navbar a {
