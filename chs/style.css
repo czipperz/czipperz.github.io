@@ -155,9 +155,11 @@ h2 {
   padding-bottom: 0; }
 
 div#navbar a#currentPage {
-  color: #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
-  background-color: #214B6B; }
+  color: #FFFFFF; }
+  @media screen and (min-width: 590px) {
+    div#navbar a#currentPage {
+      border-bottom: 2px solid #FFFFFF;
+      background-color: #214B6B; } }
 
 div#navbar {
   background-color: #093B62;
@@ -186,9 +188,11 @@ div#navbar {
     div#navbar a:link, div#navbar a:visited {
       color: #5EA3D7; }
     div#navbar a:hover, div#navbar a:active {
-      color: #FFFFFF;
-      border-bottom: 2px solid #FFFFFF;
-      background-color: #214B6B; }
+      color: #FFFFFF; }
+      @media screen and (min-width: 590px) {
+        div#navbar a:hover, div#navbar a:active {
+          border-bottom: 2px solid #FFFFFF;
+          background-color: #214B6B; } }
 
 @media screen and (min-width: 590px) {
   div#navbar {
@@ -237,9 +241,12 @@ div#navbar {
       div#navbar a:link, div#navbar a:visited {
         color: #5EA3D7; }
       div#navbar a:hover, div#navbar a:active {
-        color: #FFFFFF;
-        border-bottom: 2px solid #FFFFFF;
-        background-color: #214B6B; }
+        color: #FFFFFF; } }
+      @media screen and (max-device-width: 590px) and (min-width: 590px) {
+        div#navbar a:hover, div#navbar a:active {
+          border-bottom: 2px solid #FFFFFF;
+          background-color: #214B6B; } }
+@media screen and (max-device-width: 590px) {
     div#navbar ul li {
       height: 50px; }
     div#navbar a {
