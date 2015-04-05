@@ -143,8 +143,8 @@ h2 {
     background-color: #5EA3D7; }
     @media screen and (max-device-width: 590px) {
       .view-content div[class|="col"] {
-        width: 500px;
-        height: 280px; } }
+        width: 450px;
+        height: 180px; } }
     .view-content div[class|="col"] a:hover, .view-content div[class|="col"] a:active {
       color: #093B62; }
 
