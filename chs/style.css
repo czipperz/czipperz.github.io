@@ -12,9 +12,9 @@ body {
 h2 {
   font-size: 28px;
   margin: 15px 0 2px 0; }
-  @media screen and (max-device-width 590px) {
+  @media screen and (max-device-width: 590px) {
     h2 {
-      font-size: 400px; } }
+      font-size: 60px; } }
 
 .ld {
   font-weight: bold;
