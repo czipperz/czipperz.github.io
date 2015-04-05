@@ -121,6 +121,9 @@ h2 {
     display: block;
     float: left;
     margin: 8px 0 -2px 0; }
+    @media screen and (max-device-width: 590px) {
+      .view-content h3 {
+        font-size: 35px; } }
   .view-content > div {
     color: #093B62;
     background-color: #FFFFFF; }
