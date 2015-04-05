@@ -141,6 +141,10 @@ h2 {
     overflow-x: auto;
     white-space: wrap;
     background-color: #5EA3D7; }
+    @media screen and (max-device-width: 590px) {
+      .view-content div[class|="col"] {
+        width: 500px;
+        height: 280px; } }
     .view-content div[class|="col"] a:hover, .view-content div[class|="col"] a:active {
       color: #093B62; }
 
