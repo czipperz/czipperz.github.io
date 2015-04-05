@@ -156,7 +156,7 @@ h2 {
 
 div#navbar a#currentPage {
   color: #FFFFFF; }
-  @media screen and (min-width: 590px) {
+  @media screen and (min-width: 590px) and (min-device-width: 590px) {
     div#navbar a#currentPage {
       border-bottom: 2px solid #FFFFFF;
       background-color: #214B6B; } }
@@ -189,7 +189,7 @@ div#navbar {
       color: #5EA3D7; }
     div#navbar a:hover, div#navbar a:active {
       color: #FFFFFF; }
-      @media screen and (min-width: 590px) {
+      @media screen and (min-width: 590px) and (min-device-width: 590px) {
         div#navbar a:hover, div#navbar a:active {
           border-bottom: 2px solid #FFFFFF;
           background-color: #214B6B; } }
@@ -242,7 +242,7 @@ div#navbar {
         color: #5EA3D7; }
       div#navbar a:hover, div#navbar a:active {
         color: #FFFFFF; } }
-      @media screen and (max-device-width: 590px) and (min-width: 590px) {
+      @media screen and (max-device-width: 590px) and (min-width: 590px) and (min-device-width: 590px) {
         div#navbar a:hover, div#navbar a:active {
           border-bottom: 2px solid #FFFFFF;
           background-color: #214B6B; } }
