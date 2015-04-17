@@ -83,17 +83,25 @@ h2 {
   padding: 0px;
   float: left;
   padding-right: 5px;
-  max-width: thresh; }
+  width: 260px; }
   #info h2 {
     margin-top: 12px; }
   @media screen and (max-device-width: 590px) {
     #info {
       min-width: 100%; } }
+  @media screen and (max-width: 870px) {
+    #info {
+      min-width: 100%; } }
+  @media screen and (min-width: 1050px) {
+    #info {
+      min-width: 430px; } }
 
 #announcements {
-  padding-right: 5px;
-  max-width: thresh-25px;
   float: left; }
+  @media screen and (min-width: 870px) {
+    #announcements {
+      max-width: 590px;
+      padding-left: 5px; } }
   #announcements h2 {
     margin-top: 7px; }
   #announcements ul {
