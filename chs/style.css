@@ -88,6 +88,7 @@ h2 {
     margin-top: 12px; }
   @media screen and (max-device-width: 590px) {
     #info {
+      padding-bottom: 5px;
       min-width: 100%; } }
   @media screen and (max-width: 870px) {
     #info {
@@ -113,14 +114,10 @@ h2 {
     padding: 2px 0; }
   @media screen and (max-device-width: 590px) {
     #announcements {
-      min-width: 100%; } }
+      min-width: 100%; }
+      #announcements h2 {
+        margin-top: 0px; } }
 
-@media screen and (max-width 590px) {
-  #info {
-    padding-bottom: 5px; }
-
-  #announcements h2 {
-    margin-top: 0px; } }
 .view-content {
   background-color: #FFFFFF;
   width: 100%;
