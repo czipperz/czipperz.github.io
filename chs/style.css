@@ -99,10 +99,13 @@ h2 {
 
 #announcements {
   float: left; }
-  @media screen and (min-width: 870px) {
+  @media screen and (min-width: 880px) {
     #announcements {
       max-width: 590px;
       padding-left: 5px; } }
+  @media screen and (min-width: 1180px) {
+    #announcements {
+      margin-right: 20px; } }
   #announcements h2 {
     margin-top: 7px; }
   #announcements ul {
@@ -117,6 +120,36 @@ h2 {
       min-width: 100%; }
       #announcements h2 {
         margin-top: 0px; } }
+
+#students {
+  float: left;
+  width: 400px;
+  margin-bottom: 2px; }
+  @media screen and (min-width: 880px) {
+    #students {
+      padding-left: 5px; } }
+  @media screen and (max-device-width: 590px) {
+    #students {
+      width: 100%; } }
+  @media screen and (max-width: 400px) {
+    #students {
+      width: 100%; } }
+  #students p {
+    margin-top: 2px;
+    margin-bottom: 4px; }
+  #students h2 {
+    margin-top: 7px; }
+  #students h4 {
+    margin: 0;
+    margin-bottom: 2px;
+    font-size: 17px; }
+  #students ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: -2px; }
+  #students li {
+    padding: 2px 0; }
 
 .view-content {
   background-color: #FFFFFF;
