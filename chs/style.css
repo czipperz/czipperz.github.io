@@ -143,6 +143,9 @@ h2 {
     margin: 0;
     margin-bottom: 2px;
     font-size: 17px; }
+    @media screen and (max-device-width: 590px) {
+      #students h4 {
+        font-size: 40px; } }
   #students ul {
     padding: 0;
     margin: 0;
