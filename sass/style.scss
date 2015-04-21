@@ -1,73 +1,87 @@
-@import 'stylus/*'
-body
-	background-color body-background
-	color body-default-color
-	font-family "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
-	font-weight 300
-#page
-	margin-left 20px
-	margin-right 20px
-h1#title
-	paddingprojects()
-	font-size 55px
-	margin 20px 0
-	color title-color
-	padding-bottom 10px
-	margin-bottom 5px
-	&:hover
-		color body-background
-		background-color title-color
-#content
-	padding-top 15px
-	color body-default-color
-	a
-		width:100%
-		hover()
-	.heading
-		paddingprojects()
-		font-size 40px
-		width 100%
-		float left
-		margin-bottom 2px
-		padding-bottom 0px
-		hover(title-color)
-	.project
-		width 400px
-		padding 5px
-		padding-left 0
-		margin 5px 15px 10px 0
-		float left
-		a
-			font-size 20px
-			display block
-			font-weight bold
-			width 100%
-			paddingprojects()
-			padding-right 0
-			margin-right 5px
-		h2
-			color header-color
-			a
-				font-size 30px
-				hover(header-color)
-				text-decoration none
-				paddingprojects()
-			margin-top 0
-			margin-bottom 0
-		p
-			margin 0
-			padding-top 2px
-			paddingprojects()
-			padding-right 0
-			margin-right 0
-			hover()
-	#contact
-		float left
-		width 100%
-		#email
-			hover()
-			paddingprojects()
-			padding-left 2px
-			padding-bottom 2px
-			padding-right 2px
-			margin-left 2px
+@import 'stylus/*';
+body {
+	background-color: $body-background;
+	color: $body-default-color;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+}
+#page {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+h1#title {
+	@include paddingprojects;
+	font-size: 55px;
+	margin: 20px 0;
+	color: $title-color;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+	&:hover {
+		color: $body-background;
+		background-color: $title-color;
+	}
+}
+#content {
+	padding-top: 15px;
+	color: $body-default-color;
+	a {
+		width: 100%;
+		@include hover;
+	}
+	.heading {
+		@include paddingprojects;
+		font-size: 40px;
+		width: 100%;
+		float: left;
+		margin-bottom: 2px;
+		padding-bottom: 0px;
+		@include hover($title-color);
+	}
+	.project {
+		width: 400px;
+		padding: 5px;
+		padding-left: 0;
+		margin: 5px 15px 10px 0;
+		float: left;
+		a {
+			font-size: 20px;
+			display: block;
+			font-weight: bold;
+			width: 100%;
+			@include paddingprojects;
+			padding-right: 0;
+			margin-right: 5px;
+		}
+		h2 {
+			color: $header-color;
+			a {
+				font-size: 30px;
+				@include hover($header-color);
+				text-decoration: none;
+				@include paddingprojects;
+			margin-top: 0;
+			margin-bottom: 0;
+			}
+		}
+		p {
+			margin: 0;
+			padding-top: 2px;
+			@include paddingprojects;
+			padding-right: 0;
+			margin-right: 0;
+			@include hover;
+		}
+	}
+	#contact {
+		float: left;
+		width: 100%;
+		#email {
+			@include hover;
+			@include paddingprojects;
+			padding-left: 2px;
+			padding-bottom: 2px;
+			padding-right: 2px;
+			margin-left: 2px;
+		}
+	}
+}
