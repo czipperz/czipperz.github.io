@@ -69,6 +69,7 @@ h2 {
     display: none; }
   @media screen and (max-device-width: 590px) {
     #content {
+      padding-right: 10px;
       font-size: 35px; }
       #content h1 {
         font-size: 3em; } }
@@ -186,7 +187,7 @@ h2 {
     padding: 0 4px;
     padding-top: 4px;
     width: 250px;
-    height: 140px;
+    height: 125px;
     overflow-x: auto;
     white-space: wrap;
     background-color: #5EA3D7; }
