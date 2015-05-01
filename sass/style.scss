@@ -54,14 +54,14 @@ h1#title {
 		}
 		h2 {
 			color: $header-color;
+			margin-top: 0;
+			margin-bottom: 0;
 			a {
 				font-size: 30px;
 				@include hover($header-color);
 				text-decoration: none;
 				@include paddingprojects;
 			}
-			margin-top: 0;
-			margin-bottom: 0;
 		}
 		p {
 			margin: 0;
