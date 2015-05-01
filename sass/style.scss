@@ -41,7 +41,7 @@ h1#title {
 		width: 400px;
 		padding: 5px;
 		padding-left: 0;
-		margin: 5px 15px 10px 0;
+		margin: 5px 15px 5px 0;
 		float: left;
 		a {
 			font-size: 20px;
@@ -50,7 +50,7 @@ h1#title {
 			width: 100%;
 			@include paddingprojects;
 			padding-right: 0;
-			margin-right: 5px;
+			margin: 2px 5px 2px -5px;
 		}
 		h2 {
 			color: $header-color;
@@ -59,9 +59,9 @@ h1#title {
 				@include hover($header-color);
 				text-decoration: none;
 				@include paddingprojects;
+			}
 			margin-top: 0;
 			margin-bottom: 0;
-			}
 		}
 		p {
 			margin: 0;
@@ -75,13 +75,24 @@ h1#title {
 	#contact {
 		float: left;
 		width: 100%;
-		#email {
+		div {
+			float: left;
 			@include hover;
 			@include paddingprojects;
-			padding-left: 2px;
-			padding-bottom: 2px;
-			padding-right: 2px;
-			margin-left: 2px;
+			padding-bottom: 1px;
+			&:hover {
+				background: $body-default-color !important;
+			}
+			#email {
+				@include hover($title-color);
+				padding-left: 2px;
+				padding-bottom: 2px;
+				padding-right: 2px;
+				margin-left: 2px;
+				//&:link {
+				//	color: $title-color;
+				//}
+			}
 		}
 	}
 }

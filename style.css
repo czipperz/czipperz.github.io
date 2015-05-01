@@ -75,7 +75,7 @@ h1#title {
     width: 400px;
     padding: 5px;
     padding-left: 0;
-    margin: 5px 15px 10px 0;
+    margin: 5px 15px 5px 0;
     float: left; }
     #content .project a {
       font-size: 20px;
@@ -86,17 +86,17 @@ h1#title {
       padding-right: 5px;
       margin-left: -5px;
       padding-right: 0;
-      margin-right: 5px; }
+      margin: 2px 5px 2px -5px; }
     #content .project h2 {
-      color: #0F0; }
+      color: #0F0;
+      margin-top: 0;
+      margin-bottom: 0; }
       #content .project h2 a {
         font-size: 30px;
         text-decoration: none;
         padding-left: 5px;
         padding-right: 5px;
-        margin-left: -5px;
-        margin-top: 0;
-        margin-bottom: 0; }
+        margin-left: -5px; }
         #content .project h2 a:link, #content .project h2 a:visited {
           color: #0F0;
           background: #000; }
@@ -120,19 +120,30 @@ h1#title {
   #content #contact {
     float: left;
     width: 100%; }
-    #content #contact #email {
+    #content #contact div {
+      float: left;
       padding-left: 5px;
       padding-right: 5px;
       margin-left: -5px;
-      padding-left: 2px;
-      padding-bottom: 2px;
-      padding-right: 2px;
-      margin-left: 2px; }
-      #content #contact #email:link, #content #contact #email:visited {
+      padding-bottom: 1px; }
+      #content #contact div:link, #content #contact div:visited {
         color: #FFF;
         background: #000; }
-      #content #contact #email:hover, #content #contact #email:active {
+      #content #contact div:hover, #content #contact div:active {
         color: #000;
         background: #FFF; }
+      #content #contact div:hover {
+        background: #FFF !important; }
+      #content #contact div #email {
+        padding-left: 2px;
+        padding-bottom: 2px;
+        padding-right: 2px;
+        margin-left: 2px; }
+        #content #contact div #email:link, #content #contact div #email:visited {
+          color: #08F;
+          background: #000; }
+        #content #contact div #email:hover, #content #contact div #email:active {
+          color: #000;
+          background: #08F; }
 
 /*# sourceMappingURL=style.css.map */
