@@ -1,349 +1,138 @@
 #menu {
   width: 100%;
-  height: 32px;
-}
-#menu ul {
-  padding: 0;
-  margin: 0;
-}
-#menu ul li {
-  display: inline;
-  height: 30px;
-  float: left;
-  list-style: none;
-  margin-right: 7px;
-}
-#menu ul li a {
-  font-size: 30px;
-  padding: 3px 5px;
-  padding-left: 4px;
-  text-decoration: none;
-}
-#menu ul li a:link,
-#menu ul li a:visited {
-  color: #fff;
-  background: #000;
-}
-#menu ul li a:hover,
-#menu ul li a:active {
-  color: #000;
-  background: #fff;
-}
-#menu {
-  width: 100%;
-  height: 32px;
-}
-#menu ul {
-  padding: 0;
-  margin: 0;
-}
-#menu ul li {
-  display: inline;
-  height: 30px;
-  float: left;
-  list-style: none;
-  margin-right: 7px;
-}
-#menu ul li a {
-  font-size: 30px;
-  padding: 3px 5px;
-  padding-left: 4px;
-  text-decoration: none;
-}
-#menu ul li a:link,
-#menu ul li a:visited {
-  color: #fff;
-  background: #000;
-}
-#menu ul li a:hover,
-#menu ul li a:active {
-  color: #000;
-  background: #fff;
-}
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-}
-#page {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-h1#title {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  font-size: 55px;
-  margin: 20px 0;
-  color: #08f;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-h1#title:hover {
-  color: #000;
-  background-color: #08f;
-}
-#content {
-  padding-top: 15px;
-  color: #fff;
-}
-#content a {
-  width: 100%;
-}
-#content a:link,
-#content a:visited {
-  color: #fff;
-  background: #000;
-}
-#content a:hover,
-#content a:active {
-  color: #000;
-  background: #fff;
-}
-#content .heading {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  font-size: 40px;
-  width: 100%;
-  float: left;
-  margin-bottom: 2px;
-  padding-bottom: 0px;
-}
-#content .heading:link,
-#content .heading:visited {
-  color: #08f;
-  background: #000;
-}
-#content .heading:hover,
-#content .heading:active {
-  color: #000;
-  background: #08f;
-}
-#content .project {
-  width: 400px;
-  padding: 5px;
-  padding-left: 0;
-  margin: 5px 15px 10px 0;
-  float: left;
-}
-#content .project a {
-  font-size: 20px;
-  display: block;
-  font-weight: bold;
-  width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-right: 0;
-  margin-right: 5px;
-}
-#content .project h2 {
-  color: #0f0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-#content .project h2 a {
-  font-size: 30px;
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-}
-#content .project h2 a:link,
-#content .project h2 a:visited {
-  color: #0f0;
-  background: #000;
-}
-#content .project h2 a:hover,
-#content .project h2 a:active {
-  color: #000;
-  background: #0f0;
-}
-#content .project p {
-  margin: 0;
-  padding-top: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-right: 0;
-  margin-right: 0;
-}
-#content .project p:link,
-#content .project p:visited {
-  color: #fff;
-  background: #000;
-}
-#content .project p:hover,
-#content .project p:active {
-  color: #000;
-  background: #fff;
-}
-#content #contact {
-  float: left;
-  width: 100%;
-}
-#content #contact #email {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-left: 2px;
-  padding-bottom: 2px;
-  padding-right: 2px;
-  margin-left: 2px;
-}
-#content #contact #email:link,
-#content #contact #email:visited {
-  color: #fff;
-  background: #000;
-}
-#content #contact #email:hover,
-#content #contact #email:active {
-  color: #000;
-  background: #fff;
-}
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-}
-#page {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-h1#title {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  font-size: 55px;
-  margin: 20px 0;
-  color: #08f;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-}
-h1#title:hover {
-  color: #000;
-  background-color: #08f;
-}
-#content {
-  padding-top: 15px;
-  color: #fff;
-}
-#content a {
-  width: 100%;
-}
-#content a:link,
-#content a:visited {
-  color: #fff;
-  background: #000;
-}
-#content a:hover,
-#content a:active {
-  color: #000;
-  background: #fff;
-}
-#content .heading {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  font-size: 40px;
-  width: 100%;
-  float: left;
-  margin-bottom: 2px;
-  padding-bottom: 0px;
-}
-#content .heading:link,
-#content .heading:visited {
-  color: #08f;
-  background: #000;
-}
-#content .heading:hover,
-#content .heading:active {
-  color: #000;
-  background: #08f;
-}
-#content .project {
-  width: 400px;
-  padding: 5px;
-  padding-left: 0;
-  margin: 5px 15px 10px 0;
-  float: left;
-}
-#content .project a {
-  font-size: 20px;
-  display: block;
-  font-weight: bold;
-  width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-right: 0;
-  margin-right: 5px;
-}
-#content .project h2 {
-  color: #0f0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-#content .project h2 a {
-  font-size: 30px;
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-}
-#content .project h2 a:link,
-#content .project h2 a:visited {
-  color: #0f0;
-  background: #000;
-}
-#content .project h2 a:hover,
-#content .project h2 a:active {
-  color: #000;
-  background: #0f0;
-}
-#content .project p {
-  margin: 0;
-  padding-top: 2px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-right: 0;
-  margin-right: 0;
-}
-#content .project p:link,
-#content .project p:visited {
-  color: #fff;
-  background: #000;
-}
-#content .project p:hover,
-#content .project p:active {
-  color: #000;
-  background: #fff;
-}
-#content #contact {
-  float: left;
-  width: 100%;
-}
-#content #contact #email {
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: -5px;
-  padding-left: 2px;
-  padding-bottom: 2px;
-  padding-right: 2px;
-  margin-left: 2px;
-}
-#content #contact #email:link,
-#content #contact #email:visited {
-  color: #fff;
-  background: #000;
-}
-#content #contact #email:hover,
-#content #contact #email:active {
-  color: #000;
-  background: #fff;
-}
+  height: 32px; }
+  #menu ul {
+    padding: 0;
+    margin: 0; }
+    #menu ul li {
+      display: inline;
+      height: 30px;
+      float: left;
+      list-style: none;
+      margin-right: 7px; }
+      #menu ul li a {
+        font-size: 30px;
+        padding: 3px 5px;
+        padding-left: 4px;
+        text-decoration: none; }
+        #menu ul li a:link, #menu ul li a:visited {
+          color: #FFF;
+          background: #000; }
+        #menu ul li a:hover, #menu ul li a:active {
+          color: #000;
+          background: #FFF; }
 
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300; }
+
+#page {
+  margin-left: 20px;
+  margin-right: 20px; }
+
+h1#title {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -5px;
+  font-size: 55px;
+  margin: 20px 0;
+  color: #08F;
+  padding-bottom: 10px;
+  margin-bottom: 5px; }
+  h1#title:hover {
+    color: #000;
+    background-color: #08F; }
+
+#content {
+  padding-top: 15px;
+  color: #FFF; }
+  #content a {
+    width: 100%; }
+    #content a:link, #content a:visited {
+      color: #FFF;
+      background: #000; }
+    #content a:hover, #content a:active {
+      color: #000;
+      background: #FFF; }
+  #content .heading {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    font-size: 40px;
+    width: 100%;
+    float: left;
+    margin-bottom: 2px;
+    padding-bottom: 0px; }
+    #content .heading:link, #content .heading:visited {
+      color: #08F;
+      background: #000; }
+    #content .heading:hover, #content .heading:active {
+      color: #000;
+      background: #08F; }
+  #content .project {
+    width: 400px;
+    padding: 5px;
+    padding-left: 0;
+    margin: 5px 15px 10px 0;
+    float: left; }
+    #content .project a {
+      font-size: 20px;
+      display: block;
+      font-weight: bold;
+      width: 100%;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: -5px;
+      padding-right: 0;
+      margin-right: 5px; }
+    #content .project h2 {
+      color: #0F0; }
+      #content .project h2 a {
+        font-size: 30px;
+        text-decoration: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: -5px;
+        margin-top: 0;
+        margin-bottom: 0; }
+        #content .project h2 a:link, #content .project h2 a:visited {
+          color: #0F0;
+          background: #000; }
+        #content .project h2 a:hover, #content .project h2 a:active {
+          color: #000;
+          background: #0F0; }
+    #content .project p {
+      margin: 0;
+      padding-top: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: -5px;
+      padding-right: 0;
+      margin-right: 0; }
+      #content .project p:link, #content .project p:visited {
+        color: #FFF;
+        background: #000; }
+      #content .project p:hover, #content .project p:active {
+        color: #000;
+        background: #FFF; }
+  #content #contact {
+    float: left;
+    width: 100%; }
+    #content #contact #email {
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: -5px;
+      padding-left: 2px;
+      padding-bottom: 2px;
+      padding-right: 2px;
+      margin-left: 2px; }
+      #content #contact #email:link, #content #contact #email:visited {
+        color: #FFF;
+        background: #000; }
+      #content #contact #email:hover, #content #contact #email:active {
+        color: #000;
+        background: #FFF; }
+
+/*# sourceMappingURL=style.css.map */
