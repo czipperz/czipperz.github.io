@@ -80,7 +80,7 @@ h1#title {
 			float: left;
 			@include hover;
 			@include paddingprojects;
-			padding-bottom: 1px;
+			padding-bottom: 2px;
 			&:hover {
 				background: $body-default-color !important;
 			}
