@@ -40,7 +40,7 @@ h1#title {
   margin: 20px 0;
   color: #08F;
   padding-bottom: 10px;
-  margin-bottom: 5px; }
+  margin-bottom: 0; }
   h1#title:hover {
     color: #000;
     background-color: #08F; }
