@@ -66,8 +66,9 @@ h1#title {
 		p {
 			margin: 0;
 			padding-top: 2px;
+			padding-bottom: 4px;
 			@include paddingprojects;
-			padding-right: 0;
+			padding-right: 4px;
 			margin-right: 0;
 			@include hover;
 		}
@@ -89,9 +90,7 @@ h1#title {
 				padding-bottom: 2px;
 				padding-right: 2px;
 				margin-left: 2px;
-				//&:link {
-				//	color: $title-color;
-				//}
+				text-decoration: none;
 			}
 		}
 	}
