@@ -1,0 +1,54 @@
+!!html
+%head {
+	%link(rel="stylesheet" type="text/css" href="style.css") asdf
+	%title Czipperz's Site
+}
+#page {
+	#top {
+		%h1#title Czipperz's Site
+		#menu
+		%script(src="js/menu.js") hell
+	}
+	#content {
+		%a#projects.heading Projects
+		.project {
+			%h2%a CLibrary
+			@"https://github.com/czipperz/CLibrary/" Github
+			%p {
+				A Library that assists in many tasks but mainly focuses
+				on graphics on JFrames (windows on the screen). It allows
+				you to easily do many Java tasks without as much boiler
+				plate code.
+			}
+		}
+		.project {
+			%h2@"chs/index.html" New CHS Website
+			@"https://github.com/czipperz/chsWebsiteDraft" Github
+			%p {
+				The current Corvallis High School website is pretty
+				attrocious, so I decided to redesign it in my spare time.
+				Click the button above to preview it. Only the Home
+				and Departments pages have been implemented. More features
+				will be coming soon.
+			}
+		}
+		.project {
+			%h2%a HBML
+			@"https://github.com/czipperz/hbml" Github
+			%p {
+				This is an abstraction of the website design language HTML.
+				It allows for you to easily create websites without
+				as much boiler plate code. For example, it allows for you
+				to declare the doctype as strict just by saying '!!strict'
+				and it would complete the rest of the information for you.
+			}
+		}
+		#contact {
+			%a.heading Contact
+			%div {
+				Email me:
+				@"mailto:czipperz@gmail.com"#email czipperz@gmail.com
+			}
+		}
+	}
+}
