@@ -46,8 +46,9 @@ h1#title {
     background-color: #08F; }
 
 #content {
-  padding-top: 15px;
-  color: #FFF; }
+  padding-top: 0;
+  color: #FFF;
+  float: left; }
   #content a {
     width: 100%; }
     #content a:link, #content a:visited {
