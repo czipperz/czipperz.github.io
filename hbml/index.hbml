@@ -10,7 +10,10 @@
 		%script(src="../js/menu.js")
 	}
 	#content {
-		The HBML Programming language is a nice abstraction of HTML that eliminates
-		redundant syntax and makes it in general better.
+		%img(src="picture.png")
+		%p {
+			The HBML Programming language is a nice abstraction of HTML that eliminates
+			redundant syntax and makes it in general better.
+		}
 	}
 }
