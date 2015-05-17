@@ -22,8 +22,9 @@ h1#title {
 	}
 }
 #content {
-	padding-top: 15px;
+	padding-top: 0;
 	color: $body-default-color;
+	float: left;
 	a {
 		width: 100%;
 		@include hover;
