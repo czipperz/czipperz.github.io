@@ -48,7 +48,8 @@ h1#title {
 #content {
   padding-top: 0;
   color: #FFF;
-  float: left; }
+  float: left;
+  width: 100%; }
   #content a {
     width: 100%; }
     #content a:link, #content a:visited {

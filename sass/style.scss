@@ -25,6 +25,7 @@ h1#title {
 	padding-top: 0;
 	color: $body-default-color;
 	float: left;
+	width: 100%;
 	a {
 		width: 100%;
 		@include hover;
