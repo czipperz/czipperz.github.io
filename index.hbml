@@ -43,7 +43,7 @@
 				and it would complete the rest of the information for you.
 			}
 		}
-		#contact {
+		#contact%p {
 			%a.heading Contact
 			%div {
 				Email me:
