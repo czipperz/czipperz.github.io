@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css"></link>
+    <title> Czipperz's Blog - C++ galore </title>
+  </head>
+  <body>
+    <div id="top">
+      <h1 id="title"> Czipperz's Blog - C++ galore </h1>
+    </div>
+    <div id="content">
+      <div class="article">
+        <h2> Java to C++ - part 1. </h2>
+        <p>
+          What is the difference between C++ and Java?  People
+          experienced with both languages will give you a list of
+          their favorite features not available in the other.  But it
+          doesn't really matter.  What I care about are the features
+          that make it so that my code makes sense.  Maybe not as
+          readable <i>at first</i>, but makes sense once you
+          understand it.  Lets look at some simple Java code then
+          translate it to C++:
+        </p>
+        <pre>
+          // Java
+          public class Begin {
+              public static void main(String[] args) {
+                  System.out.println("Hello World!");
+              }
+          }
+        </pre>
+        <pre>
+          // C++
+          #include &lt;iostream&gt;
+          int main() {
+              std::cout << "Hello World!" << std::endl;
+          }
+        </pre>
+        <p>
+          This code is honestly fairly similar.  The main difference
+          is that printing is done by using the
+          overloaded <code>&lt;&lt;</code> operator of the global
+          variable <code>std::cout</code>.  Overloading this operator
+          makes the code much more understandable: just push the bits
+          from the <code>"Hello World!"</code> string into the output.
+          You will also notice that you don't need to have a class
+          wrapped around the main statement for it to work!  C++ has
+          objects, they look and work very similar to those in Java,
+          but it discourages you from using them when it doesn't make
+          sense to do so.
+        </p>
+        <br />
+        <p>
+          You'll also notice the weird <code>#include</code> line.
+          This informs the compiler that you want to use the functions
+          provided by the iostream header provided in the standard
+          library.  It literally means that the compiler will just
+          substitute in the entire file at that point then actually
+          compile the program.
+        </p>
+        <br />
+        <p>
+          C++ really isn't very complicated compared to Java, it just
+          does things differently and faster.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

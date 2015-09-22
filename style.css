@@ -22,6 +22,16 @@
           color: #000;
           background: #FFF; }
 
+p {
+  margin: 0;
+  font-size: 16px; }
+  p:link, p:visited {
+    color: #FFF;
+    background: #000; }
+  p:hover, p:active {
+    color: #000;
+    background: #FFF; }
+
 body {
   background-color: #000;
   color: #FFF;
