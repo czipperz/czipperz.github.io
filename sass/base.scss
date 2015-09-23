@@ -19,3 +19,16 @@ $header-color: #0F0;
 	padding-right: $pad;
 	margin-left: (-1 * $pad);
 }
+@mixin h2style() {
+    h2 {
+        color: $header-color;
+        margin-top: 0;
+        margin-bottom: 0;
+        a {
+            font-size: 30px;
+            @include hover($header-color);
+            text-decoration: none;
+            @include paddingprojects;
+        }
+    }
+}
