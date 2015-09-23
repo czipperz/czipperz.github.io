@@ -2,4 +2,5 @@ p {
     margin: 0;
     font-size: 16px;
     @include hover;
+    max-width: 800px;
 }
