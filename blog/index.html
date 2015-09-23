@@ -80,13 +80,16 @@
           </p>
           <br />
           <p>
-            The line <code>string first_line;</code> allocates a string
-            that will be deleted when the main function ends.  It is
-            very similar to a <code>String</code> in Java except that it
-            is modifyable.  You may think that immutable Strings in Java
-            are a great feature and they are, but C++ allows you a
-            variable as immutable by adding the
-            keyword <code>const</code> rather than designing two
+            The line <code>string first_line;</code> allocates a
+            string that will be deleted when the main function ends.
+            Writing <code>String firstLine;</code> in Java will
+            allocate a <i>pointer</i> to a String but won't actually
+            allocate it.  You can do the exact same thing, but it is
+            bad form.  It is very similar to a <code>String</code> in
+            Java except that it is modifiable.  You may think that
+            immutable Strings in Java are a great feature and they
+            are, but C++ allows you a variable as immutable by adding
+            the keyword <code>const</code> rather than designing two
             different classes to do the same thing.  This has a great
             speed improvement as you don't have central cache of
             immutable strings and don't need multiple allocations for
