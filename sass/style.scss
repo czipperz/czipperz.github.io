@@ -56,17 +56,6 @@ h1#title {
 			padding-right: 0;
 			margin: 2px 5px 2px -5px;
 		}
-		h2 {
-			color: $header-color;
-			margin-top: 0;
-			margin-bottom: 0;
-			a {
-				font-size: 30px;
-				@include hover($header-color);
-				text-decoration: none;
-				@include paddingprojects;
-			}
-		}
 		p {
 			margin: 0;
 			padding-top: 2px;
@@ -98,4 +87,15 @@ h1#title {
 			}
 		}
 	}
+}
+h2 {
+    color: $header-color;
+    margin-top: 0;
+    margin-bottom: 0;
+    a {
+	font-size: 30px;
+	@include hover($header-color);
+	text-decoration: none;
+	@include paddingprojects;
+    }
 }
