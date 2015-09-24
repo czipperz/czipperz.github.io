@@ -67,6 +67,9 @@ h1#title {
 			@include hover;
 		}
 	}
+        .article {
+            @include h2style;
+        }
 	#contact {
 		float: left;
 		width: 100%;
@@ -89,4 +92,4 @@ h1#title {
 		}
 	}
 }
-@include h2style;
+/* @include h2style; */

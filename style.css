@@ -135,6 +135,22 @@ h1#title {
       #content .project p:hover, #content .project p:active {
         color: #000;
         background: #FFF; }
+  #content .article h2 {
+    color: #0F0;
+    margin-top: 0;
+    margin-bottom: 0; }
+    #content .article h2 a {
+      font-size: 30px;
+      text-decoration: none;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-left: -5px; }
+      #content .article h2 a:link, #content .article h2 a:visited {
+        color: #0F0;
+        background: #000; }
+      #content .article h2 a:hover, #content .article h2 a:active {
+        color: #000;
+        background: #0F0; }
   #content #contact {
     float: left;
     width: 100%; }
@@ -165,21 +181,6 @@ h1#title {
           color: #000;
           background: #08F; }
 
-h2 {
-  color: #0F0;
-  margin-top: 0;
-  margin-bottom: 0; }
-  h2 a {
-    font-size: 30px;
-    text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: -5px; }
-    h2 a:link, h2 a:visited {
-      color: #0F0;
-      background: #000; }
-    h2 a:hover, h2 a:active {
-      color: #000;
-      background: #0F0; }
+/* @include h2style; */
 
 /*# sourceMappingURL=style.css.map */
