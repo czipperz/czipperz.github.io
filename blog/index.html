@@ -84,11 +84,12 @@
           <br />
           <p>
             You can see that the <code>.equals()</code> method isn't
-            used for the standard string class and they instead prefer
-            to overload the <code>==</code> operator.  Operator
-            overloading is a very powerful feature of C++ that isn't
-            in Java.  It also allows you to remove interfaces, which
-            I'll post later about.
+            used to compare objects because you can just overload
+            the <code>==</code> operator.  Don't worry, you can still
+            compare memory addresses, but we'll get to that later.
+            Operator overloading is a very powerful feature of C++
+            that isn't in Java.  It allows you to treat classes as
+            builtin types, which I'll post later about.
           </p>
           <br />
           <p>
@@ -117,7 +118,7 @@
             declaration of the function!
           </p>
           <pre class="prettyprint">
-            std::string concat(const std::string& a, const std::string b) {
+            std::string concat(const std::string& a, const std::string& b) {
                 return a + b;
             }
           </pre>
