@@ -36,6 +36,9 @@ p {
 .article {
   margin-top: 20px; }
 
+pre.prettyprint {
+  margin-left: -40px !important; }
+
 body {
   background-color: #000;
   color: #FFF;
