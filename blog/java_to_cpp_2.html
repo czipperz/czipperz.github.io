@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+    <title> Czipperz's Blog - C++ galore </title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="top">
+        <h1 id="title"> Czipperz's Blog - C++ galore </h1>
+      </div>
+      <div id="content">
+        <div class="article">
+          <h2><a href="java_to_cpp_2.html"> Java to C++ - Destructors. </a></h2>
+          <h4 class="date">9/22/2015</h4>
+          <p>
+            C++ is not a managed language.  This basically means that
+            there is no garbage collector.  The good thing about this is
+            that there is no startup time or garbage collector overhead.
+            The design goal of C++ was to be:
+          </p>
+          <ul>
+            <li>Extremely general/flexible</li>
+            <li>Zero-overhead abstractions</li>
+            <li>Well-specified interfaces</li>
+          </ul>
+          <span style="font-size:12px">Source: Bjarne Stroustrup,
+            inventor of C++ <i>"Make Simple Tasks Simple!"</i> CppCon 2014</span>
+          <br /> <br />
+
+          <p>
+            This means that they make speedups that may not seem right
+            until you understand the reasoning behind it.  But this post
+            is about destructors, arguably the best feature of C++ that
+            doesn't exist in Java.  Destructors force the destruction of
+            resources when a block of code ends.  Let's look at an
+            example:
+          </p>
+          <pre class="prettyprint">
+            #include &lt;fstream&gt;
+            #include &lt;iostream&gt;
+            #include &lt;string&gt;
+
+            int main() {
+                using namespace std;
+
+                ifstream file_stream("file");
+                string first_line;
+                getline(file_stream, first_line);
+
+                cout << "First line of file is: " << first_line << endl;
+            }
+          </pre>
+          <p>
+            The first two lines tell the compiler to basically import
+            the file stream and input output stream headers (fstream and
+            iostream respectively).  The &lt;&gt; around the name tells
+            it that it is a system header and that you didn't make it.
+          </p>
+          <br />
+          <p>
+            The line <code>using namespace std;</code> tells the
+            compiler to look up any members it doesn't see itself in the
+            namespace <code>std</code>.  For example, this shortens the
+            usage of <code>std::cout</code> to <code>cout</code>.
+          </p>
+          <br />
+          <p>
+            The <code>ifstream</code> allow you to read input from a
+            file, assuming that it exists.  We will for the sake of the
+            example.  In Java you would have to wrap this operation in a
+            try catch block, then close the resource at the end.  If an
+            exception occurs that you don't catch, the file will never
+            be closed!  In C++ the destructor for an object will always
+            be called when the resource falls out of scope: in this case
+            at the end of the main function.  This makes sure that
+            resources are properly disposed <i>no matter what</i>,
+            removing the resource cleanup strain from the user, the
+            point of a garbage collector in the first place!
+          </p>
+          <br />
+          <p>
+            The line <code>string first_line;</code> allocates a
+            string that will be deleted when the main function ends.
+            Writing <code>String firstLine;</code> in Java will
+            allocate a <i>pointer</i> to a String but won't actually
+            allocate it.  You can do the exact same thing, but it is
+            bad form.  It is very similar to a <code>String</code> in
+            Java except that it is modifiable.  You may think that
+            immutable Strings in Java are a great feature and they
+            are, but C++ allows you a variable as immutable by adding
+            the keyword <code>const</code> rather than designing two
+            different classes to do the same thing.  This has a great
+            speed improvement as you don't have central cache of
+            immutable strings and don't need multiple allocations for
+            one string object.
+          </p>
+          <br />
+          <p>
+            The last line of real code is a function call
+            of <code>getline</code>.  This reads a line out of a stream
+            and puts it into the second variable given, a string
+            reference.  A reference simply means that that other method
+            can change the contents of it, just like a normal Object in
+            Java.
+          </p>
+          <br />
+          <p>
+            The final line just prints out the first line of the file
+            that you acquired in the <code>getline()</code> statement.
+          </p>
+          <br />
+          <p>
+            All the destructors are actually called at the very last
+            line, the <code>}</code>.  First the <code>string
+              first_line</code> will be deleted, then
+            the <code>ifstream</code>.  This ensures that the
+            resources acquired are deleted no matter what happens
+            after they are aquired: a process called RAII - Resource
+            Acquisition Is Initialization.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
