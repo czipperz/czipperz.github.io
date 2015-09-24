@@ -12,6 +12,128 @@
       </div>
       <div id="content">
         <div class="article">
+          <h2><a> Java to C++ - <code>const</code> and references. </a></h2>
+          <h4 class="date">9/23/2015</h4>
+          <p>
+            As we saw in the last post, <i>Java to C++ -
+            Destructors</i>, giving a <code>string</code> to
+            the <code>getline</code> function will modify it to be the
+            current line buffered by the stream.  This is really cool,
+            but it is dangerous because the side effects, or places
+            where variables change, can be obscured.
+          </p>
+          <br />
+          <p>
+            C++ helps to ease this pain by allowing you to declare a
+            variable as <code>const</code>.  This allows you to only
+            use functions on it that don't modify the state of the
+            object, or read public variables from the object.  Passing
+            a variable by constant reference is a really cool feature
+            that allows a function to look at the contents but not
+            modify them.
+          </p>
+          <br />
+          <p>
+            <code>const</code> is very similar to
+            the <code>final</code> keyword, but <i>much more
+            powerful</i>.  Every type in Java is a pointer, meaning
+            that it is really just a value that tells you where to
+            look for the actual value.  The final keyword just tells
+            the compiler that you can't change the address that the
+            pointer points to, but the const keyword does that too!
+          </p>
+          <br />
+          <p>
+            An ampersand after a type but before the name of a
+            variable tells the compiler that it is a reference.  Let's
+            look at an example.
+          </p>
+          <br />
+          <pre class="prettyprint">
+            #include &lt;assert.h&gt;
+            #include &lt;string&gt;
+
+            int main() {
+                std::string str = "Hello World!";
+                const std::string  immutable_copy      = str;
+                const std::string& immutable_reference = str;
+
+                str = "Different string";
+
+                // compile errors, can't change state of const object:
+                // immutable_reference = "";
+                // immutable_copy = "";
+
+                assert(immutable_copy == "Hello World!");
+                assert(immutable_reference == "Different string");
+
+            // str and immutable_copy are deleted at this closing brace.
+            // immutable_reference doesn't need to be deleted as it isn't a value type.
+            }
+          </pre>
+          <p>
+            As you can see, the reference maintains shares the same
+            memory as the value, <code>str</code>.  References are
+            just like final objects in Java.  The key difference
+            between references and pointers are that references cannot
+            be <code>null</code> as they have to point to a memory
+            location when they are declared.  This gives them
+            incredible power as parameters because null checks are
+            redundant.
+          </p>
+          <br />
+          <p>
+            You can see that the <code>.equals()</code> method isn't
+            used for the standard string class and they instead prefer
+            to overload the <code>==</code> operator.  Operator
+            overloading is a very powerful feature of C++ that isn't
+            in Java.  It also allows you to remove interfaces, which
+            I'll post later about.
+          </p>
+          <br />
+          <p>
+            The main reason references are so popular is that they can
+            make a huge improvement over value types for arguements to
+            a method.  A value type is one that is not a pointer or
+            reference.  They aren't very popular as they have to
+            be <i>cloned when used as an argument</i>.  Let's look at
+            an example of const references used as function inputs.
+            These are a popular subgenre because they ensure that
+            there won't be a change to the object passed in while
+            maintaining high performance.
+          </p>
+          <pre class="prettyprint">
+            #include &lt;string&gt;
+
+            std::string concat(std::string a, std::string b) {
+                return a + b;
+            }
+          </pre>
+          <p>
+            The problem with this code is that the strings are passed
+            by value but then not modified, making that operation
+            unnecessary and a waste of resources.  To get a nice
+            performance boost, all we have to change is the
+            declaration of the function!
+          </p>
+          <pre class="prettyprint">
+            std::string concat(const std::string& a, const std::string b) {
+                return a + b;
+            }
+          </pre>
+          <p>
+            You might think that returning a reference to the string
+            created by the <code>+</code> operator would be a good
+            idea, but that would enact <i>undefined behavior</i>.
+            This is because the result of the <code>+</code> operator
+            is deleted at the closing brace, but with a value type the
+            compiler will optimize the unnecessary copy and immediate
+            deletion and just return the value.  A general rule of
+            thumb is to never return a reference if it points to a
+            variable declared during the scope of the function.
+          </p>
+        </div>
+        <div class="article">
           <h2><a> Java to C++ - Destructors. </a></h2>
           <h4 class="date">9/22/2015</h4>
           <p>
