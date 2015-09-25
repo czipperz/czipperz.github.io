@@ -29,6 +29,7 @@
                 std::cout &lt;&lt; *int_ptr &lt;&lt; std::endl;
 
             // memory leak! int_ptr is never deleted
+            // add ``delete int_ptr`` to the end, or use a value type int instead
             }
           </pre>
           <p>
@@ -39,13 +40,31 @@
           </p>
           <br />
           <p>
+            Pointers are different from references in that their
+            semantics require a dereference before usage.  You can
+            dereference a pointer into a value bye using the
+            unary <code>*</code> operator.  However,
+            the <code>*</code> operator is annoying as it is right
+            associative.  This means that <code>*ptr.y = 10;</code>
+            would be invalid as the ptr isn't dereferenced before
+            usage!  To overcome this, use the <code>-&gt;</code>
+            operator, which basically replaces <code>ptr-&gt;y</code>
+            with <code>(*ptr).y</code>.  In C++ the <code>this</code>
+            keyword is just a pointer to self, meaning that you have
+            to use <code>this-&gt;field</code> to access something
+            rather than <code>this.field</code>.  Note that
+            Java's <code>.</code> operator is literally the exact same
+            as C++'s <code>-&gt;</code> operator.
+          </p>
+          <br />
+          <p>
             Pointers allow you to access native memory locations, so a pointer and int pair is all that an array really is!  Let's implement a simple class to represent an array:
           </p>
 	  <pre class="prettyprint">
 	    #include &lt;stdexcept&gt;   // std::out_of_range
 
-	    // forces generic usage of this like ArrayList&lt;int&gt; for 
-	    // types, ArrayList by itself is compile error!
+	    // forces generic usage of this like Array&lt;int&gt; for 
+	    // types, Array by itself is compile error!
 	    template&lt;class T&gt;
 	    class Array {
 	        private:
@@ -78,10 +97,63 @@
 		        throw std::out_of_range("Index out of range");
                     return array_start[index];
 		}
-            }
+            }; // all structures must end with semicolon
 	  </pre>
 	  <p>
+            A potential problem is that any copies of
+            this <code>Array</code> don't make a deep copy, they just
+            copy the pointer location, resulting in a possible double
+            deletion!  It also just isn't good style to have
+            constructors written this way, because if any of the
+            values were <code>const</code>, then it would be a syntax
+            error!  Let's fix the constructors:
 	  </p>
+          <pre class="prettyprint">
+            Array() : array_start(new T[10])
+                    , length(10) { }
+          </pre>
+          <p>
+            This now constructs the values with <code>new T[10]</code>
+            and <code>10</code> rather than copying them in after they
+            have been constructed.  It also separates the
+            initialization from the code and makes it cleaner overall.
+          </p>
+          <br />
+          <p>
+            Now let's get into the real problem with the class, any
+            copies are not true copies!  C++ has an implicitly defined
+            method called a copy constructor on every object.  It is
+            called to initialize a copy of an object.  For this
+            reason, there is no generic clone method, just
+            use <code>&lt;type&gt; copy = old;</code>!  The auto
+            generated copy constructor works great for classes without
+            pointers but not so well when there are pointers.  Every
+            copy constructor should be accompanied by a copy
+            assignment operator, as show below.
+          </p>
+          <pre class="prettyprint">
+            #include &lt;algorithm&gt;   // std::copy
+
+            // copy constructor
+            Array(const Array& other) : array_start(new T[other.length])
+                                      , length(other.length) {
+                std::copy(other.array_start, other.array_start + length, array_start);
+            }
+
+            // copy assignment operator
+            Array&amp; operator=(const Array& other) {
+                length = other.length;
+
+                if(array_start) delete[] array_start;
+                array_start = new T[length];
+                std::copy(other.array_start, other.array_start + length, array_start);
+            }
+          </pre>
+          <p>
+            As you can see, pointers and pointer arithmetic are really
+            cool and powerful but they make it easy to "shoot yourself
+            in the foot" if you don't know what to do with them.
+          </p>
         </div>
       </div>
     </div>
