@@ -93,7 +93,7 @@
 		}
 
 		// checked access - throws exception if out of bounds
-		T&amp; at(int index) throw (std::out_of_range) {
+	        T&amp; at(int index) {
 		    if(index &lt; 0 || index &gt;= length)
 		        throw std::out_of_range("Index out of range");
                     return array_start[index];
