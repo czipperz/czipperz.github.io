@@ -130,7 +130,10 @@
             generated copy constructor works great for classes without
             pointers but not so well when there are pointers.  Every
             copy constructor should be accompanied by a copy
-            assignment operator, as show below.
+            assignment operator, as show below.  The copy constructor
+            and copy assignment operators <i>need</i> to take a const
+            reference to the type, such as <code>const
+            Array&amp;</code>.
           </p>
           <pre class="prettyprint">
             #include &lt;algorithm&gt;   // std::copy
@@ -148,6 +151,10 @@
                 if(array_start) delete[] array_start;
                 array_start = new T[length];
                 std::copy(other.array_start, other.array_start + length, array_start);
+
+                // remember to always ``return *this;`` so it can be
+                // assigned to in function arguments.
+                return *this;
             }
           </pre>
           <p>
