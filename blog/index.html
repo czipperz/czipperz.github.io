@@ -28,8 +28,9 @@
                 int* int_ptr = new int(0);
                 std::cout &lt;&lt; *int_ptr &lt;&lt; std::endl;
 
-            // memory leak! int_ptr is never deleted
-            // add ``delete int_ptr`` to the end, or use a value type int instead
+            // memory leak!  This is not caught by compiler!  int_ptr
+            // is never deleted add ``delete int_ptr`` to the end, or
+            // use a value type int instead
             }
           </pre>
           <p>
