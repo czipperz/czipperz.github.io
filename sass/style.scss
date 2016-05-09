@@ -11,6 +11,12 @@ body {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+a {
+    text-decoration: none;
+    &:hover, &:link {
+            text-decoration: none;
+    }
+}
 h1#title {
 	@include paddingprojects;
 	font-size: 55px;
