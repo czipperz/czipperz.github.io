@@ -164,14 +164,14 @@
 
             template&lt;class T, class = void&gt;
                 struct incrementable : std::false_type { };
-            
+
             template&lt;class T&gt;
                 struct incrementable
                     &lt;T, typename std::enable_if&lt;
                             std::is_same&lt;T&amp;, decltype(++std::declval&lt;T&gt;())&gt;::value &&
                             std::is_same&lt;T&amp;, decltype(--std::declval&lt;T&gt;())&gt;::value >::type
                     &gt; : std::true_type { };
-            
+
             template&lt;class T&gt;
                 struct add_able&lt;T, typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type&gt;
                 : std::true_type { };
