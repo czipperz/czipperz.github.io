@@ -38,19 +38,19 @@
             example:
           </p>
           <pre class="prettyprint">
-            #include &lt;fstream&gt;
-            #include &lt;iostream&gt;
-            #include &lt;string&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 
-            int main() {
-                using namespace std;
+int main() {
+    using namespace std;
 
-                ifstream file_stream("file");
-                string first_line;
-                getline(file_stream, first_line);
+    ifstream file_stream("file");
+    string first_line;
+    getline(file_stream, first_line);
 
-                cout << "First line of file is: " << first_line << endl;
-            }
+    cout << "First line of file is: " << first_line << endl;
+}
           </pre>
           <p>
             The first two lines tell the compiler to basically import

@@ -28,13 +28,13 @@
             follows:
           </p>
           <pre class="prettyprint">
-            (defun eval-and-replace ()
-              "Replace the preceding sexp with its value."
-              (interactive)
-              (if (and evil-mode (eq (following-char) ?\))) (forward-char 1))
-              (let ((value (eval (preceding-sexp))))
-                (backward-kill-sexp)
-                (insert (format "%s" value))))
+(defun eval-and-replace ()
+  "Replace the preceding sexp with its value."
+  (interactive)
+  (if (and evil-mode (eq (following-char) ?\))) (forward-char 1))
+  (let ((value (eval (preceding-sexp))))
+    (backward-kill-sexp)
+    (insert (format "%s" value))))
           </pre>
           <p>
             Binding this to a key is simple enough:

@@ -35,15 +35,15 @@
             only changes):
           </p>
           <pre class="prettyprint">
-            <u>int</u> max(<u>int</u> x, <u>int</u> y) {
-                return x &gt; y ? x : y;
-            }
-            <u>float</u> max(<u>float</u> x, <u>float</u> y) {
-                return x &gt; y ? x : y;
-            }
-            <u>double</u> max(<u>double</u> x, <u>double</u> y) {
-                return x &gt; y ? x : y;
-            }
+<u>int</u> max(<u>int</u> x, <u>int</u> y) {
+    return x &gt; y ? x : y;
+}
+<u>float</u> max(<u>float</u> x, <u>float</u> y) {
+    return x &gt; y ? x : y;
+}
+<u>double</u> max(<u>double</u> x, <u>double</u> y) {
+    return x &gt; y ? x : y;
+}
           </pre>
           <p>
             As you can see, we have a lot of uninteresting code that
@@ -53,10 +53,10 @@
             operator!
           </p>
           <pre class="prettyprint">
-            template&lt;class T&gt;
-            T max(const T& x, const T& y) {
-                return x &gt; y ? x : y;
-            }
+template&lt;class T&gt;
+T max(const T& x, const T& y) {
+    return x &gt; y ? x : y;
+}
           </pre>
           <p>
             Don't be fooled when I write <code>class T</code>!  It
@@ -74,19 +74,19 @@
             the standard library incorporated it in.)
           </p>
           <pre class="prettyprint">
-            #include &lt;type_traits&gt;
+#include &lt;type_traits&gt;
 
-            template&lt;class T&gt;
-            typename std::enable_if&lt;!std::is_arithmetic&lt;T&gt;::value, T>::type
-            max(const T& x, const T& y) {
-                return x &gt; y ? x : y;
-            }
+template&lt;class T&gt;
+typename std::enable_if&lt;!std::is_arithmetic&lt;T&gt;::value, T>::type
+max(const T& x, const T& y) {
+    return x &gt; y ? x : y;
+}
 
-            template&lt;class T&gt;
-            typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value, T&gt;::type
-            max(T x, T y) {
-                return x &gt; y ? x : y;
-            }
+template&lt;class T&gt;
+typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value, T&gt;::type
+max(T x, T y) {
+    return x &gt; y ? x : y;
+}
           </pre>
           <p>
             Let's look at the line <code>typename
@@ -116,12 +116,12 @@
             constructor.
           </p>
           <pre class="prettyprint">
-            template&lt;class T&gt;
-            void swap(T& a, T& b) {
-                T temp = a;
-                a = b;
-                b = temp;
-            }
+template&lt;class T&gt;
+void swap(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
           </pre>
           <p>
             A lot of really cool things are possible with template
@@ -133,26 +133,26 @@
             template meta programming with interfaces in C++.
           </p>
           <pre class="prettyprint">
-            class incrementable {
-                virtual incrementable& operator++() = 0;
-                virtual incrementable& operator--() = 0;
-            };
+class incrementable {
+    virtual incrementable& operator++() = 0;
+    virtual incrementable& operator--() = 0;
+};
 
-            class ex_1 : public incrementable {
-                // private by default!
-                int i;
+class ex_1 : public incrementable {
+    // private by default!
+    int i;
 
-                public:
-                incrementable& addOne() { i++; return *this; }
-                incrementable& subOne() { i--; return *this; }
-            };
+    public:
+    incrementable& addOne() { i++; return *this; }
+    incrementable& subOne() { i--; return *this; }
+};
 
-            void add_five_times(incrementable& a) {
-                for(int i = 0; i &lt; 5; i++) {
-                    // use prefix with classes!
-                    ++a;
-                }
-            }
+void add_five_times(incrementable& a) {
+    for(int i = 0; i &lt; 5; i++) {
+        // use prefix with classes!
+        ++a;
+    }
+}
           </pre>
           <p>
             This method works fine for basic operations but breaks
@@ -160,28 +160,28 @@
             types.  Let's implement something similar using templates.
           </p>
           <pre class="prettyprint">
-            #include &lt;type_traits&gt;
+#include &lt;type_traits&gt;
 
-            template&lt;class T, class = void&gt;
-                struct incrementable : std::false_type { };
+template&lt;class T, class = void&gt;
+    struct incrementable : std::false_type { };
 
-            template&lt;class T&gt;
-                struct incrementable
-                    &lt;T, typename std::enable_if&lt;
-                            std::is_same&lt;T&amp;, decltype(++std::declval&lt;T&gt;())&gt;::value &&
-                            std::is_same&lt;T&amp;, decltype(--std::declval&lt;T&gt;())&gt;::value >::type
-                    &gt; : std::true_type { };
+template&lt;class T&gt;
+    struct incrementable
+        &lt;T, typename std::enable_if&lt;
+                std::is_same&lt;T&amp;, decltype(++std::declval&lt;T&gt;())&gt;::value &&
+                std::is_same&lt;T&amp;, decltype(--std::declval&lt;T&gt;())&gt;::value >::type
+        &gt; : std::true_type { };
 
-            template&lt;class T&gt;
-                struct add_able&lt;T, typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type&gt;
-                : std::true_type { };
+template&lt;class T&gt;
+    struct add_able&lt;T, typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type&gt;
+    : std::true_type { };
 
-            template&lt;class T&gt;
-                typename std::enable_if&lt; incrementable&lt;T&gt;::value, void &gt;::type
-                add_five_times(T& a) {
-                for(int i = 0; i &lt; 5; i++)
-                    ++a;
-            }
+template&lt;class T&gt;
+    typename std::enable_if&lt; incrementable&lt;T&gt;::value, void &gt;::type
+    add_five_times(T& a) {
+    for(int i = 0; i &lt; 5; i++)
+        ++a;
+}
           </pre>
           <p>
             The second and third lines dictate the base case: if none

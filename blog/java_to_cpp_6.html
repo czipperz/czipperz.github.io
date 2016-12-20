@@ -39,20 +39,20 @@
             which is like generic programming in Java on steroids.
           </p>
           <pre class="prettyprint">
-            class printable {
-              public:
-                virtual void print() = 0;
-            };
+class printable {
+  public:
+    virtual void print() = 0;
+};
 
-            class one : public printable {
-              public:
-                void print() { std::cout &lt;&lt; "one" &lt;&lt; std::end; }
-            };
+class one : public printable {
+  public:
+    void print() { std::cout &lt;&lt; "one" &lt;&lt; std::end; }
+};
 
-            class two : public printable {
-              public:
-                void print() { std::cout &lt;&lt; "two" &lt;&lt; std::end; }
-            };
+class two : public printable {
+  public:
+    void print() { std::cout &lt;&lt; "two" &lt;&lt; std::end; }
+};
           </pre>
           <p>
             Here we see that we use a new keyword,
@@ -102,40 +102,40 @@
             an <code>if(true) {}</code>.
           </p>
           <pre class="prettyprint">
-            int main() {
-                // Error!  Can't use a abstract class as value type!
-                // printable x = sub();
-                // Error!  Can't point a reference to an unnamed value!
-                // printable& x = sub();
-            
-                one o;
-                two t;
-                {
-                    printable& x = o;
-                    x.print();
-                    // output one
-                }
-                {
-                    printable& x = t;
-                    x.print();
-                    // output two
-                }
-                {
-                    printable& x = t;
-                    x = o;
-                    x.print();
-                    // ouput two!  Remember that a reference is a pointer to one
-                    // unchangable memory location.  Assigning to it will corrupt
-                    // ``t`` rather than changing the memory location!
-                }
-                {
-                    printable* x = &t;
-                    x = &o;
-                    x->print();
-                    // output one!  Assigning to a pointer will change the pointer
-                    // rather than the memory!
-                }
-            }
+int main() {
+    // Error!  Can't use a abstract class as value type!
+    // printable x = sub();
+    // Error!  Can't point a reference to an unnamed value!
+    // printable& x = sub();
+
+    one o;
+    two t;
+    {
+        printable& x = o;
+        x.print();
+        // output one
+    }
+    {
+        printable& x = t;
+        x.print();
+        // output two
+    }
+    {
+        printable& x = t;
+        x = o;
+        x.print();
+        // ouput two!  Remember that a reference is a pointer to one
+        // unchangable memory location.  Assigning to it will corrupt
+        // ``t`` rather than changing the memory location!
+    }
+    {
+        printable* x = &t;
+        x = &o;
+        x->print();
+        // output one!  Assigning to a pointer will change the pointer
+        // rather than the memory!
+    }
+}
           </pre>
           <p>
             In the main method, we see that an interface / abstract

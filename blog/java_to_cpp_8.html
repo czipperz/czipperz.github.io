@@ -33,21 +33,21 @@
             controlled pointer:
           </p>
           <pre class="prettyprint">
-            class SwapExample {
-                int* my_int;
-            public:
-                SwapExample(int i) : my_int(new int(i)) {}
+class SwapExample {
+    int* my_int;
+public:
+    SwapExample(int i) : my_int(new int(i)) {}
 
-                int get() const { return *my_int; }
-                void set(int i) { *my_int = i; }
+    int get() const { return *my_int; }
+    void set(int i) { *my_int = i; }
 
-                ~SwapExample() { delete my_int; }
-            };
+    ~SwapExample() { delete my_int; }
+};
 
-            int main() {
-                SwapExample se(3);
-                SwapExample copy = se;
-            }
+int main() {
+    SwapExample se(3);
+    SwapExample copy = se;
+}
           </pre>
           <p>
             But when this program is ran, there is a double free.
@@ -57,37 +57,37 @@
             assignment operator.  Here is an example of this:
           </p>
           <pre class="prettyprint">
-            class SwapExample {
-                int* my_int;
-            public:
-                SwapExample(int i) : my_int(new int(i)) {}
+class SwapExample {
+    int* my_int;
+public:
+    SwapExample(int i) : my_int(new int(i)) {}
 
-                // copy constructor
-                SwapExample(const SwapExample&amp; other)
-                    : my_int(new int(*other.my_int)) {}
+    // copy constructor
+    SwapExample(const SwapExample&amp; other)
+        : my_int(new int(*other.my_int)) {}
 
-                // copy assignment operator
-                SwapExample&amp; operator=(const SwapExample&amp; other) {
-                    delete my_int;
-                    my_int = new int(*other.my_int);
-                    return *this;
-                }
+    // copy assignment operator
+    SwapExample&amp; operator=(const SwapExample&amp; other) {
+        delete my_int;
+        my_int = new int(*other.my_int);
+        return *this;
+    }
 
-                int get() const { return *my_int; }
-                void set(int i) { *my_int = i; }
+    int get() const { return *my_int; }
+    void set(int i) { *my_int = i; }
 
-                ~SwapExample() { delete my_int; }
-            };
+    ~SwapExample() { delete my_int; }
+};
 
-            #include &lt;assert.h&gt;
-            int main() {
-                SwapExample se(3);
-                SwapExample copy = se;
+#include &lt;assert.h&gt;
+int main() {
+    SwapExample se(3);
+    SwapExample copy = se;
 
-                copy.set(5);
-                assert(copy.get() == 5);
-                assert(se.get() == 3);
-            }
+    copy.set(5);
+    assert(copy.get() == 5);
+    assert(se.get() == 3);
+}
           </pre>
           <p>
             This is a decent implementation, but it breaks the DRY
@@ -110,39 +110,39 @@
             exception unsafety.
           </p>
           <pre class="prettyprint">
-            class SwapExample {
-                int* my_int;
-            public:
-                SwapExample(int i) : my_int(new int(i)) {}
+class SwapExample {
+    int* my_int;
+public:
+    SwapExample(int i) : my_int(new int(i)) {}
 
-                // copy constructor
-                SwapExample(const SwapExample&amp; other)
-                    : my_int(new int(*other.my_int)) {}
+    // copy constructor
+    SwapExample(const SwapExample&amp; other)
+        : my_int(new int(*other.my_int)) {}
 
-                // copy assignment operator
-                SwapExample&amp; operator=(SwapExample copy) {
-                    swap(copy);
-                    return *this;
-                }
+    // copy assignment operator
+    SwapExample&amp; operator=(SwapExample copy) {
+        swap(copy);
+        return *this;
+    }
 
-                void swap(SwapExample&amp; other) {
-                    // allow swap to work for built in types
-                    using std::swap;
-                    swap(my_int, other.my_int);
-                }
+    void swap(SwapExample&amp; other) {
+        // allow swap to work for built in types
+        using std::swap;
+        swap(my_int, other.my_int);
+    }
 
-                int get() const { return *my_int; }
-                void set(int i) { *my_int = i; }
+    int get() const { return *my_int; }
+    void set(int i) { *my_int = i; }
 
-                ~SwapExample() { delete my_int; }
-            };
+    ~SwapExample() { delete my_int; }
+};
 
-            // custom overload of std::swap
-            namespace std {
-            void swap(SwapExample&amp; first, SwapExample&amp; second) {
-                first.swap(second);
-            }
-            }
+// custom overload of std::swap
+namespace std {
+void swap(SwapExample&amp; first, SwapExample&amp; second) {
+    first.swap(second);
+}
+}
           </pre>
           <p>
             By having our copy assignment operator take the class by
@@ -152,11 +152,11 @@
             underlined):
           </p>
           <pre class="prettyprint">
-            SwapExample&amp; operator=(<u>const SwapExample&amp; other</u>) {
-                SwapExample copy<u>(other)</u>;
-                swap(copy);
-                return *this;
-            }
+SwapExample&amp; operator=(<u>const SwapExample&amp; other</u>) {
+    SwapExample copy<u>(other)</u>;
+    swap(copy);
+    return *this;
+}
           </pre>
           <p>
             In summary, using <code>swap</code> provides more

@@ -27,17 +27,17 @@
             elements from the <code>Array</code>:
           </p>
           <pre class="prettyprint">
-            // unchecked const access
-            T&amp; operator[](int index) {
-                return array_start[index];
-            }
+// unchecked const access
+T&amp; operator[](int index) {
+    return array_start[index];
+}
 
-            // checked access - throws exception if out of bounds
-            T&amp; at(int index) {
-                if(index &lt; 0 || index &gt;= length)
-                    throw std::out_of_range("Index out of range");
-                return array_start[index];
-            }
+// checked access - throws exception if out of bounds
+T&amp; at(int index) {
+    if(index &lt; 0 || index &gt;= length)
+        throw std::out_of_range("Index out of range");
+    return array_start[index];
+}
           </pre>
           <p>
             None of the methods on the <code>Array</code> class have
@@ -48,17 +48,17 @@
             reference.  Let's implement that:
           </p>
           <pre class="prettyprint">
-            // unchecked const access
-            const T&amp; operator[](int index) const {
-                return array_start[index];
-            }
+// unchecked const access
+const T&amp; operator[](int index) const {
+    return array_start[index];
+}
 
-            // checked const access
-            const T&amp; at(int index) const {
-                if(index &lt; 0 || index &gt;= length)
-                    throw std::out_of_range("Index out of range");
-                return array_start[index];
-            }
+// checked const access
+const T&amp; at(int index) const {
+    if(index &lt; 0 || index &gt;= length)
+        throw std::out_of_range("Index out of range");
+    return array_start[index];
+}
           </pre>
           <p>
             Now we can read elements from our <code>const Array</code>

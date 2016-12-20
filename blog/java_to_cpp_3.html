@@ -51,26 +51,26 @@
           </p>
           <br />
           <pre class="prettyprint">
-            #include &lt;assert.h&gt;
-            #include &lt;string&gt;
+#include &lt;assert.h&gt;
+#include &lt;string&gt;
 
-            int main() {
-                std::string str = "Hello World!";
-                const std::string  immutable_copy      = str;
-                const std::string& immutable_reference = str;
+int main() {
+    std::string str = "Hello World!";
+    const std::string  immutable_copy      = str;
+    const std::string& immutable_reference = str;
 
-                str = "Different string";
+    str = "Different string";
 
-                // compile errors, can't change state of const object:
-                // immutable_reference = "";
-                // immutable_copy = "";
+    // compile errors, can't change state of const object:
+    // immutable_reference = "";
+    // immutable_copy = "";
 
-                assert(immutable_copy == "Hello World!");
-                assert(immutable_reference == "Different string");
+    assert(immutable_copy == "Hello World!");
+    assert(immutable_reference == "Different string");
 
-            // str and immutable_copy are deleted at this closing brace.
-            // immutable_reference doesn't need to be deleted as it isn't a value type.
-            }
+// str and immutable_copy are deleted at this closing brace.
+// immutable_reference doesn't need to be deleted as it isn't a value type.
+}
           </pre>
           <p>
             As you can see, the reference maintains shares the same
@@ -105,11 +105,11 @@
             maintaining high performance.
           </p>
           <pre class="prettyprint">
-            #include &lt;string&gt;
+#include &lt;string&gt;
 
-            std::string concat(std::string a, std::string b) {
-                return a + b;
-            }
+std::string concat(std::string a, std::string b) {
+    return a + b;
+}
           </pre>
           <p>
             The problem with this code is that the strings are passed
@@ -119,9 +119,9 @@
             declaration of the function!
           </p>
           <pre class="prettyprint">
-            std::string concat(const std::string& a, const std::string& b) {
-                return a + b;
-            }
+std::string concat(const std::string& a, const std::string& b) {
+    return a + b;
+}
           </pre>
           <p>
             You might think that returning a reference to the string

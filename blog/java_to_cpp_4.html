@@ -22,16 +22,16 @@
             Let's look at an example of a pointer:
           </p>
           <pre class="prettyprint">
-            #include &lt;iostream&gt;
+#include &lt;iostream&gt;
 
-            int main() {
-                int* int_ptr = new int(0);
-                std::cout &lt;&lt; *int_ptr &lt;&lt; std::endl;
+int main() {
+    int* int_ptr = new int(0);
+    std::cout &lt;&lt; *int_ptr &lt;&lt; std::endl;
 
-            // memory leak!  This is not caught by compiler!  int_ptr
-            // is never deleted add ``delete int_ptr`` to the end, or
-            // use a value type int instead
-            }
+// memory leak!  This is not caught by compiler!  int_ptr
+// is never deleted add ``delete int_ptr`` to the end, or
+// use a value type int instead
+}
           </pre>
           <p>
             This shows the basic usage of a pointer.  In Java, ints
@@ -63,46 +63,46 @@
             pointer and int pair is all that an array really is!
             Let's implement a simple class to represent an array:
           </p>
-	  <pre class="prettyprint">
-	    #include &lt;stdexcept&gt;   // std::out_of_range
+          <pre class="prettyprint">
+#include &lt;stdexcept&gt;   // std::out_of_range
 
-	    // forces generic usage of this like Array&lt;int&gt; for
-	    // types, Array by itself is compile error!
-	    template&lt;class T&gt;
-	    class Array {
-	        private:
-		T* array_start;
-		unsigned int length;
+// forces generic usage of this like Array&lt;int&gt; for
+// types, Array by itself is compile error!
+template&lt;class T&gt;
+class Array {
+    private:
+    T* array_start;
+    unsigned int length;
 
-		public:
-		// constructor
-		Array() {
-		    array_start = new T[10];
-		    length = 10;
-		}
+    public:
+    // constructor
+    Array() {
+        array_start = new T[10];
+        length = 10;
+    }
 
-		// destructor
-		~Array() {
-		    // not null test
-		    if(array_start)
-		        delete[] array_start;
-                    // non pointers auto destructed
-		}
+    // destructor
+    ~Array() {
+        // not null test
+        if(array_start)
+            delete[] array_start;
+        // non pointers auto destructed
+    }
 
-		// random access - could commit suicide
-	        T&amp; operator[](int index) {
-		    return array_start[index];
-		}
+    // random access - could commit suicide
+    T&amp; operator[](int index) {
+        return array_start[index];
+    }
 
-		// checked access - throws exception if out of bounds
-	        T&amp; at(int index) {
-		    if(index &lt; 0 || index &gt;= length)
-		        throw std::out_of_range("Index out of range");
-                    return array_start[index];
-		}
-            }; // all structures must end with semicolon
-	  </pre>
-	  <p>
+    // checked access - throws exception if out of bounds
+    T&amp; at(int index) {
+        if(index &lt; 0 || index &gt;= length)
+            throw std::out_of_range("Index out of range");
+        return array_start[index];
+    }
+}; // all structures must end with semicolon
+          </pre>
+          <p>
             A potential problem is that any copies of
             this <code>Array</code> don't make a deep copy, they just
             copy the pointer location, resulting in a possible double
@@ -110,10 +110,10 @@
             constructors written this way, because if any of the
             values were <code>const</code>, then it would be a syntax
             error!  Let's fix the constructors:
-	  </p>
+          </p>
           <pre class="prettyprint">
-            Array() : array_start(new T[10])
-                    , length(10) { }
+Array() : array_start(new T[10])
+        , length(10) { }
           </pre>
           <p>
             This now constructs the values with <code>new T[10]</code>
@@ -138,26 +138,26 @@
             Array&amp;</code>.
           </p>
           <pre class="prettyprint">
-            #include &lt;algorithm&gt;   // std::copy
+#include &lt;algorithm&gt;   // std::copy
 
-            // copy constructor
-            Array(const Array& other) : array_start(new T[other.length])
-                                      , length(other.length) {
-                std::copy(other.array_start, other.array_start + length, array_start);
-            }
+// copy constructor
+Array(const Array& other) : array_start(new T[other.length])
+                          , length(other.length) {
+    std::copy(other.array_start, other.array_start + length, array_start);
+}
 
-            // copy assignment operator
-            Array&amp; operator=(const Array& other) {
-                length = other.length;
+// copy assignment operator
+Array&amp; operator=(const Array& other) {
+    length = other.length;
 
-                if(array_start) delete[] array_start;
-                array_start = new T[length];
-                std::copy(other.array_start, other.array_start + length, array_start);
+    if(array_start) delete[] array_start;
+    array_start = new T[length];
+    std::copy(other.array_start, other.array_start + length, array_start);
 
-                // remember to always ``return *this;`` so it can be
-                // assigned to in function arguments.
-                return *this;
-            }
+    // remember to always ``return *this;`` so it can be
+    // assigned to in function arguments.
+    return *this;
+}
           </pre>
           <p>
             As you can see, pointers and pointer arithmetic are really
