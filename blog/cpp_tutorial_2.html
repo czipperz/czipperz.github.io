@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <title> Czipperz's Blog - C++ galore </title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="top">
+        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
+      </div>
+      <div id="content">
+        <div class="article" id="main_article">
+          <h2><a href="cpp_tutorial_2.html">
+              C++ Tutorial 2 - Getting user input. </a></h2>
+          <h4 class="date">12/19/2016</h4>
+          <p>
+            In this tutorial we will look at getting user input.  We
+            will start by getting the user's name.  First we will ask
+            the user to input their name.  Then we will store their
+            name into a variable and greet them.
+          </p>
+          <pre class="prettyprint">
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    // Ask the user to input their name.
+    cout &lt;&lt "What is your name? ";
+
+    // Declare a string variable.
+    string name;
+    // Store their input into the name variable.
+    cin &gt;&gt name;
+
+    // Greet them.
+    cout &lt;&lt "\n" &lt;&lt "Hello " &lt;&lt name &lt;&lt ".\n";
+
+    // Visual Studio only for the following line.
+    getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            To declare a variable, write <code class="prettyprint">Type
+            variable_name;</code>.  On line 7, <code class="prettyprint">Type</code>
+            is <code class="prettyprint">string</code> and <code class="prettyprint">variable_name</code>
+            is <code class="prettyprint">name</code>.
+          </p>
+          <br />
+          <p>
+            To get input from the user, use <code class="prettyprint">cin</code>
+            and <code class="prettyprint">&gt;&gt;</code> in conjunction with the variable
+            to store the input in.  To get a string from the user,
+            their name, we wrote <code class="prettyprint">cin >> name</code>.
+          </p>
+          <br />
+          <p>
+            We can use multiple <code class="prettyprint">&lt;&lt;</code> s to print out
+            more data without having to rewrite the name of the
+            stream, <code class="prettyprint">cout</code>.  The <code class="prettyprint">"\n"</code>s tell
+            the computer to print out a new line.  This helps us read
+            the output.
+          </p>
+          <br />
+          <p>
+            Now let us in addition get the age of the user.  We need
+            to declare an integer to store their age, read it
+            from <code class="prettyprint">cin</code>, and finally use it in some way.
+            Let's print out a special message depending on if their
+            age is less than 18.
+          </p>
+          <pre class="prettyprint">
+#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main() {
+    // Ask the user to input their name.
+    cout &lt;&lt "What is your name? ";
+
+    // Declare a string variable.
+    string name;
+    // Store their input into the name variable.
+    cin &gt;&gt name;
+
+    // Ask the user to input their name.
+    cout &lt;&lt; "\n" &lt;&lt; "How old are you " &lt;&lt; name &lt;&lt; "? ";
+
+    // Declare the age variable.
+    int age;
+    // Store their age into our variable.
+    cin &gt;&gt; age;
+
+    // If the user's age is less than 18
+    if (age &lt; 18) {
+        cout &lt;&lt; "\n" &lt;&lt; "Go back to school!\n";
+    } else {
+        // Otherwise (age is at least 18)
+        cout &lt&lt; "\n" &lt;&lt; "I guess you will live another "
+             &lt&lt; 100 - age &lt;&lt; " years.\n";
+    }
+
+    // Visual Studio only for the following line.
+    getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            We now see usage of another type of variable, the
+            <code class="prettyprint">int</code>.  An
+            <code class="prettyprint">int</code> stores non-fractional
+            numbers.
+          </p>
+          <br />
+          <p>
+            We also see usage of
+            an <code class="prettyprint">if</code> statement: a
+            statement that branches our code based on the condition
+            given.  Here we test if the user is a child by comparing
+            their <code class="prettyprint">age</code>
+            with <code class="prettyprint">18</code>.  If they are a
+            child, we tell them to go back to school.  If they are an
+            adult we predict how many years they have left to live,
+            assuming they die at 100.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

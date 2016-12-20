@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <title> Czipperz's Blog - C++ galore </title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="top">
+        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
+      </div>
+      <div id="content">
+        <div class="article" id="main_article">
+          <h2><a href="cpp_tutorial_4.html">
+              C++ Tutorial 4 - Using vector. </a></h2>
+          <h4 class="date">12/19/2016</h4>
+          <p>
+            Here we will go
+            over <code class="prettyprint">vector</code> and some
+            basic usages.  A <code class="prettyprint">vector</code>
+            is a list of things.  To use a vector, we have to
+            write <code class="prettyprint">#include
+            &lt;vector&gt;</code> at the top of the file.
+          </p>
+          <pre class="prettyprint">
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+
+using namespace std;
+
+int main() {
+    /* Visual Studio: */ getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            So now we can use <code class="prettyprint">vector</code>s
+            in our program.  A vector is a list of things.  The type
+            of the elements must be told to the computer to be able to
+            use our vector.  Here is how we declare
+            a <code class="prettyprint">vector</code>
+            of <code class="prettyprint">int</code>s
+            named <code class="prettyprint">int_list</code>.
+          </p>
+          <pre class="prettyprint">
+    vector&lt;int&gt; int_list;
+          </pre>
+          <p>
+            To use our list we insert elements and retrieve elements.
+            To insert an element at the end of
+            the <code class="prettyprint">vector</code>, write the
+            following code:
+          </p>
+          <pre class="prettyprint">
+    int_list.push_back(42);
+          </pre>
+          <p>
+            Now our <code class="prettyprint">vector</code> has one
+            element, 42.  To add another element we can repeat the
+            process:
+          </p>
+          <pre class="prettyprint">
+    int_list.push_back(33);
+          </pre>
+          <p>
+            Now our <code class="prettyprint">vector</code> has two
+            elements, 42 and 33 in that order.  To retrieve elements
+            we use square brackets and an index number.  The number
+            starts from 0.
+          </p>
+          <pre class="prettyprint">
+    // retrieve the first element
+    int_list[0];
+
+    // retrieve the second element
+    int_list[1];
+          </pre>
+          <p>
+            Each element is an integer, so we can interact with each
+            element as one.
+          </p>
+          <pre class="prettyprint">
+    // set the second element to 22
+    int_list[1] = 22;
+
+    // ensure the first element has a maximum value of 40
+    if (int_list[0] > 40) {
+        int_list = 40;
+    }
+
+    int index = 0;
+    // set the first element to 11
+    int_list[index] = 11;
+
+    // print out "Our vector has 2 elements."
+    cout << "Our vector has " << int_list.size() << " elements.\n";
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

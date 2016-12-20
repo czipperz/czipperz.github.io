@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+    <title> Czipperz's Blog - C++ galore </title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="top">
+        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
+      </div>
+      <div id="content">
+        <div class="article" id="main_article">
+          <h2><a href="cpp_tutorial_5.html">
+              C++ Tutorial 5 - Using algorithms. </a></h2>
+          <h4 class="date">12/19/2016</h4>
+          <p>
+            Here we will go over basic usages of the algorithms
+            library.  To use the algorithms library, we have to
+            write <code class="prettyprint">#include
+            &lt;algorithm&gt;</code> at the top of the file.
+          </p>
+          <pre class="prettyprint">
+#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+
+using namespace std;
+
+int main() {
+    /* Visual Studio: */ getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            Algorithms allow us to do various operations over lists in
+            our code.  So we will
+            include <code class="prettyprint">&lt;vector&gt;</code> and create
+            a <code class="prettyprint">vector</code>
+            of <code class="prettyprint">int</code>s with the
+            values <code class="prettyprint">11</code>,
+            <code class="prettyprint">23</code>,
+            and <code class="prettyprint">17</code>.
+          </p>
+          <pre class="prettyprint">
+#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+int main() {
+    vector&lt;int&gt; list;
+    list.push_back(11);
+    list.push_back(23);
+    list.push_back(17);
+
+    /* Visual Studio: */ getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            Now that we have a list of elements, we will print them
+            out.  To do so we have to use an algorithm --
+            <code class="prettyprint">for_each</code>.  To use
+            <code class="prettyprint">for_each</code> we have to
+            define a function for what to do with each element.  In
+            this case we will print out each element with a space
+            after it:
+          </p>
+          <pre class="prettyprint">
+#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt; // <-- required to use cout and cin
+#include &lt;vector&gt;
+
+using namespace std;
+
+void print_element(int element) {
+    cout &lt;&lt; element &lt;&lt; " ";
+}
+
+int main() {
+    vector&lt;int&gt; list;
+    list.push_back(11);
+    list.push_back(23);
+    list.push_back(17);
+    for_each(list.begin(), list.end(), print_element);
+
+    /* Visual Studio: */ getchar();
+    return 0;
+}
+          </pre>
+          <p>
+            The <code class="prettyprint">for_each</code> statement
+            will now go from the beginning to the end of the list,
+            applying <code class="prettyprint">print_element</code> to
+            each element.
+          </p>
+          <br />
+          <p>
+            <code class="prettyprint">print_element</code> is a
+            function that takes one argument --
+            an <code class="prettyprint">int</code> that we name
+            <code class="prettyprint">element</code>.  It
+            returns <code class="prettyprint">void</code>, the lack of
+            a value.  What the function does is defined inside the
+            curly brackets.  It prints out the element and a space.
+          </p>
+          <br />
+          <p>
+            Having to separate the operation into a function makes it
+            harder to read our code.  To fix this, we can put the
+            function body in place of the name of the function:
+          </p>
+          <pre class="prettyprint">
+    for_each(list.begin(), list.end(),
+             [](int element) {
+                 cout &lt;&lt; element &lt;&lt; " ";
+             });
+          </pre>
+          <p>
+            This makes it clear what we intend to do.
+          </p>
+          <br />
+          <p>
+            There are other algorithms that allow us to express what
+            we intend to do directly.  Let's
+            use <code class="prettyprint">sort</code> to sort the
+            list:
+          </p>
+          <pre class="prettyprint">
+    sort(list.begin(), list.end());
+          </pre>
+          <p>
+            This will sort the list into ascending order.  The new
+            contents will be <code class="prettyprint">11</code>,
+            <code class="prettyprint">17</code>,
+            and <code class="prettyprint">23</code>, in that order.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
