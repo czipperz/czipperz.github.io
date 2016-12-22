@@ -24,8 +24,7 @@
 
 p {
   margin: 0;
-  font-size: 16px;
-  max-width: 800px; }
+  font-size: 16px; }
   p:link, p:visited {
     color: #FFF;
     background: #000; }
@@ -45,7 +44,8 @@ p {
   max-width: 850px; }
 
 pre.prettyprint {
-  margin-left: 20px !important; }
+  margin-left: 20px !important;
+  width: inherit !important; }
 
 #previous_articles {
   float: left; }

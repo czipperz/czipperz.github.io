@@ -2,7 +2,6 @@ p {
     margin: 0;
     font-size: 16px;
     @include hover;
-    max-width: 800px;
 }
 #main_article {
     float:left;
@@ -17,6 +16,7 @@ p {
 }
 pre.prettyprint {
     margin-left: 20px!important;
+    width: inherit!important;
 }
 #previous_articles {
     float:left;
