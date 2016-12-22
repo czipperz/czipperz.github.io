@@ -99,3 +99,12 @@ h1#title {
 		}
 	}
 }
+
+pre.prettyprint, code.prettyprint {
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	-o-border-radius: 0 !important;
+	-ms-border-radius: 0 !important;
+	-khtml-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
