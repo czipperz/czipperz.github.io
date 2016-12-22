@@ -24,3 +24,24 @@ pre.prettyprint {
         margin-top: 0;
     }
 }
+
+.hidden {
+    display: none;
+}
+
+pre.prettyprint.answer, .answer {
+    background-color: #600 !important;
+}
+
+#content a.answer_link {
+    display: block;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    &:link, &:visited {
+        color: #000 !important;
+        background: #F00 !important;
+    }
+    &:hover {
+        color: #FFF !important;
+    }
+}

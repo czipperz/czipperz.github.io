@@ -52,6 +52,22 @@ pre.prettyprint {
   #previous_articles h1 {
     margin-top: 0; }
 
+.hidden {
+  display: none; }
+
+pre.prettyprint.answer, .answer {
+  background-color: #600 !important; }
+
+#content a.answer_link {
+  display: block;
+  padding-top: 1px;
+  padding-bottom: 1px; }
+  #content a.answer_link:link, #content a.answer_link:visited {
+    color: #000 !important;
+    background: #F00 !important; }
+  #content a.answer_link:hover {
+    color: #FFF !important; }
+
 body {
   background-color: #000;
   color: #FFF;
