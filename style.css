@@ -64,7 +64,7 @@ body {
 
 a {
   text-decoration: none; }
-  a:hover, a:link {
+  a:hover, a:link, a:visited {
     text-decoration: none; }
 
 h1#title {
