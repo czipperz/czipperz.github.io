@@ -210,4 +210,8 @@ pre.prettyprint, code.prettyprint {
   -khtml-border-radius: 0 !important;
   border-radius: 0 !important; }
 
+pre.prettyprint {
+  background-color: #006 !important;
+  padding-bottom: 0 !important; }
+
 /*# sourceMappingURL=style.css.map */
