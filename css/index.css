@@ -1,0 +1,27 @@
+#idcard {
+    margin: 14px;
+    margin-top: 0;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1000px;
+    display: inline-block;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.16), 0 0px 20px rgba(0,0,0,0.3);
+    vertical-align: top;
+    padding: 15px;
+}
+
+#idcard h2 {
+    margin: 0;
+    display: inline-block;
+    color: #6abf69;
+}
+
+#idcard h4 {
+    margin: 0;
+    display: inline-block;
+    color: #00600f;
+}
+
+#idcard p {
+    margin-bottom: 0;
+}
