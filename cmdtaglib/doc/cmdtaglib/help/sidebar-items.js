@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["show_help","Shows help, using `progname` as the name of the program when display usage.  Exits with the error code provided."]]});

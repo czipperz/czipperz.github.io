@@ -1,55 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <script src="https://raw.githubusercontent.com/google/code-prettify/master/src/lang-lisp.js"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 9 - Linked List</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="eval-and-replace.html">
-              eval-and-replace for evil mode </a></h2>
-          <h4 class="date">5/8/2016</h4>
-          <p>
-            Emacs allows for you to evaluate s-expressions and print
-            them out on the status bar.  This is really cool, and many
-            people have made a function that evaluates it in-place.
-            The problem I have with these implementations are
-            that <code>evil mode</code> treats parenthesis as matching
-            when you are on the closing parenthesis, instead of after
-            the closing parenthesis.  To get this behavior to work
-            properly I implemented <code>eval-and-replace</code> as
-            follows:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="eval-and-replace.html"><h2 class="title"> eval-and-replace for evil mode </h2></a>
+        <p class="description">5/8/2016</p>
+        <p>
+          Emacs allows for you to evaluate s-expressions and print
+          them out on the status bar.  This is really cool, and many
+          people have made a function that evaluates it in-place.
+          The problem I have with these implementations are
+          that <code>evil mode</code> treats parenthesis as matching
+          when you are on the closing parenthesis, instead of after
+          the closing parenthesis.  To get this behavior to work
+          properly I implemented <code>eval-and-replace</code> as
+          follows:
+        </p>
+        <pre class="prettyprint">
 (defun eval-and-replace ()
   "Replace the preceding sexp with its value."
   (interactive)
   (if (and evil-mode (eq (following-char) ?\))) (forward-char 1))
   (let ((value (eval (preceding-sexp))))
     (backward-kill-sexp)
-    (insert (format "%s" value))))
-          </pre>
-          <p>
-            Binding this to a key is simple enough:
-          </p>
-          <pre class="prettyprint">
-(global-set-key (kbd "C-c e") 'eval-and-replace)
-          </pre>
-          <p>
-            Now if you input <code>(/ 1000 20)</code> then
-            press <code>C-c e</code>, it is replace
-            with <code>50</code>.  Putting your cursor on or after the
-            closing parenthesis in normal mode then pressing <code>C-c
+    (insert (format "%s" value))))</pre>
+        <p>
+          Binding this to a key is simple enough:
+        </p>
+        <pre class="prettyprint">
+(global-set-key (kbd "C-c e") 'eval-and-replace)</pre>
+        <p>
+          Now if you input <code>(/ 1000 20)</code> then
+          press <code>C-c e</code>, it is replace
+          with <code>50</code>.  Putting your cursor on or after the
+          closing parenthesis in normal mode then pressing <code>C-c
             e</code> yields the same result.
-          </p>
-        </div>
+        </p>
       </div>
     </div>
   </body>

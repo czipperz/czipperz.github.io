@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 3 - Using variables</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_3.html">
-              C++ Tutorial 3 - Using variables. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            Here we will go over more usages of variables.
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_3.html"><h2 class="title"> C++ Tutorial 3 - Using variables </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          Here we will go over more usages of variables.
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
@@ -32,45 +83,40 @@ int main() {
     // Visual Studio only for the following line.
     getchar();
     return 0;
-}
-          </pre>
-          <p>
-            In this main function, we declare a
-            variable <code class="prettyprint">x</code> of type int,
-            and then give it the value
-            of <code class="prettyprint">3</code>.  These are two
-            different statements, as denoted by the semicolon
-            (<code class="prettyprint">;</code>).
-          </p>
-          <br />
-          <p>
-            We can simplify these two lines down
-            to <code class="prettyprint">int x = 3;</code>.  This will
-            declare and construct it with the value
-            of <code class="prettyprint">3</code>.
-          </p>
-          <br />
-          <p>
-            Writing <code class="prettyprint">cout &lt;&lt; x;</code>
-            would then print out 3 to the terminal.
-          </p>
-          <br />
-          <p>
-            The types of variables matters as much as their values. By
-            simply replacing the
-            word <code class="prettyprint">int</code>
-            with <code class="prettyprint">string</code> will change
-            the meaning of our program.  A string and an integer are
-            distinct types obviously.
-          </p>
-          <br />
-          <p>
-            Try making a string variable and name
-            it <code class="prettyprint">message</code>.  Construct it
-            with a message you wish to show the user.  Then reassign
-            the message to something else.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          In this main function, we declare a
+          variable <code class="prettyprint">x</code> of type int,
+          and then give it the value
+          of <code class="prettyprint">3</code>.  These are two
+          different statements, as denoted by the semicolon
+          (<code class="prettyprint">;</code>).
+        </p>
+        <p>
+          We can simplify these two lines down
+          to <code class="prettyprint">int x = 3;</code>.  This will
+          declare and construct it with the value
+          of <code class="prettyprint">3</code>.
+        </p>
+        <p>
+          Writing <code class="prettyprint">cout &lt;&lt; x;</code>
+          would then print out 3 to the terminal.
+        </p>
+        <p>
+          The types of variables matters as much as their values. By
+          simply replacing the
+          word <code class="prettyprint">int</code>
+          with <code class="prettyprint">string</code> will change
+          the meaning of our program.  A string and an integer are
+          distinct types obviously.
+        </p>
+        <p>
+          Try making a string variable and name
+          it <code class="prettyprint">message</code>.  Construct it
+          with a message you wish to show the user.  Then reassign
+          the message to something else.
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
@@ -88,20 +134,17 @@ int main() {
     // Visual Studio only for the following line.
     getchar();
     return 0;
-}
-          </pre>
-          <p>
-            Our new program will print out "3My second message!".  To
-            insert a line break
-            between <code class="prettyprint">x</code> and
-            the <code class="prettyprint">message</code>, we have to
-            print out <code class="prettyprint">"\n"</code>.
-            Put the following line before we print out the message to do this:
-          </p>
-          <pre class="prettyprint">
-    cout &lt;&lt; "\n";
-          </pre>
-        </div>
+}</pre>
+        <p>
+          Our new program will print out "3My second message!".  To
+          insert a line break
+          between <code class="prettyprint">x</code> and
+          the <code class="prettyprint">message</code>, we have to
+          print out <code class="prettyprint">"\n"</code>.
+          Put the following line before we print out the message to do this:
+        </p>
+        <pre class="prettyprint">
+    cout &lt;&lt; "\n";</pre>
       </div>
     </div>
   </body>

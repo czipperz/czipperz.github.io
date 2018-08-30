@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["parse_cmd","Parses a `String` based on the expected `str`.  This will return `None` only if `expected` doesn't match `cmd`.  It will return `Some(None)` if it parses but there isn't assignment.  It will return `Some(Some(String))`if it parses and there is an assignment statement."]]});

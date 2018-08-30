@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["CMD","An enum of all the different commands that can be invoked."]]});

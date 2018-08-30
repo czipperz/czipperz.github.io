@@ -1,40 +1,89 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 1 - Introduction</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_1.html">
-              C++ Tutorial 1 - Introduction. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            This series of tutorials is the general learning plan for
-            C++.  I presume you have Visual Studio installed.  If you
-            are working on Mac/Linux, use a text editor like Emacs
-            and compile via the command line:
-          </p>
-          <pre class="prettyprint">
-$ g++ -o OUTPUT_FILE INPUT_FILES -std=c++11 && ./OUTPUT_FILE
-          </pre>
-          <p>
-            Make a project if using Visual Studio and open a file of
-            the name <code>first.cpp</code>.  This file will
-            be <code>INPUT_FILES</code> for the command line
-            compilers.
-          </p>
-          <br />
-          <p>
-            Hello world:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_1.html"><h2 class="title"> C++ Tutorial 1 - Introduction </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          This series of tutorials is the general learning plan for
+          C++.  I presume you have Visual Studio installed.  If you
+          are working on Mac/Linux, use a text editor like Emacs
+          and compile via the command line:
+        </p>
+        <pre class="prettyprint">
+$ g++ -o OUTPUT_FILE INPUT_FILES -std=c++11 && ./OUTPUT_FILE</pre>
+        <p>
+          Make a project if using Visual Studio and open a file of
+          the name <code>first.cpp</code>.  This file will
+          be <code>INPUT_FILES</code> for the command line
+          compilers.
+        </p>
+        <p>
+          Hello world:
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 
@@ -48,65 +97,56 @@ int main() {
     getchar();
 
     return 0;
-}
-          </pre>
-          <p>
-            Try printing out your name by changing the text inside the
-            double quotes to <code>Czipperz</code> or something of
-            the like.
-          </p>
-          <p>
-            Try printing out a number, removing the quotes entirely
-            doing so.
-          </p>
-          <br />
-          <p>
-            Let's look at the structure of our program.  The first two
-            lines tell the compiler to look up information related to
-            input and output on the terminal with the user.
-          </p>
-          <br />
-          <p>
-            The third line tells the computer to use the standard
-            library (<code class="prettyprint">std</code>).
-          </p>
-          <br />
-          <p>
-            The fourth line tells the computer we are writing a
-            function, one named main that will return an integer
-            (<code class="prettyprint">int</code>).  Since there is
-            nothing inside the parenthesis, the function takes no
-            arguments from its caller.  The open curly bracket
-            (<code class="prettyprint">{</code>) indicates a function
-            body: the code that will run when the function is called.
-            Running our program will automatically
-            call <code class="prettyprint">main()</code>.
-          </p>
-          <br />
-          <p>
-            The fifth line instructs the computer to print the string
-            "Hello World!\n" to the terminal.
-            The <code class="prettyprint">"\n"</code> instructs it to
-            print a new line.
-          </p>
-          <br />
-          <p>
-            The sixth and optional line instructs the compiler to get
-            a character from the user, keeping the program alive until
-            so.
-          </p>
-          <br />
-          <p>
-            The seventh line instructs the compiler to signal successful
-            completion of the program.  Returning a non-zero number
-            from <code class="prettyprint">main()</code> signifies an error.
-          </p>
-          <br />
-          <p>
-            The eighth and final line closes the function and ends
-            the program.
-          </p>
-        </div>
+}</pre>
+        <p>
+          Try printing out your name by changing the text inside the
+          double quotes to <code>Czipperz</code> or something of
+          the like.
+        </p>
+        <p>
+          Try printing out a number, removing the quotes entirely
+          doing so.
+        </p>
+        <p>
+          Let's look at the structure of our program.  The first two
+          lines tell the compiler to look up information related to
+          input and output on the terminal with the user.
+        </p>
+        <p>
+          The third line tells the computer to use the standard
+          library (<code class="prettyprint">std</code>).
+        </p>
+        <p>
+          The fourth line tells the computer we are writing a
+          function, one named main that will return an integer
+          (<code class="prettyprint">int</code>).  Since there is
+          nothing inside the parenthesis, the function takes no
+          arguments from its caller.  The open curly bracket
+          (<code class="prettyprint">{</code>) indicates a function
+          body: the code that will run when the function is called.
+          Running our program will automatically
+          call <code class="prettyprint">main()</code>.
+        </p>
+        <p>
+          The fifth line instructs the computer to print the string
+          "Hello World!\n" to the terminal.
+          The <code class="prettyprint">"\n"</code> instructs it to
+          print a new line.
+        </p>
+        <p>
+          The sixth and optional line instructs the compiler to get
+          a character from the user, keeping the program alive until
+          so.
+        </p>
+        <p>
+          The seventh line instructs the compiler to signal successful
+          completion of the program.  Returning a non-zero number
+          from <code class="prettyprint">main()</code> signifies an error.
+        </p>
+        <p>
+          The eighth and final line closes the function and ends
+          the program.
+        </p>
       </div>
     </div>
   </body>

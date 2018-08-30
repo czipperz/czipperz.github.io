@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["cmd","Provides the `CMD` enum, representing the different commands that can be invoked."],["help","Provides the `show_help(&String)` function, which shows help for a user who incorrectly used the program."],["parse","Provides the `parse_cmd(&String, &str)` function."]]});

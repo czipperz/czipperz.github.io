@@ -1,56 +1,103 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - const and references</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_3.html">
-              Java to C++ - <code>const</code> and references. </a></h2>
-          <h4 class="date">9/23/2015</h4>
-          <p>
-            As we saw in the last post, <i>Java to C++ -
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_3.html"><h2 class="title"> Java to C++ - <code>const</code> and references </h2></a>
+        <p class="date">9/23/2015</p>
+        <p>
+          As we saw in the last post, <i>Java to C++ -
             Destructors</i>, giving a <code>string</code> to
-            the <code>getline</code> function will modify it to be the
-            current line buffered by the stream.  This is really cool,
-            but it is dangerous because the side effects, or places
-            where variables change, can be obscured.
-          </p>
-          <br />
-          <p>
-            C++ helps to ease this pain by allowing you to declare a
-            variable as <code>const</code>.  This allows you to only
-            use functions on it that don't modify the state of the
-            object, or read public variables from the object.  Passing
-            a variable by constant reference is a really cool feature
-            that allows a function to look at the contents but not
-            modify them.
-          </p>
-          <br />
-          <p>
-            <code>const</code> is very similar to
-            the <code>final</code> keyword, but <i>much more
+          the <code>getline</code> function will modify it to be the
+          current line buffered by the stream.  This is really cool,
+          but it is dangerous because the side effects, or places
+          where variables change, can be obscured.
+        </p>
+        <p>
+          C++ helps to ease this pain by allowing you to declare a
+          variable as <code>const</code>.  This allows you to only
+          use functions on it that don't modify the state of the
+          object, or read public variables from the object.  Passing
+          a variable by constant reference is a really cool feature
+          that allows a function to look at the contents but not
+          modify them.
+        </p>
+        <p>
+          <code>const</code> is very similar to
+          the <code>final</code> keyword, but <i>much more
             powerful</i>.  Every type in Java is a pointer, meaning
-            that it is really just a value that tells you where to
-            look for the actual value.  The final keyword just tells
-            the compiler that you can't change the address that the
-            pointer points to, but the const keyword does that too!
-          </p>
-          <br />
-          <p>
-            An ampersand after a type but before the name of a
-            variable tells the compiler that it is a reference.  Let's
-            look at an example.
-          </p>
-          <br />
-          <pre class="prettyprint">
+          that it is really just a value that tells you where to
+          look for the actual value.  The final keyword just tells
+          the compiler that you can't change the address that the
+          pointer points to, but the const keyword does that too!
+        </p>
+        <p>
+          An ampersand after a type but before the name of a
+          variable tells the compiler that it is a reference.  Let's
+          look at an example.
+        </p>
+        <pre class="prettyprint">
 #include &lt;assert.h&gt;
 #include &lt;string&gt;
 
@@ -70,71 +117,65 @@ int main() {
 
 // str and immutable_copy are deleted at this closing brace.
 // immutable_reference doesn't need to be deleted as it isn't a value type.
-}
-          </pre>
-          <p>
-            As you can see, the reference maintains shares the same
-            memory as the value, <code>str</code>.  References are
-            just like final objects in Java.  The key difference
-            between references and pointers are that references cannot
-            be <code>null</code> as they have to point to a memory
-            location when they are declared.  This gives them
-            incredible power as parameters because null checks are
-            redundant.
-          </p>
-          <br />
-          <p>
-            You can see that the <code>.equals()</code> method isn't
-            used to compare objects because you can just overload
-            the <code>==</code> operator.  Don't worry, you can still
-            compare memory addresses, but we'll get to that later.
-            Operator overloading is a very powerful feature of C++
-            that isn't in Java.  It allows you to treat classes as
-            builtin types, which I'll post later about.
-          </p>
-          <br />
-          <p>
-            The main reason references are so popular is that they can
-            make a huge improvement over value types for arguements to
-            a method.  A value type is one that is not a pointer or
-            reference.  They aren't very popular as they have to
-            be <i>cloned when used as an argument</i>.  Let's look at
-            an example of const references used as function inputs.
-            These are a popular subgenre because they ensure that
-            there won't be a change to the object passed in while
-            maintaining high performance.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          As you can see, the reference maintains shares the same
+          memory as the value, <code>str</code>.  References are
+          just like final objects in Java.  The key difference
+          between references and pointers are that references cannot
+          be <code>null</code> as they have to point to a memory
+          location when they are declared.  This gives them
+          incredible power as parameters because null checks are
+          redundant.
+        </p>
+        <p>
+          You can see that the <code>.equals()</code> method isn't
+          used to compare objects because you can just overload
+          the <code>==</code> operator.  Don't worry, you can still
+          compare memory addresses, but we'll get to that later.
+          Operator overloading is a very powerful feature of C++
+          that isn't in Java.  It allows you to treat classes as
+          builtin types, which I'll post later about.
+        </p>
+        <p>
+          The main reason references are so popular is that they can
+          make a huge improvement over value types for arguements to
+          a method.  A value type is one that is not a pointer or
+          reference.  They aren't very popular as they have to
+          be <i>cloned when used as an argument</i>.  Let's look at
+          an example of const references used as function inputs.
+          These are a popular subgenre because they ensure that
+          there won't be a change to the object passed in while
+          maintaining high performance.
+        </p>
+        <pre class="prettyprint">
 #include &lt;string&gt;
 
 std::string concat(std::string a, std::string b) {
     return a + b;
-}
-          </pre>
-          <p>
-            The problem with this code is that the strings are passed
-            by value but then not modified, making that operation
-            unnecessary and a waste of resources.  To get a nice
-            performance boost, all we have to change is the
-            declaration of the function!
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          The problem with this code is that the strings are passed
+          by value but then not modified, making that operation
+          unnecessary and a waste of resources.  To get a nice
+          performance boost, all we have to change is the
+          declaration of the function!
+        </p>
+        <pre class="prettyprint">
 std::string concat(const std::string& a, const std::string& b) {
     return a + b;
-}
-          </pre>
-          <p>
-            You might think that returning a reference to the string
-            created by the <code>+</code> operator would be a good
-            idea, but that would enact <i>undefined behavior</i>.
-            This is because the result of the <code>+</code> operator
-            is deleted at the closing brace, but with a value type the
-            compiler will optimize the unnecessary copy and immediate
-            deletion and just return the value.  A general rule of
-            thumb is to never return a reference if it points to a
-            variable declared during the scope of the function.
-          </p>
-        </div>
+}</pre>
+        <p>
+          You might think that returning a reference to the string
+          created by the <code>+</code> operator would be a good
+          idea, but that would enact <i>undefined behavior</i>.
+          This is because the result of the <code>+</code> operator
+          is deleted at the closing brace, but with a value type the
+          compiler will optimize the unnecessary copy and immediate
+          deletion and just return the value.  A general rule of
+          thumb is to never return a reference if it points to a
+          variable declared during the scope of the function.
+        </p>
       </div>
     </div>
   </body>

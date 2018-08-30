@@ -1,46 +1,93 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <script src="../js/toggle_visibility.js"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 9 - Linked List</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_8.html">
-              C++ Tutorial 8 - Classes. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            Here we will go over making
-            a <code class="prettyprint">linked_list</code>.
-            Start out by declaring a class:
-          </p>
-          <pre class="prettyprint">
-class linked_list {};
-          </pre>
-          <p>
-            Now we have to figure out what our linked list is.
-            Our <code class="prettyprint">linked_list</code> is a data
-            structure that looks like this.  Each black box is an
-            element, each red box is a pointer.  The white boxes are
-            "nodes".
-          </p>
-          <br />
-          <img src="linked_list.png" />
-          <div> <br /> </div>
-          <p>
-            Each node owns its element, the black box, and the next
-            node, the red arrow.  When we have a "value type" it
-            matches the lifetime of the owner.  This means that if the
-            node was represented as:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_8.html"><h2 class="title"> C++ Tutorial 9 - Linked List </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          Here we will go over making
+          a <code class="prettyprint">linked_list</code>.
+          Start out by declaring a class:
+        </p>
+        <pre class="prettyprint">
+class linked_list {};</pre>
+        <p>
+          Now we have to figure out what our linked list is.
+          Our <code class="prettyprint">linked_list</code> is a data
+          structure that looks like this.  Each black box is an
+          element, each red box is a pointer.  The white boxes are
+          "nodes".
+        </p>
+        <img src="blog/linked_list.png" />
+        <p>
+          Each node owns its element, the black box, and the next
+          node, the red arrow.  When we have a "value type" it
+          matches the lifetime of the owner.  This means that if the
+          node was represented as:
+        </p>
+        <pre class="prettyprint">
 class linked_list {
 public:
     using element = int;
@@ -51,36 +98,33 @@ private:
         element elem;
         node <span class="nocode">next</span>;
     };
-};
-          </pre>
-          <p>
-            Then when we make our first node, it immediately makes the
-            second node, which makes the third node, and so on.  The
-            compiler sees that this will recurse infinitely and will
-            give us an error to express this.
-          </p>
-          <br />
-          <p>
-            BTW the <code class="prettyprint">node</code> is placed
-            inside the <code class="prettyprint">linked_list</code>
-            (and is <code class="prettyprint">private</code> to the <code class="prettyprint">linked_list</code>)
-            because it is only to be used by
-            the <code class="prettyprint">linked_list</code>, and will
-            interact with the user through
-            the <code class="prettyprint">linked_list</code>.
-          </p>
-          <br />
-          <p>
-            So to represent a node, we have to learn how to detach the
-            lifetime of it and the next node.  To do this we use a
-            <code class="prettyprint">unique_ptr</code>.  This class
-            lives in the header
-            file <code class="prettyprint">&lt;memory&gt;</code>.
-            Just like a <code class="prettyprint">vector</code>, we
-            must specify the type it encloses
-            via <code class="prettyprint">&lt;&gt;</code>.
-          </p>
-          <pre class="prettyprint">
+};</pre>
+        <p>
+          Then when we make our first node, it immediately makes the
+          second node, which makes the third node, and so on.  The
+          compiler sees that this will recurse infinitely and will
+          give us an error to express this.
+        </p>
+        <p>
+          BTW the <code class="prettyprint">node</code> is placed
+          inside the <code class="prettyprint">linked_list</code>
+          (and is <code class="prettyprint">private</code> to the <code class="prettyprint">linked_list</code>)
+          because it is only to be used by
+          the <code class="prettyprint">linked_list</code>, and will
+          interact with the user through
+          the <code class="prettyprint">linked_list</code>.
+        </p>
+        <p>
+          So to represent a node, we have to learn how to detach the
+          lifetime of it and the next node.  To do this we use a
+          <code class="prettyprint">unique_ptr</code>.  This class
+          lives in the header
+          file <code class="prettyprint">&lt;memory&gt;</code>.
+          Just like a <code class="prettyprint">vector</code>, we
+          must specify the type it encloses
+          via <code class="prettyprint">&lt;&gt;</code>.
+        </p>
+        <pre class="prettyprint">
 #include &lt;memory&gt;
 class linked_list {
 public:
@@ -92,50 +136,42 @@ private:
         element elem;
         unique_ptr&lt;node&gt; <span class="nocode">next</span>;
     };
-};
-          </pre>
-          <p>
-            Now declare and define a constructor for the node that
-            takes an element by constant reference.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['node_constructor', 'break_after_node_constructor'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="node_constructor" class="prettyprint answer hidden">
+};</pre>
+        <p>
+          Now declare and define a constructor for the node that
+          takes an element by constant reference.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
         // in class node
         node(const element&);
 
-linked_list::node::node(const element& e) : elem(e) {}
-          </pre>
-          <div id="break_after_node_constructor" style="display:block;">
-            <br />
-          </div>
-          <p>
-            The final node's next node will be represented by a null
-            pointer, written <code class="prettyprint">nullptr</code>.
-          </p>
-          <br />
-          <p>
-            So if we directly own
-            a <code class="prettyprint">node</code> from
-            the <code class="prettyprint">linked_list</code> class,
-            and the <code class="prettyprint">node</code> owns
-            an <code class="prettyprint">element</code>, then there
-            will always be at least one element in
-            the <code class="prettyprint">linked_list</code>.  This is
-            not the intended behavior, because the default state
-            should be to have no elements.  This means that the
-            lifetime of the
-            first <code class="prettyprint">node</code> is distinct
-            from that of
-            the <code class="prettyprint">linked_list</code>.
-            Therefore, we need to use
-            a <code class="prettyprint">unique_ptr</code> to represent
-            the first <code class="prettyprint">node</code>.
-          </p>
-          <pre class="prettyprint">
+linked_list::node::node(const element& e) : elem(e) {}</pre>
+        </div>
+        <p>
+          The final node's next node will be represented by a null
+          pointer, written <code class="prettyprint">nullptr</code>.
+        </p>
+        <p>
+          So if we directly own
+          a <code class="prettyprint">node</code> from
+          the <code class="prettyprint">linked_list</code> class,
+          and the <code class="prettyprint">node</code> owns
+          an <code class="prettyprint">element</code>, then there
+          will always be at least one element in
+          the <code class="prettyprint">linked_list</code>.  This is
+          not the intended behavior, because the default state
+          should be to have no elements.  This means that the
+          lifetime of the
+          first <code class="prettyprint">node</code> is distinct
+          from that of
+          the <code class="prettyprint">linked_list</code>.
+          Therefore, we need to use
+          a <code class="prettyprint">unique_ptr</code> to represent
+          the first <code class="prettyprint">node</code>.
+        </p>
+        <pre class="prettyprint">
 class linked_list {
 public:
     using element = int;
@@ -148,19 +184,15 @@ private:
     };
 
     unique_ptr&lt;node&gt; head;
-};
-          </pre>
-          <p>
-            Now we are going to declare and define the default
-            constructor, which will start the list out with no
-            elements.  Try to do this yourself without reading ahead!
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['default_constructor', 'break_after_default_constructor'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="default_constructor" class="prettyprint answer hidden">
+};</pre>
+        <p>
+          Now we are going to declare and define the default
+          constructor, which will start the list out with no
+          elements.  Try to do this yourself without reading ahead!
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
 class linked_list {
 public:
     using element = int;
@@ -178,26 +210,22 @@ public:
     linked_list();
 };
 
-linked_list::linked_list() : head(nullptr) {}
-          </pre>
-          <div id="break_after_default_constructor" style="display:block;">
-            <!-- This div is required to make the break consistently displayed -->
-            <br />
-          </div>
-          <p>
-            Now that we can construct
-            a <code class="prettyprint">linked_list</code>, let's
-            define some simple behavior.  First we will define a
-            method to add an element to the front of the list,
-            called <code class="prettyprint">push_front</code>.  To do
-            this we create a node to house this element, move
-            ownership of the <code class="prettyprint">head</code> to
-            this new node, then move this new node to
-            the <code class="prettyprint">head</code>.  We move
-            ownership by using the
-            function <code class="prettyprint">move</code>.
-          </p>
-          <pre class="prettyprint">
+linked_list::linked_list() : head(nullptr) {}</pre>
+        </div>
+        <p>
+          Now that we can construct
+          a <code class="prettyprint">linked_list</code>, let's
+          define some simple behavior.  First we will define a
+          method to add an element to the front of the list,
+          called <code class="prettyprint">push_front</code>.  To do
+          this we create a node to house this element, move
+          ownership of the <code class="prettyprint">head</code> to
+          this new node, then move this new node to
+          the <code class="prettyprint">head</code>.  We move
+          ownership by using the
+          function <code class="prettyprint">move</code>.
+        </p>
+        <pre class="prettyprint">
     // in class linked_list
     void push_front(element const&amp;);
 
@@ -213,31 +241,27 @@ void linked_list::push_front(element const&amp; elem) {
 
     // move the new node to the head
     head = move(node);
-}
-          </pre>
-          <p>
-            The <code class="prettyprint">new</code> keyword tells the
-            computer to allocate memory for the object on the heap.
-            When we move
-            a <code class="prettyprint">unique_ptr</code>, we are
-            moving the memory address for this object, rather than
-            moving the object itself.  Since we have to clean up this
-            memory at some point,
-            the <code class="prettyprint">unique_ptr</code> that owns
-            that pointer will .
-          </p>
-          <p>
-            Let's define a method to remove the first
-            element: <code class="prettyprint">pop_front</code>.  This
-            will take ownership of the second element, then replace
-            the head with it.  Try to express this yourself.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['pop_front', 'break_after_pop_front'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="pop_front" class="prettyprint answer hidden">
+}</pre>
+        <p>
+          The <code class="prettyprint">new</code> keyword tells the
+          computer to allocate memory for the object on the heap.
+          When we move
+          a <code class="prettyprint">unique_ptr</code>, we are
+          moving the memory address for this object, rather than
+          moving the object itself.  Since we have to clean up this
+          memory at some point,
+          the <code class="prettyprint">unique_ptr</code> that owns
+          that pointer will.
+        </p>
+        <p>
+          Let's define a method to remove the first
+          element: <code class="prettyprint">pop_front</code>.  This
+          will take ownership of the second element, then replace
+          the head with it.  Try to express this yourself.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
     // in class linked_list
     void pop_front();
 
@@ -248,144 +272,128 @@ void linked_list::pop_front() {
 
     // replace the head with it
     head = move(<span class="nocode">next</span>);
-}
-          </pre>
-          <div id="break_after_pop_front" style="display:block;">
-            <br />
-          </div>
-          <p>
-            So now that we have the basic methods of inserting and
-            removing elements from the front of the list, we need to
-            implement clearing the list.  A basic implementation of
-            clearing the list will take ownership of the entire list
-            and stop.  Try to implement this.  This is intended as a
-            recap on how to acquire ownership of a resource.  We will
-            extend the implementation later.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['clear_basic', 'break_after_clear_basic'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="clear_basic" class="prettyprint answer hidden">
+}</pre>
+        </div>
+        <p>
+          So now that we have the basic methods of inserting and
+          removing elements from the front of the list, we need to
+          implement clearing the list.  A basic implementation of
+          clearing the list will take ownership of the entire list
+          and stop.  Try to implement this.  This is intended as a
+          recap on how to acquire ownership of a resource.  We will
+          extend the implementation later.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
     // in class linked_list
     void clear();
 
 void linked_list::clear() {
     // take ownership of the entire list
     unique_ptr&lt;node&gt; list = move(head);
-}
-          </pre>
-          <div id="break_after_clear_basic" style="display:block;"> <br /> </div>
-          <p>
-            Now we are going to implement an iterator.  We are going
-            to use two different approaches and explore both.  The
-            premise of an iterator is that it allows us to access each
-            element in the container, in this case
-            the <code class="prettyprint">linked_list</code>.  Note
-            that it doesn't transfer ownership of these elements.
-          </p>
-          <h3> Approach #1 </h3>
-          <p>
-            Here we will mimic the structure of
-            our <code class="prettyprint">node</code> class to
-            implement the iterator.  We have to use pointers and not
-            references because we wish to redirect the pointers to
-            different elements and nodes.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        </div>
+        <p>
+          Now we are going to implement an iterator.  We are going
+          to use two different approaches and explore both.  The
+          premise of an iterator is that it allows us to access each
+          element in the container, in this case
+          the <code class="prettyprint">linked_list</code>.  Note
+          that it doesn't transfer ownership of these elements.
+        </p>
+        <h3> Approach #1 </h3>
+        <p>
+          Here we will mimic the structure of
+          our <code class="prettyprint">node</code> class to
+          implement the iterator.  We have to use pointers and not
+          references because we wish to redirect the pointers to
+          different elements and nodes.
+        </p>
+        <pre class="prettyprint">
     // inside linked_list
 public:
     class iterator {
         element* elem;
         node* <span class="nocode">next</span>;
     public:
-    };
-          </pre>
-          <p>
-            We need to be able to construct the iterator with two
-            pointers, one to an element and one to a node.  If we make
-            this constructor <code class="prettyprint">public</code>,
-            then anyone can initialize our iterator to an incorrect
-            value.  If we make
-            it <code class="prettyprint">private</code>, then
-            the <code class="prettyprint">linked_list</code> class
-            can't access it.
-          </p>
-          <br />
-          <p>
-            To correctly implement this, we need to use a special
-            keyword: <code class="prettyprint">friend</code>.  Only
-            you and your <code class="prettyprint">friend</code>s can
-            touch your <code class="prettyprint">private</code>
-            members and methods.  Add the following line to the
-            iterator and then declare and implement a private
-            constructor that takes the two pointers.  We also want a
-            public default constructor that does nothing.
-          </p>
-          <pre class="prettyprint">
+    };</pre>
+        <p>
+          We need to be able to construct the iterator with two
+          pointers, one to an element and one to a node.  If we make
+          this constructor <code class="prettyprint">public</code>,
+          then anyone can initialize our iterator to an incorrect
+          value.  If we make
+          it <code class="prettyprint">private</code>, then
+          the <code class="prettyprint">linked_list</code> class
+          can't access it.
+        </p>
+        <p>
+          To correctly implement this, we need to use a special
+          keyword: <code class="prettyprint">friend</code>.  Only
+          you and your <code class="prettyprint">friend</code>s can
+          touch your <code class="prettyprint">private</code>
+          members and methods.  Add the following line to the
+          iterator and then declare and implement a private
+          constructor that takes the two pointers.  We also want a
+          public default constructor that does nothing.
+        </p>
+        <pre class="prettyprint">
         // in iterator
         friend class linked_list;
           </pre>
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['iterator_1_c', 'break_after_iterator_1_c'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="iterator_1_c" class="prettyprint answer hidden">
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
         // in iterator, private
         iterator(element*, node*);
         // in iterator, public
         iterator();
 
 linked_list::iterator::iterator(element* e, node* n) : elem(e), <span class="nocode">next</span>(n) {}
-linked_list::iterator::iterator() {}
-          </pre>
-          <div id="break_after_iterator_1_c" style="display:block;"> <br /> </div>
-          <p>
-            Now we need to define four methods: an equals comparison
-            operator and an unequal comparison operator, an increment
-            operator, and a dereference operator.
-          </p>
-          <br />
-          <p>
-            The equals comparison
-            operator, <code class="prettyprint">operator==(other)</code>,
-            will simply compare if the elements pointed to are the
-            same object.  The unequal comparison
-            operator, <code class="prettyprint">operator!=(other)</code>,
-            will simply return the inverse of the previous.
-          </p>
-          <br />
-          <p>
-            The increment
-            operator, <code class="prettyprint">operator++()</code>,
-            will need to bring the iterator to the next element.
-          </p>
-          <br />
-          <p>
-            The dereference
-            operator, <code class="prettyprint">operator*()</code>,
-            will retrieve the current element.
-          </p>
-          <br />
-          <p>
-            On <code class="prettyprint">const</code> and its
-            applicability to these functions.  This keyword describes
-            the current object.  When a method
-            on <code class="prettyprint">linked_list</code>
-            is <code class="prettyprint">const</code>, it means that
-            the <code class="prettyprint">linked_list</code> and the
-            elements it owns will not be modified via this method.
-            Since an <code class="prettyprint">iterator</code> <u>does
+linked_list::iterator::iterator() {}</pre>
+        </div>
+        <p>
+          Now we need to define four methods: an equals comparison
+          operator and an unequal comparison operator, an increment
+          operator, and a dereference operator.
+        </p>
+        <p>
+          The equals comparison
+          operator, <code class="prettyprint">operator==(other)</code>,
+          will simply compare if the elements pointed to are the
+          same object.  The unequal comparison
+          operator, <code class="prettyprint">operator!=(other)</code>,
+          will simply return the inverse of the previous.
+        </p>
+        <p>
+          The increment
+          operator, <code class="prettyprint">operator++()</code>,
+          will need to bring the iterator to the next element.
+        </p>
+        <p>
+          The dereference
+          operator, <code class="prettyprint">operator*()</code>,
+          will retrieve the current element.
+        </p>
+        <p>
+          On <code class="prettyprint">const</code> and its
+          applicability to these functions.  This keyword describes
+          the current object.  When a method
+          on <code class="prettyprint">linked_list</code>
+          is <code class="prettyprint">const</code>, it means that
+          the <code class="prettyprint">linked_list</code> and the
+          elements it owns will not be modified via this method.
+          Since an <code class="prettyprint">iterator</code> <u>does
             not</u> own the elements it points to, the dereference
-            operator should return a non-constant reference and be
-            declared as <code class="prettyprint">const</code> in
-            its <u>effect on
+          operator should return a non-constant reference and be
+          declared as <code class="prettyprint">const</code> in
+          its <u>effect on
             the <code class="prettyprint">iterator</code></u>, because
-            it doesn't change
-            the <code class="prettyprint">iterator.</code>
-          </p>
-          <pre class="prettyprint">
+          it doesn't change
+          the <code class="prettyprint">iterator.</code>
+        </p>
+        <pre class="prettyprint">
         // in iterator
         bool operator==(const iterator&) const;
         bool operator!=(const iterator&) const;
@@ -412,31 +420,26 @@ iterator& linked_list::iterator::operator++() {
     return *this;
 }
 
-element& linked_list::iterator::operator*() { return *elem; }
-          </pre>
-          <p>
-            This code has a bug
-            in <code class="prettyprint">operator++()</code>.  The bug
-            is due to the nature of our implementation of the
-            <code class="prettyprint">linked_list</code>'s final
-            element.  Try to find it yourself.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['iterator_1_bug', 'break_after_iterator_1_bug'])">
-            Toggle Explanation Visibility
-          </a>
-          <div id="iterator_1_bug" class="hidden">
-            <div class="answer" style="margin-top:1em; margin-left:1em;">
-              <p>
-                What's happening is that when the final element of the
-                list is reached, the next pointer will be null.  We
-                don't test for it to be null before using it, causing
-                bad things to happen.  We have to wrap null checks
-                around the increment operator to fix this.  A non-null
-                pointer is true.
-              </p>
-              <pre class="prettyprint answer">
+element& linked_list::iterator::operator*() { return *elem; }</pre>
+        <p>
+          This code has a bug
+          in <code class="prettyprint">operator++()</code>.  The bug
+          is due to the nature of our implementation of the
+          <code class="prettyprint">linked_list</code>'s final
+          element.  Try to find it yourself.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <div class="content hideContent">
+            <p>
+              What's happening is that when the final element of the
+              list is reached, the next pointer will be null.  We
+              don't test for it to be null before using it, causing
+              bad things to happen.  We have to wrap null checks
+              around the increment operator to fix this.  A non-null
+              pointer is true.
+            </p>
+            <pre class="prettyprint">
 iterator& linked_list::iterator::operator++() {
     if (<span class="nocode">next</span>) {
         elem = <span class="nocode">next</span>-&gt;elem;
@@ -446,46 +449,42 @@ iterator& linked_list::iterator::operator++() {
         <span class="nocode">next</span> = nullptr;
     }
     return *this;
-}
-              </pre>
-            </div>
+}</pre>
           </div>
-          <div id="break_after_iterator_1_bug" style="display:block;"> <br /> </div>
-          <p>
-            Now we will implement the
-            method <code class="prettyprint">insert_after()</code>.
-            This method is very similar
-            to <code class="prettyprint">push_front()</code>.  To do
-            this we need to create a new node for our element, move
-            ownership of the node after the iterator to the new node,
-            then the new node as the iterator's next node.
-          </p>
-          <br />
-          <p>
-            To express ownership of the next node in the iterator, we
-            must use a <code class="prettyprint">unique_ptr</code>.
-            But we didn't use
-            a <code class="prettyprint">unique_ptr</code>, we used a
-            normal pointer to the next element.
-          </p>
-          <br />
-          <p>
-            We must restructure our implementation of
-            the <code class="prettyprint">iterator</code> to correctly
-            express this.
-          </p>
-          <h3> Approach #2 </h3>
-          <p>
-            This time, instead of mimicking
-            a <code class="prettyprint">node</code>, let's use
-            the <code class="prettyprint">node</code> directly.  Since
-            the <code class="prettyprint">iterator</code> doesn't own
-            the <code class="prettyprint">node</code>, and can be
-            reassigned to
-            different <code class="prettyprint">node</code>s, it must
-            be a pointer.
-          </p>
-          <pre class="prettyprint">
+        </div>
+        <p>
+          Now we will implement the
+          method <code class="prettyprint">insert_after()</code>.
+          This method is very similar
+          to <code class="prettyprint">push_front()</code>.  To do
+          this we need to create a new node for our element, move
+          ownership of the node after the iterator to the new node,
+          then the new node as the iterator's next node.
+        </p>
+        <p>
+          To express ownership of the next node in the iterator, we
+          must use a <code class="prettyprint">unique_ptr</code>.
+          But we didn't use
+          a <code class="prettyprint">unique_ptr</code>, we used a
+          normal pointer to the next element.
+        </p>
+        <p>
+          We must restructure our implementation of
+          the <code class="prettyprint">iterator</code> to correctly
+          express this.
+        </p>
+        <h3> Approach #2 </h3>
+        <p>
+          This time, instead of mimicking
+          a <code class="prettyprint">node</code>, let's use
+          the <code class="prettyprint">node</code> directly.  Since
+          the <code class="prettyprint">iterator</code> doesn't own
+          the <code class="prettyprint">node</code>, and can be
+          reassigned to
+          different <code class="prettyprint">node</code>s, it must
+          be a pointer.
+        </p>
+        <pre class="prettyprint">
     class iterator {
         node* current;
         iterator(node*);
@@ -496,13 +495,10 @@ iterator& linked_list::iterator::operator++() {
         bool operator!=(const iterator&) const;
         iterator& operator++();
         element& operator*(const iterator&) const;
-    };
-          </pre>
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['iterator_2', 'break_after_iterator_2'])">
-            Toggle Definition Visibility
-          </a>
-          <pre id="iterator_2" class="prettyprint answer hidden">
+    };</pre>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
 bool operator==(const iterator& other) const {
     return current == other.current;
 }
@@ -516,15 +512,14 @@ iterator& linked_list::iterator::operator++() {
 }
 element& operator*(const iterator& other) const {
     return *current-&gt;elem;
-}
-          </pre>
-          <div id="break_after_iterator_2" style="display:block;"> <br /> </div>
-          <p>
-            Now let's try to implement
-            the <code class="prettyprint">insert_after()</code>
-            method.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        </div>
+        <p>
+          Now let's try to implement
+          the <code class="prettyprint">insert_after()</code>
+          method.
+        </p>
+        <pre class="prettyprint">
     // in linked_list
     void insert_after(iterator, element const&amp;);
 
@@ -533,54 +528,43 @@ void linked_list::push_front(element const&amp; e) {
     unique_ptr&lt;node&gt; node(new node(e));
     node-&gt;<span class="nocode">next</span> = move(head);
     head = node;
-}
-          </pre>
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['insert_after', 'break_after_insert_after'])">
-            Toggle Implementation Visibility
-          </a>
-          <pre id="insert_after" class="prettyprint answer hidden">
+}</pre>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
 void linked_list::insert_after(iterator it, element const&amp; e) {
     unique_ptr&lt;node&gt; node(new node(e));
     node-&gt;<span class="nocode">next</span> = move(it.current-&gt;<span class="nocode">next</span>);
     it.current-&gt;<span class="nocode">next</span> = move(node);
-}
-          </pre>
-          <div id="break_after_insert_after" style="display:block;"> <br /> </div>
-          <p>
-            Now implement <code class="prettyprint">erase_after()</code>.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['erase_after', 'break_after_erase_after'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="erase_after" class="prettyprint answer hidden">
+}</pre>
+        </div>
+        <p>
+          Now implement <code class="prettyprint">erase_after()</code>.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
 void linked_list::erase_after(iterator it) {
     unique_ptr&lt;node&gt; <span class="nocode">next</span> = move(it.current-&gt;<span class="nocode">next</span>);
     it.current-><span class="nocode">next</span> = move(<span class="nocode">next</span>-&gt;<span class="nocode">next</span>);
-}
-          </pre>
-          <div id="break_after_erase_after" style="display:block;"> <br /> </div>
-          <p>
-            Now we need to define the
-            methods <code class="prettyprint">begin()</code>
-            and <code class="prettyprint">end()</code> so that we can
-            use the <code class="prettyprint">iterator</code>s.  The
-            <code class="prettyprint">begin()</code> method will
-            return an <code class="prettyprint">iterator</code>
-            pointing to the first element, and
-            the <code class="prettyprint">end()</code> method will
-            return an <code class="prettyprint">iterator</code> that
-            points to the object after the last -- in this case,
-            looking at the diagram, null.
-          </p>
-          <br />
-          <a href="javascript:void(0)" class="answer_link"
-             onclick="toggle_visibility(['begin_end', 'break_after_begin_end'])">
-            Toggle Answer Visibility
-          </a>
-          <pre id="begin_end" class="prettyprint answer hidden">
+}</pre>
+        </div>
+        <p>
+          Now we need to define the
+          methods <code class="prettyprint">begin()</code>
+          and <code class="prettyprint">end()</code> so that we can
+          use the <code class="prettyprint">iterator</code>s.  The
+          <code class="prettyprint">begin()</code> method will
+          return an <code class="prettyprint">iterator</code>
+          pointing to the first element, and
+          the <code class="prettyprint">end()</code> method will
+          return an <code class="prettyprint">iterator</code> that
+          points to the object after the last -- in this case,
+          looking at the diagram, null.
+        </p>
+        <div class="project answer">
+          <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
+          <pre class="prettyprint content hideContent">
     // in linked_list
     iterator begin();
     iterator end();
@@ -590,14 +574,12 @@ iterator linked_list::begin() {
 }
 iterator linked_list::end() {
     return iterator(nullptr);
-}
-          </pre>
-          <div id="break_after_begin_end" style="display:block;"> <br /> </div>
-          <p>
-            And now we are done implementing
-            our <code class="prettyprint">linked_list</code>.
-          </p>
+}</pre>
         </div>
+        <p>
+          And now we are done implementing
+          our <code class="prettyprint">linked_list</code>.
+        </p>
       </div>
     </div>
   </body>

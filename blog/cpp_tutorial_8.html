@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 8 - Classes</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_8.html">
-              C++ Tutorial 8 - Classes. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            Here we will go over making a class.
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_8.html"><h2 class="title"> C++ Tutorial 8 - Classes </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          Here we will go over making a class.
+        </p>
+        <pre class="prettyprint">
 #include &lt;cstdio&gt;
 
 using namespace std;
@@ -28,150 +79,137 @@ class integer {};
 int main() {
     /* Visual Studio: */ getchar();
     return 0;
-}
-          </pre>
-          <p>
-            To define a class, use the
-            syntax <code class="prettyprint">class my_class_name
+}</pre>
+        <p>
+          To define a class, use the
+          syntax <code class="prettyprint">class my_class_name
             {};</code>.  Our <code class="prettyprint">integer</code> class is going to
-            have a member <code class="prettyprint">int</code> that we
-            are going to provide methods to interact with.
-          </p>
-          <br />
-          <p>
-            To add a member <code class="prettyprint">int</code>
-            named <code class="prettyprint">value</code>,
-            add <code class="prettyprint">int value;</code> inside the
-            curly brackets of the class.  Now make
-            an <code class="prettyprint">integer</code> variable
-            inside <code class="prettyprint">main()</code>.
-          </p>
-          <pre class="prettyprint">
+          have a member <code class="prettyprint">int</code> that we
+          are going to provide methods to interact with.
+        </p>
+        <p>
+          To add a member <code class="prettyprint">int</code>
+          named <code class="prettyprint">value</code>,
+          add <code class="prettyprint">int value;</code> inside the
+          curly brackets of the class.  Now make
+          an <code class="prettyprint">integer</code> variable
+          inside <code class="prettyprint">main()</code>.
+        </p>
+        <pre class="prettyprint">
 class integer { int value; };
 
 int main() {
     integer i;
 
     ...
-}
-          </pre>
-          <p>
-            By default, all members and methods of classes are
-            private, meaning that they can only be accessed from
-            within the class.  So our member variable we've named
-            <code class="prettyprint">value</code> is useless right
-            now.  We need to define a function
-            called <code class="prettyprint"><span class="nocode">get</span>()</code>
-            that will retrieve the value,
-            and <code class="prettyprint"><span class="nocode">set</span>()</code>
-            that will set the value.  We need to first declare these
-            functions, and then separately define them.  Here we will
-            declare them:
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          By default, all members and methods of classes are
+          private, meaning that they can only be accessed from
+          within the class.  So our member variable we've named
+          <code class="prettyprint">value</code> is useless right
+          now.  We need to define a function
+          called <code class="prettyprint"><span class="nocode">get</span>()</code>
+          that will retrieve the value,
+          and <code class="prettyprint"><span class="nocode">set</span>()</code>
+          that will set the value.  We need to first declare these
+          functions, and then separately define them.  Here we will
+          declare them:
+        </p>
+        <pre class="prettyprint">
 class integer {
     int value;
 
     int <span class="nocode">get</span>();
     void <span class="nocode">set</span>(int new_value);
-};
-          </pre>
-          <p>
-            These methods are
-            still <code class="prettyprint">private</code>.  To make
-            them <code class="prettyprint">public</code>,
-            add <code class="prettyprint">public:</code> between the
-            member variable and the methods:
-          </p>
-          <pre class="prettyprint">
+};</pre>
+        <p>
+          These methods are
+          still <code class="prettyprint">private</code>.  To make
+          them <code class="prettyprint">public</code>,
+          add <code class="prettyprint">public:</code> between the
+          member variable and the methods:
+        </p>
+        <pre class="prettyprint">
 class integer {
     int value;
 public:
     int <span class="nocode">get</span>();
     void <span class="nocode">set</span>(int new_value);
-};
-          </pre>
-          <p>
-            Now we will define them, outside of the class body:
-          </p>
-          <pre class="prettyprint">
+};</pre>
+        <p>
+          Now we will define them, outside of the class body:
+        </p>
+        <pre class="prettyprint">
 int integer::<span class="nocode">get</span>() { return value; }
-void integer::<span class="nocode">set</span>(int new_value) { value = new_value; }
-          </pre>
-          <p>
-            The special
-            syntax <code class="prettyprint">integer::</code> tells
-            the computer that the function is a method of the
-            class <code class="prettyprint">integer</code>.
-          </p>
-          <br />
-          <p>
-            Now we can try using our integer class.
-          </p>
-          <pre class="prettyprint">
+void integer::<span class="nocode">set</span>(int new_value) { value = new_value; }</pre>
+        <p>
+          The special
+          syntax <code class="prettyprint">integer::</code> tells
+          the computer that the function is a method of the
+          class <code class="prettyprint">integer</code>.
+        </p>
+        <p>
+          Now we can try using our integer class.
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 
 int main() {
     integer i;
     i.set(3);
     // prints "3"
-    cout << i.get() << "\n";
+    cout &lt;&lt; i.get() &lt;&lt; "\n";
 
     const integer two <u style="color:red">= 2</u>;
-    cout << copy<u style="color:red">.get()</u> << "\n";
+    cout &lt;&lt; copy<u style="color:red">.get()</u> &lt;&lt; "\n";
 
     ...
-}
-          </pre>
-          <p>
-            Uh oh, our integer class gives an error when we try to
-            initialize it with the
-            value <code class="prettyprint">2</code>.  We are trying
-            to use a special method, the constructor, when we haven't
-            defined one.  We are also trying to use
-            the <code class="prettyprint"><span class="nocode">get()</span></code>
-            method on a <code class="prettyprint">const
+}</pre>
+        <p>
+          Uh oh, our integer class gives an error when we try to
+          initialize it with the
+          value <code class="prettyprint">2</code>.  We are trying
+          to use a special method, the constructor, when we haven't
+          defined one.  We are also trying to use
+          the <code class="prettyprint"><span class="nocode">get()</span></code>
+          method on a <code class="prettyprint">const
             integer</code>, when we haven't told the computer that is
-            allowed.
-          </p>
-          <br />
-          <p>
-            Here is how to write the constructor.  Put the following
-            line inside the class:
-          </p>
-          <pre class="prettyprint">
-    integer(int initial_value);
-          </pre>
-          <p>
-            Then define it outside the class:
-          </p>
-          <pre class="prettyprint">
-integer::integer(int initial_value) : value(initial_value) {}
-          </pre>
-          <p>
-            We explicitly call
-            the <code class="prettyprint">int</code>'s constructor
-            with our <code class="prettyprint">initial_value</code>
-            parameter by using the colon
-            (<code class="prettyprint">:</code>) initializer syntax.
-          </p>
-          <br />
-          <p>
-            Now we need to make
-            the <code class="prettyprint"><span class="nocode">get</span>()</code>
-            method work on a <code class="prettyprint">const
+          allowed.
+        </p>
+        <p>
+          Here is how to write the constructor.  Put the following
+          line inside the class:
+        </p>
+        <pre class="prettyprint">
+    integer(int initial_value);</pre>
+        <p>
+          Then define it outside the class:
+        </p>
+        <pre class="prettyprint">
+integer::integer(int initial_value) : value(initial_value) {}</pre>
+        <p>
+          We explicitly call
+          the <code class="prettyprint">int</code>'s constructor
+          with our <code class="prettyprint">initial_value</code>
+          parameter by using the colon
+          (<code class="prettyprint">:</code>) initializer syntax.
+        </p>
+        <p>
+          Now we need to make
+          the <code class="prettyprint"><span class="nocode">get</span>()</code>
+          method work on a <code class="prettyprint">const
             integer</code>.  To do this we add the
-            keyword <code class="prettyprint">const</code> to the
-            description of this method.  We change it both in the
-            declaration and the definition:
-          </p>
-          <pre class="prettyprint">
+          keyword <code class="prettyprint">const</code> to the
+          description of this method.  We change it both in the
+          declaration and the definition:
+        </p>
+        <pre class="prettyprint">
     // in class integer:
-    int <span class="nocode">get</span>() const;
-
-int integer::<span class="nocode">get</span>() const { return value; }
-          </pre>
-        </div>
+    int <span class="nocode">get</span>() const;</pre>
+        <pre class="prettyprint">
+// outside the class integer:
+int integer::<span class="nocode">get</span>() const { return value; }</pre>
       </div>
     </div>
   </body>

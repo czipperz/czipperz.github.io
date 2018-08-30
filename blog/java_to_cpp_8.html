@@ -1,38 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - Rule of Three and the copy and swap idiom</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_8.html"> C++ - Rule of Three and the copy and swap idiom. </a></h2>
-          <h4 class="date">5/8/2016</h4>
-          <p>
-            In C++ it is pretty hard to make exception safe code.
-            Exceptions can come at basically any time.  Every call to
-            <code>new</code> can throw, every function call (or
-            operator function!) can throw.  To make good programs we
-            have to figure out how to make code that won't fail in the
-            face of exceptions.
-          </p>
-          <br />
-          <p>
-            The copy and swap idiom addresses this in copy
-            constructors, and helps us to simplify code.
-          </p>
-          <br />
-          <p>
-            First lets start with a basic example of a class with a
-            controlled pointer:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_8.html"><h2 class="title"> Java to C++ - Rule of Three and the copy and swap idiom </h2></a>
+        <h4 class="date">5/8/2016</h4>
+        <p>
+          In C++ it is pretty hard to make exception safe code.
+          Exceptions can come at basically any time.  Every call to
+          <code>new</code> can throw, every function call (or
+          operator function!) can throw.  To make good programs we
+          have to figure out how to make code that won't fail in the
+          face of exceptions.
+        </p>
+        <p>
+          The copy and swap idiom addresses this in copy
+          constructors, and helps us to simplify code.
+        </p>
+        <p>
+          First lets start with a basic example of a class with a
+          controlled pointer:
+        </p>
+        <pre class="prettyprint">
 class SwapExample {
     int* my_int;
 public:
@@ -47,16 +97,15 @@ public:
 int main() {
     SwapExample se(3);
     SwapExample copy = se;
-}
-          </pre>
-          <p>
-            But when this program is ran, there is a double free.
-            This is because we didn't properly follow the rule of
-            three.  When you make a destructor that frees a resource,
-            you need to also make a copy constructor and copy
-            assignment operator.  Here is an example of this:
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          But when this program is ran, there is a double free.
+          This is because we didn't properly follow the rule of
+          three.  When you make a destructor that frees a resource,
+          you need to also make a copy constructor and copy
+          assignment operator.  Here is an example of this:
+        </p>
+        <pre class="prettyprint">
 class SwapExample {
     int* my_int;
 public:
@@ -87,29 +136,26 @@ int main() {
     copy.set(5);
     assert(copy.get() == 5);
     assert(se.get() == 3);
-}
-          </pre>
-          <p>
-            This is a decent implementation, but it breaks the DRY
-            principle of not repeating yourself.  We repeat the
-            <code>delete my_int</code> in the copy assignment operator
-            and the destructor, and <code>new int(*other.my_int)</code>
-            in the copy constructor and the copy assignment operator.
-          </p>
-          <br />
-          <p>
-            In addition, it is not exception safe because if the
-            memory allocation fails in the copy constructor,
-            <code>my_int</code> points to deallocated memory, but the
-            user of this class might still use it.
-          </p>
-          <br />
-          <p>
-            If we instead copy the object, then swap in those new
-            values, we would solve both the repetition problem and the
-            exception unsafety.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          This is a decent implementation, but it breaks the DRY
+          principle of not repeating yourself.  We repeat the
+          <code>delete my_int</code> in the copy assignment operator
+          and the destructor, and <code>new int(*other.my_int)</code>
+          in the copy constructor and the copy assignment operator.
+        </p>
+        <p>
+          In addition, it is not exception safe because if the
+          memory allocation fails in the copy constructor,
+          <code>my_int</code> points to deallocated memory, but the
+          user of this class might still use it.
+        </p>
+        <p>
+          If we instead copy the object, then swap in those new
+          values, we would solve both the repetition problem and the
+          exception unsafety.
+        </p>
+        <pre class="prettyprint">
 class SwapExample {
     int* my_int;
 public:
@@ -143,28 +189,26 @@ void swap(SwapExample&amp; first, SwapExample&amp; second) {
     first.swap(second);
 }
 }
-          </pre>
-          <p>
-            By having our copy assignment operator take the class by
-            <i>value</i>, it allows some compiler optimizations and
-            allows brevity in code.  The following code has about the
-            same semantic meaning, but has more boilerplate (that I
-            underlined):
-          </p>
-          <pre class="prettyprint">
+        </pre>
+        <p>
+          By having our copy assignment operator take the class by
+          <i>value</i>, it allows some compiler optimizations and
+          allows brevity in code.  The following code has about the
+          same semantic meaning, but has more boilerplate (that I
+          underlined):
+        </p>
+        <pre class="prettyprint">
 SwapExample&amp; operator=(<u>const SwapExample&amp; other</u>) {
     SwapExample copy<u>(other)</u>;
     swap(copy);
     return *this;
-}
-          </pre>
-          <p>
-            In summary, using <code>swap</code> provides more
-            functionality for your class (a way to swap instances),
-            simplifies the copying of the class by removing redundant
-            code, and is safer.
-          </p>
-        </div>
+}</pre>
+        <p>
+          In summary, using <code>swap</code> provides more
+          functionality for your class (a way to swap instances),
+          simplifies the copying of the class by removing redundant
+          code, and is safer.
+        </p>
       </div>
     </div>
   </body>

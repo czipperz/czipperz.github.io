@@ -1,32 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - method modifiers</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_5.html"> Java to C++ - method modifiers. </a></h2>
-          <h4 class="date">9/26/2015</h4>
-          <p>
-            Like in Java, you can add modifiers to methods, such as
-            specifying what they can throw or declaring them
-            as <code>const</code>.  These are very powerful and fit
-            right into the type system.
-          </p>
-          <br />
-          <p>
-            Let's look at how to apply <code>const</code> properly to
-            methods.  Last time we showed two methods that retrieve
-            elements from the <code>Array</code>:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_5.html"><h2 class="title"> Java to C++ - method modifiers </h2></a>
+        <p class="description">9/26/2015</p>
+        <p>
+          Like in Java, you can add modifiers to methods, such as
+          specifying what they can throw or declaring them
+          as <code>const</code>.  These are very powerful and fit
+          right into the type system.
+        </p>
+        <p>
+          Let's look at how to apply <code>const</code> properly to
+          methods.  Last time we showed two methods that retrieve
+          elements from the <code>Array</code>:
+        </p>
+        <pre class="prettyprint">
 // unchecked const access
 T&amp; operator[](int index) {
     return array_start[index];
@@ -37,17 +88,16 @@ T&amp; at(int index) {
     if(index &lt; 0 || index &gt;= length)
         throw std::out_of_range("Index out of range");
     return array_start[index];
-}
-          </pre>
-          <p>
-            None of the methods on the <code>Array</code> class have
-            a <code>const</code> flag so a <code>const Array</code> is
-            useless!  Looking at these methods, it makes sense to make
-            a <code>const operator[]</code> method that will return
-            a <code>const</code> reference rather than a normal
-            reference.  Let's implement that:
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          None of the methods on the <code>Array</code> class have
+          a <code>const</code> flag so a <code>const Array</code> is
+          useless!  Looking at these methods, it makes sense to make
+          a <code>const operator[]</code> method that will return
+          a <code>const</code> reference rather than a normal
+          reference.  Let's implement that:
+        </p>
+        <pre class="prettyprint">
 // unchecked const access
 const T&amp; operator[](int index) const {
     return array_start[index];
@@ -58,22 +108,19 @@ const T&amp; at(int index) const {
     if(index &lt; 0 || index &gt;= length)
         throw std::out_of_range("Index out of range");
     return array_start[index];
-}
-          </pre>
-          <p>
-            Now we can read elements from our <code>const Array</code>
-            without changing it!  Each element returned will be
-            a <code>const</code> reference so cannot be modified,
-            ensuring the <code>const</code>ness of the
-            <code>Array</code>.
-          </p>
-          <br />
-          <p>
-            I'll showing template meta programming next time and how
-            to make your classes work with the standard library
-            functions.
-          </p>
-        </div>
+}</pre>
+        <p>
+          Now we can read elements from our <code>const Array</code>
+          without changing it!  Each element returned will be
+          a <code>const</code> reference so cannot be modified,
+          ensuring the <code>const</code>ness of the
+          <code>Array</code>.
+        </p>
+        <p>
+          I'll showing template meta programming next time and how
+          to make your classes work with the standard library
+          functions.
+        </p>
       </div>
     </div>
   </body>

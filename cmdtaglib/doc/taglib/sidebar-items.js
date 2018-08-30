@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["FileError",""],["FileType",""]],"fn":[["set_strings_unicode","Enables or disables the Unicode string management."]],"mod":[["taglib_sys",""]],"struct":[["AudioProperties","Common audio file properties."],["File","A representation of an audio file, with meta-data and properties."],["Tag","The abstract meta-data container for audio files"]]});

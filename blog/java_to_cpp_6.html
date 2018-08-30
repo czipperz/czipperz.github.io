@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - polymorphism</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_6.html"> Java to C++ - polymorphism. </a></h2>
-          <h4 class="date">9/27/2015</h4>
-          <p>
-            As we saw earlier, the main goals of C++ are as follows:
-          </p>
-          <ul>
-            <li>Extremely general/flexible</li>
-            <li>Zero-overhead abstractions</li>
-            <li>Well-specified interfaces</li>
-          </ul>
-          <span style="font-size:12px">Source: Bjarne Stroustrup,
-            inventor of C++ <i>"Make Simple Tasks Simple!"</i> CppCon 2014</span>
-          <br /><br />
-          <p>
-            This means that when you have to make methods that accept
-            general types, you have to make it fast and flexible.
-            Java tries to do general types with interfaces and generic
-            types.  This works well, but incurs a big runtime
-            overhead.  Let's do it anyway, because you're going to see
-            it somewhere eventually.  This concept of making
-            a <code>interface</code> then extending it is called
-            polymorphism.  Polymorphism is a very easy way to create
-            abstractions but it is pretty slow.  Here is how it works
-            in C++.  Next post I'll look at <code>template metaprogramming</code>
-            which is like generic programming in Java on steroids.
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_6.html"><h2 class="title"> Java to C++ - polymorphism </h2></a>
+        <p class="description">9/27/2015</p>
+        <p>
+          As we saw earlier, the main goals of C++ are as follows:
+        </p>
+        <ul>
+          <li>Extremely general/flexible</li>
+          <li>Zero-overhead abstractions</li>
+          <li>Well-specified interfaces</li>
+        </ul>
+        <span style="font-size:12px">Source: Bjarne Stroustrup,
+          inventor of C++ <i>"Make Simple Tasks Simple!"</i> CppCon 2014</span>
+        <p>
+          This means that when you have to make methods that accept
+          general types, you have to make it fast and flexible.
+          Java tries to do general types with interfaces and generic
+          types.  This works well, but incurs a big runtime
+          overhead.  Let's do it anyway, because you're going to see
+          it somewhere eventually.  This concept of making
+          a <code>interface</code> then extending it is called
+          polymorphism.  Polymorphism is a very easy way to create
+          abstractions but it is pretty slow.  Here is how it works
+          in C++.  Next post I'll look at <code>template metaprogramming</code>
+          which is like generic programming in Java on steroids.
+        </p>
+        <pre class="prettyprint">
 class printable {
   public:
     virtual void print() = 0;
@@ -52,56 +103,51 @@ class one : public printable {
 class two : public printable {
   public:
     void print() { std::cout &lt;&lt; "two" &lt;&lt; std::end; }
-};
-          </pre>
-          <p>
-            Here we see that we use a new keyword,
-            <code>virtual</code> and some weird <code>= 0</code>
-            thing.  <code>virtual</code> tells the compiler that this
-            class should be extensible and overridden print methods
-            should be called instead <code>printable</code>'s own.
-          </p>
-          <br />
-          <p>
-            This is the default behavior in Java but it isn't in C++
-            for performance reasons.  If a class isn't polymorphic,
-            not having any virtual methods, then it can be turned into
-            a plain old data structure and all calls to its "methods"
-            are just function calls that take an implicit pointer to
-            the struct.  This means that using object orientation
-            without inheritance is as fast as C!
-          </p>
-          <br />
-          <p>
-            The <code>= 0</code> is the exact same as the abstract
-            keyword.  It just enforces that the <code>printable</code>
-            "interface" must have an overridden <code>print</code>
-            method to be able to be constructed.
-          </p>
-          <br />
-          <p>
-            One thing you should note is that you use a colon to show
-            extension, rather than a keyword.  The colon takes a list
-            of classes and the way in which to extend them.  By
-            default, inheritance is <code>private</code>.  This means
-            that only your class knows that it is an instance of the
-            other class.  Most of the time private inheritance is used
-            when you want to do advanced template metaprogramming and
-            public inheritance is done most everywhere else.
-            Protected inheritance is the other modifier, meaning that
-            only subclasses have access to the data or to the knowledge of inheritance, as there are no
-            packages in C++.
-          </p>
-          <br />
-          <p>
-            Now let's look at an example of subtle problems with
-            polymorphism in C++.  Java solves this by making
-            everything a pointer, and the behavior of a pointer in C++
-            is the same intuitive thing that it is in Java.  BTW
-            putting braces in C++ enters a "sub scope".  It's like
-            an <code>if(true) {}</code>.
-          </p>
-          <pre class="prettyprint">
+};</pre>
+        <p>
+          Here we see that we use a new keyword,
+          <code>virtual</code> and some weird <code>= 0</code>
+          thing.  <code>virtual</code> tells the compiler that this
+          class should be extensible and overridden print methods
+          should be called instead <code>printable</code>'s own.
+        </p>
+        <p>
+          This is the default behavior in Java but it isn't in C++
+          for performance reasons.  If a class isn't polymorphic,
+          not having any virtual methods, then it can be turned into
+          a plain old data structure and all calls to its "methods"
+          are just function calls that take an implicit pointer to
+          the struct.  This means that using object orientation
+          without inheritance is as fast as C!
+        </p>
+        <p>
+          The <code>= 0</code> is the exact same as the abstract
+          keyword.  It just enforces that the <code>printable</code>
+          "interface" must have an overridden <code>print</code>
+          method to be able to be constructed.
+        </p>
+        <p>
+          One thing you should note is that you use a colon to show
+          extension, rather than a keyword.  The colon takes a list
+          of classes and the way in which to extend them.  By
+          default, inheritance is <code>private</code>.  This means
+          that only your class knows that it is an instance of the
+          other class.  Most of the time private inheritance is used
+          when you want to do advanced template metaprogramming and
+          public inheritance is done most everywhere else.
+          Protected inheritance is the other modifier, meaning that
+          only subclasses have access to the data or to the knowledge of inheritance, as there are no
+          packages in C++.
+        </p>
+        <p>
+          Now let's look at an example of subtle problems with
+          polymorphism in C++.  Java solves this by making
+          everything a pointer, and the behavior of a pointer in C++
+          is the same intuitive thing that it is in Java.  BTW
+          putting braces in C++ enters a "sub scope".  It's like
+          an <code>if(true) {}</code>.
+        </p>
+        <pre class="prettyprint">
 int main() {
     // Error!  Can't use a abstract class as value type!
     // printable x = sub();
@@ -135,25 +181,22 @@ int main() {
         // output one!  Assigning to a pointer will change the pointer
         // rather than the memory!
     }
-}
-          </pre>
-          <p>
-            In the main method, we see that an interface / abstract
-            class is best used as a pointer, which takes away the
-            benefits of deterministic destruction at the end of scopes.
-          </p>
-          <br />
-          <p>
-            The problem with polymorphism is that it forces the entire
-            class to be allocated differently and that method call to
-            be looked up at runtime.  Template Metaprogramming shifts
-            this method lookup to compile time and makes your methods
-            more general by removing interfaces and just accessing
-            fields directly.  This can even make your methods
-            generically work over objects and native types (int,
-            float...) all in the same way!
-          </p>
-        </div>
+}</pre>
+        <p>
+          In the main method, we see that an interface / abstract
+          class is best used as a pointer, which takes away the
+          benefits of deterministic destruction at the end of scopes.
+        </p>
+        <p>
+          The problem with polymorphism is that it forces the entire
+          class to be allocated differently and that method call to
+          be looked up at runtime.  Template Metaprogramming shifts
+          this method lookup to compile time and makes your methods
+          more general by removing interfaces and just accessing
+          fields directly.  This can even make your methods
+          generically work over objects and native types (int,
+          float...) all in the same way!
+        </p>
       </div>
     </div>
   </body>

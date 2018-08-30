@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - Pointers and Classes</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_4.html"> Java to C++ - Pointers and Classes. </a></h2>
-          <h4 class="date">9/25/2015</h4>
-          <p>
-            Pointers are fundamentally simple.  They simply tell you
-            where a value is rather than giving you the actual value.
-            However, because of how destructors work, they can be
-            dangerous to use in certain situations.
-            Let's look at an example of a pointer:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_4.html"><h2 class="title"> Java to C++ - Pointers and Classes </h2></a>
+        <p class="description">9/25/2015</p>
+        <p>
+          Pointers are fundamentally simple.  They simply tell you
+          where a value is rather than giving you the actual value.
+          However, because of how destructors work, they can be
+          dangerous to use in certain situations.
+          Let's look at an example of a pointer:
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 
 int main() {
@@ -31,39 +83,36 @@ int main() {
 // memory leak!  This is not caught by compiler!  int_ptr
 // is never deleted add ``delete int_ptr`` to the end, or
 // use a value type int instead
-}
-          </pre>
-          <p>
-            This shows the basic usage of a pointer.  In Java, ints
-            are always value types, so you have to return an int to
-            modify a variable.  In C++, everything is a value type
-            unless explicitly marked as a pointer or reference.
-          </p>
-          <br />
-          <p>
-            Pointers are different from references in that their
-            semantics require a dereference before usage.  You can
-            dereference a pointer into a value bye using the
-            unary <code>*</code> operator.  However,
-            the <code>*</code> operator is annoying as it is right
-            associative.  This means that <code>*ptr.y = 10;</code>
-            would be invalid as the ptr isn't dereferenced before
-            usage!  To overcome this, use the <code>-&gt;</code>
-            operator, which basically replaces <code>ptr-&gt;y</code>
-            with <code>(*ptr).y</code>.  In C++ the <code>this</code>
-            keyword is just a pointer to self, meaning that you have
-            to use <code>this-&gt;field</code> to access something
-            rather than <code>this.field</code>.  Note that
-            Java's <code>.</code> operator is literally the exact same
-            as C++'s <code>-&gt;</code> operator.
-          </p>
-          <br />
-          <p>
-            Pointers allow you to access native memory locations, so a
-            pointer and int pair is all that an array really is!
-            Let's implement a simple class to represent an array:
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          This shows the basic usage of a pointer.  In Java, ints
+          are always value types, so you have to return an int to
+          modify a variable.  In C++, everything is a value type
+          unless explicitly marked as a pointer or reference.
+        </p>
+        <p>
+          Pointers are different from references in that their
+          semantics require a dereference before usage.  You can
+          dereference a pointer into a value bye using the
+          unary <code>*</code> operator.  However,
+          the <code>*</code> operator is annoying as it is right
+          associative.  This means that <code>*ptr.y = 10;</code>
+          would be invalid as the ptr isn't dereferenced before
+          usage!  To overcome this, use the <code>-&gt;</code>
+          operator, which basically replaces <code>ptr-&gt;y</code>
+          with <code>(*ptr).y</code>.  In C++ the <code>this</code>
+          keyword is just a pointer to self, meaning that you have
+          to use <code>this-&gt;field</code> to access something
+          rather than <code>this.field</code>.  Note that
+          Java's <code>.</code> operator is literally the exact same
+          as C++'s <code>-&gt;</code> operator.
+        </p>
+        <p>
+          Pointers allow you to access native memory locations, so a
+          pointer and int pair is all that an array really is!
+          Let's implement a simple class to represent an array:
+        </p>
+        <pre class="prettyprint">
 #include &lt;stdexcept&gt;   // std::out_of_range
 
 // forces generic usage of this like Array&lt;int&gt; for
@@ -100,44 +149,41 @@ class Array {
             throw std::out_of_range("Index out of range");
         return array_start[index];
     }
-}; // all structures must end with semicolon
-          </pre>
-          <p>
-            A potential problem is that any copies of
-            this <code>Array</code> don't make a deep copy, they just
-            copy the pointer location, resulting in a possible double
-            deletion!  It also just isn't good style to have
-            constructors written this way, because if any of the
-            values were <code>const</code>, then it would be a syntax
-            error!  Let's fix the constructors:
-          </p>
-          <pre class="prettyprint">
+}; // all structures must end with semicolon</pre>
+        <p>
+          A potential problem is that any copies of
+          this <code>Array</code> don't make a deep copy, they just
+          copy the pointer location, resulting in a possible double
+          deletion!  It also just isn't good style to have
+          constructors written this way, because if any of the
+          values were <code>const</code>, then it would be a syntax
+          error!  Let's fix the constructors:
+        </p>
+        <pre class="prettyprint">
 Array() : array_start(new T[10])
-        , length(10) { }
-          </pre>
-          <p>
-            This now constructs the values with <code>new T[10]</code>
-            and <code>10</code> rather than copying them in after they
-            have been constructed.  It also separates the
-            initialization from the code and makes it cleaner overall.
-          </p>
-          <br />
-          <p>
-            Now let's get into the real problem with the class, any
-            copies are not true copies!  C++ has an implicitly defined
-            method called a copy constructor on every object.  It is
-            called to initialize a copy of an object.  For this
-            reason, there is no generic clone method, just
-            use <code>&lt;type&gt; copy = old;</code>!  The auto
-            generated copy constructor works great for classes without
-            pointers but not so well when there are pointers.  Every
-            copy constructor should be accompanied by a copy
-            assignment operator, as show below.  The copy constructor
-            and copy assignment operators <i>need</i> to take a const
-            reference to the type, such as <code>const
+        , length(10) { }</pre>
+        <p>
+          This now constructs the values with <code>new T[10]</code>
+          and <code>10</code> rather than copying them in after they
+          have been constructed.  It also separates the
+          initialization from the code and makes it cleaner overall.
+        </p>
+        <p>
+          Now let's get into the real problem with the class, any
+          copies are not true copies!  C++ has an implicitly defined
+          method called a copy constructor on every object.  It is
+          called to initialize a copy of an object.  For this
+          reason, there is no generic clone method, just
+          use <code>&lt;type&gt; copy = old;</code>!  The auto
+          generated copy constructor works great for classes without
+          pointers but not so well when there are pointers.  Every
+          copy constructor should be accompanied by a copy
+          assignment operator, as show below.  The copy constructor
+          and copy assignment operators <i>need</i> to take a const
+          reference to the type, such as <code>const
             Array&amp;</code>.
-          </p>
-          <pre class="prettyprint">
+        </p>
+        <pre class="prettyprint">
 #include &lt;algorithm&gt;   // std::copy
 
 // copy constructor
@@ -157,14 +203,12 @@ Array&amp; operator=(const Array& other) {
     // remember to always ``return *this;`` so it can be
     // assigned to in function arguments.
     return *this;
-}
-          </pre>
-          <p>
-            As you can see, pointers and pointer arithmetic are really
-            cool and powerful but they make it easy to "shoot yourself
-            in the foot" if you don't know what to do with them.
-          </p>
-        </div>
+}</pre>
+        <p>
+          As you can see, pointers and pointer arithmetic are really
+          cool and powerful but they make it easy to "shoot yourself
+          in the foot" if you don't know what to do with them.
+        </p>
       </div>
     </div>
   </body>

@@ -1,40 +1,91 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - template metaprogramming</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_7.html"> Java to C++ - template metaprogramming. </a></h2>
-          <h4 class="date">10/1/2015</h4>
-          <p>
-            Template metaprogramming has to be one of the coolest ways
-            of abstracting your code.  It is very similar to
-            polymorphism because it is polymorphism!  The only
-            difference is that template metaprogramming happens at
-            compile time rather than runtime time.  Template
-            metaprogramming can be used to mimic functional
-            programming languages or to build abstract ways of using
-            generic code.
-          </p>
-          <br />
-          <p>
-            So why do we need template metaprogramming?  The real
-            reason is that we want to remove stupid duplicate code.
-            Java allows you to use polymorphism and generic
-            programming but these methods only work on classes and not
-            on builtin data types.  I implemented a small example in
-            to show how code repetition is bad (underlined are the
-            only changes):
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_7.html"><h2 class="title"> Java to C++ - template metaprogramming </h2></a>
+        <p class="description">10/1/2015</p>
+        <p>
+          Template metaprogramming has to be one of the coolest ways
+          of abstracting your code.  It is very similar to
+          polymorphism because it is polymorphism!  The only
+          difference is that template metaprogramming happens at
+          compile time rather than runtime time.  Template
+          metaprogramming can be used to mimic functional
+          programming languages or to build abstract ways of using
+          generic code.
+        </p>
+        <p>
+          So why do we need template metaprogramming?  The real
+          reason is that we want to remove stupid duplicate code.
+          Java allows you to use polymorphism and generic
+          programming but these methods only work on classes and not
+          on builtin data types.  I implemented a small example in
+          to show how code repetition is bad (underlined are the
+          only changes):
+        </p>
+        <pre class="prettyprint">
 <u>int</u> max(<u>int</u> x, <u>int</u> y) {
     return x &gt; y ? x : y;
 }
@@ -43,37 +94,34 @@
 }
 <u>double</u> max(<u>double</u> x, <u>double</u> y) {
     return x &gt; y ? x : y;
-}
-          </pre>
-          <p>
-            As you can see, we have a lot of uninteresting code that
-            is honestly pretty useless.  C++ allows us to abstract
-            over this using a template.  This template will work
-            on <i>any type</i> that implements the greater than
-            operator!
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          As you can see, we have a lot of uninteresting code that
+          is honestly pretty useless.  C++ allows us to abstract
+          over this using a template.  This template will work
+          on <i>any type</i> that implements the greater than
+          operator!
+        </p>
+        <pre class="prettyprint">
 template&lt;class T&gt;
 T max(const T& x, const T& y) {
     return x &gt; y ? x : y;
-}
-          </pre>
-          <p>
-            Don't be fooled when I write <code>class T</code>!  It
-            works perfectly well
-            with <code>int</code>s, <code>float</code>s, etc!
-          </p>
-          <br />
-          <p>
-            Since the template is resolved <i>at compile time</i>, you
-            can even create specializations of a function that will
-            act differently!  Let's take all integral types
-            (<code>char</code>, <code>int</code>, <code>double</code>
-            etc) as values rather than references: (note that this
-            only works in C++11 and beyond because of the time that
-            the standard library incorporated it in.)
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          Don't be fooled when I write <code>class T</code>!  It
+          works perfectly well
+          with <code>int</code>s, <code>float</code>s, etc!
+        </p>
+        <p>
+          Since the template is resolved <i>at compile time</i>, you
+          can even create specializations of a function that will
+          act differently!  Let's take all integral types
+          (<code>char</code>, <code>int</code>, <code>double</code>
+          etc) as values rather than references: (note that this
+          only works in C++11 and beyond because of the time that
+          the standard library incorporated it in.)
+        </p>
+        <pre class="prettyprint">
 #include &lt;type_traits&gt;
 
 template&lt;class T&gt;
@@ -86,53 +134,50 @@ template&lt;class T&gt;
 typename std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value, T&gt;::type
 max(T x, T y) {
     return x &gt; y ? x : y;
-}
-          </pre>
-          <p>
-            Let's look at the line <code>typename
+}</pre>
+        <p>
+          Let's look at the line <code>typename
             std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value,
             T&gt;::type</code>.  The <code>std::is_arithmetic&lt;T&gt;</code>
-            part creates a class at compile time that has one field:
-            value.  This field is true if the type given is an
-            arithmetic type (<code>int</code>, <code>float</code>,
-            <code>char</code>, <code>bool</code>, <code>double</code>,
-            <code>unsigned long</code>, etc.), and false if it is not.
-            The <code>::value</code> then will extract this bool.
-            This means that the <code>std::enable_if&lt;...,
+          part creates a class at compile time that has one field:
+          value.  This field is true if the type given is an
+          arithmetic type (<code>int</code>, <code>float</code>,
+          <code>char</code>, <code>bool</code>, <code>double</code>,
+          <code>unsigned long</code>, etc.), and false if it is not.
+          The <code>::value</code> then will extract this bool.
+          This means that the <code>std::enable_if&lt;...,
             T&gt;::type</code> line tells the compiler to only use
-            this implementation only if the bool given in the first
-            parameter is true.  Then the <code>::type</code> extracts
-            the <code>T</code> from it if it is true and allows you to
-            use that as the return type by
-            putting <code>typename</code> before it!  All of this
-            functionality is not builtin to the language, allowing you
-            to make your own methods that have their own
-            specifications.
-          </p>
-          <br />
-          <p>
-            The following code will swap two references of any type
-            implementing a copy assignment operator and copy
-            constructor.
-          </p>
-          <pre class="prettyprint">
+          this implementation only if the bool given in the first
+          parameter is true.  Then the <code>::type</code> extracts
+          the <code>T</code> from it if it is true and allows you to
+          use that as the return type by
+          putting <code>typename</code> before it!  All of this
+          functionality is not builtin to the language, allowing you
+          to make your own methods that have their own
+          specifications.
+        </p>
+        <p>
+          The following code will swap two references of any type
+          implementing a copy assignment operator and copy
+          constructor.
+        </p>
+        <pre class="prettyprint">
 template&lt;class T&gt;
 void swap(T& a, T& b) {
     T temp = a;
     a = b;
     b = temp;
-}
-          </pre>
-          <p>
-            A lot of really cool things are possible with template
-            metaprogramming!  I suggest watching
-            <a href="https://www.youtube.com/watch?v=Am2is2QCvxY">these</a>
-            <a href="https://www.youtube.com/watch?v=a0FliKwcwXE">videos</a>
-            if you are interested in learning more.  Before I end it
-            though, I will show you a side by side comparison of
-            template meta programming with interfaces in C++.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          A lot of really cool things are possible with template
+          metaprogramming!  I suggest watching
+          <a href="https://www.youtube.com/watch?v=Am2is2QCvxY">these</a>
+          <a href="https://www.youtube.com/watch?v=a0FliKwcwXE">videos</a>
+          if you are interested in learning more.  Before I end it
+          though, I will show you a side by side comparison of
+          template meta programming with interfaces in C++.
+        </p>
+        <pre class="prettyprint">
 class incrementable {
     virtual incrementable& operator++() = 0;
     virtual incrementable& operator--() = 0;
@@ -152,14 +197,13 @@ void add_five_times(incrementable& a) {
         // use prefix with classes!
         ++a;
     }
-}
-          </pre>
-          <p>
-            This method works fine for basic operations but breaks
-            down if you want to intersperse classes and arithmetic
-            types.  Let's implement something similar using templates.
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          This method works fine for basic operations but breaks
+          down if you want to intersperse classes and arithmetic
+          types.  Let's implement something similar using templates.
+        </p>
+        <pre class="prettyprint">
 #include &lt;type_traits&gt;
 
 template&lt;class T, class = void&gt;
@@ -181,55 +225,49 @@ template&lt;class T&gt;
     add_five_times(T& a) {
     for(int i = 0; i &lt; 5; i++)
         ++a;
-}
-          </pre>
-          <p>
-            The second and third lines dictate the base case: if none
-            of the other more specialized cases match, then we extend
-            false_type: a class that aliases <code>false</code> to the
-            value <code>type</code>.  This means that we only
-            get <code>type</code> as <code>true</code> if the absurd
-            case occurs: the class fits our interface.
-          </p>
-          <br />
-          <p>
-            Now we have to define under what situations we will have
-            a <code>true_type</code>.  The second struct
-            initialization will only trigger if the class defines a
-            prefix <code>++</code> and <code>--</code> operator and
-            both of those operators return a reference to the class.
-            <code>enable_if</code> only defines the <code>type</code>
-            member if the condition is true, meaning that the code
-            won't evaluate at all if it doesn't fit the description of
-            the interface.
-          </p>
-          <br />
-          <p>
-            The third case will enact on any type that is considered
-            arithmetic: <code>int</code>, <code>float</code>,
-            <code>bool</code>, <code>char</code>, <code>long</code>,
-            etc.  For some reason they don't work with the second
-            condition but they should still be considered
-            incrementable.
-          </p>
-          <br />
-          <p>
-            We then use incrementable by declaring the return type as
-            void if the type is incrementable, <i>and not implementing
+}</pre>
+        <p>
+          The second and third lines dictate the base case: if none
+          of the other more specialized cases match, then we extend
+          false_type: a class that aliases <code>false</code> to the
+          value <code>type</code>.  This means that we only
+          get <code>type</code> as <code>true</code> if the absurd
+          case occurs: the class fits our interface.
+        </p>
+        <p>
+          Now we have to define under what situations we will have
+          a <code>true_type</code>.  The second struct
+          initialization will only trigger if the class defines a
+          prefix <code>++</code> and <code>--</code> operator and
+          both of those operators return a reference to the class.
+          <code>enable_if</code> only defines the <code>type</code>
+          member if the condition is true, meaning that the code
+          won't evaluate at all if it doesn't fit the description of
+          the interface.
+        </p>
+        <p>
+          The third case will enact on any type that is considered
+          arithmetic: <code>int</code>, <code>float</code>,
+          <code>bool</code>, <code>char</code>, <code>long</code>,
+          etc.  For some reason they don't work with the second
+          condition but they should still be considered
+          incrementable.
+        </p>
+        <p>
+          We then use incrementable by declaring the return type as
+          void if the type is incrementable, <i>and not implementing
             the function at all if it isn't incrementable</i>.  This
-            new function works over all types that worked on the
-            interface example as well as all numeric types!  All of
-            this happens at compile time, so there is also no overhead
-            of a virtual function.
-          </p>
-          <br />
-          <p>
-            As you have seen, template metaprogramming can be very
-            complicated, but it allows you to generalize your code
-            more and push polymorphism to compile time rather than
-            runtime.
-          </p>
-        </div>
+          new function works over all types that worked on the
+          interface example as well as all numeric types!  All of
+          this happens at compile time, so there is also no overhead
+          of a virtual function.
+        </p>
+        <p>
+          As you have seen, template metaprogramming can be very
+          complicated, but it allows you to generalize your code
+          more and push polymorphism to compile time rather than
+          runtime.
+        </p>
       </div>
     </div>
   </body>

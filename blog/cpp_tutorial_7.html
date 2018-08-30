@@ -1,24 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 7 - const</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_7.html">
-              C++ Tutorial 7 - <code class="prettyprint">const</code>. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            Here we will go over the <code class="prettyprint">const</code> keyword.
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_7.html"><h2 class="title">
+            C++ Tutorial 7 - <code class="prettyprint">const</code> </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          Here we will go over the <code class="prettyprint">const</code> keyword.
+        </p>
+        <pre class="prettyprint">
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
 
@@ -30,18 +82,17 @@ int main() {
 
     /* Visual Studio: */ getchar();
     return 0;
-}
-          </pre>
-          <p>
-            Here we declare a string and initialize it with the
-            value <code class="prettyprint">"Message"</code>.  We then
-            append <code class="prettyprint">" for you!"</code>,
-            making <code class="prettyprint">message</code>
-            contain <code class="prettyprint">"Message for
+}</pre>
+        <p>
+          Here we declare a string and initialize it with the
+          value <code class="prettyprint">"Message"</code>.  We then
+          append <code class="prettyprint">" for you!"</code>,
+          making <code class="prettyprint">message</code>
+          contain <code class="prettyprint">"Message for
             you!"</code>.  Let's extract out this appendage to a
-            function.
-          </p>
-          <pre class="prettyprint">
+          function.
+        </p>
+        <pre class="prettyprint">
 void append(string&amp; str) {
     str += " for you!";
 }
@@ -62,54 +113,49 @@ void append(string&amp; str) {
 #include &lt;iostream&gt;
 void <span class="nocode">print</span>(string&amp; str) {
     cout &lt;&lt; str;
-}
-          </pre>
-          <p>
-            The <code class="prettyprint">str</code> parameter is taken
-            by reference.  Just like
-            in <code class="prettyprint">append</code>, we are able to
-            modify the <code class="prettyprint">string</code>.  Since
-            our print function doesn't actually modify the string, we
-            should tell the computer that it won't.  To do this, we
-            add the keyword <code class="prettyprint">const</code>
-            before the ampersand marking it as a reference:
-          </p>
-          <pre class="prettyprint">
+}</pre>
+        <p>
+          The <code class="prettyprint">str</code> parameter is taken
+          by reference.  Just like
+          in <code class="prettyprint">append</code>, we are able to
+          modify the <code class="prettyprint">string</code>.  Since
+          our print function doesn't actually modify the string, we
+          should tell the computer that it won't.  To do this, we
+          add the keyword <code class="prettyprint">const</code>
+          before the ampersand marking it as a reference:
+        </p>
+        <pre class="prettyprint">
 void <span class="nocode">print</span>(string const&amp; str) {
     cout &lt;&lt; str;
-}
-          </pre>
-          <p>
-            Before it was <code class="prettyprint">const</code>,
-            writing <code class="prettyprint">
-              <span class="nocode">print</span>("The milk man is
+}</pre>
+        <p>
+          Before it was <code class="prettyprint">const</code>,
+          writing <code class="prettyprint">
+            <span class="nocode">print</span>("The milk man is
             here");</code> would give us an error at compile time.
-            Marking it as <code class="prettyprint">const</code>
-            allows it to work.  This shows us an important aspect
-            of <code class="prettyprint">const</code> references: they
-            allow the code to use temporary variables as arguments.
-          </p>
-          <br />
-          <p>
-            Since the parameter is taken as
-            a <code class="prettyprint">const</code> reference, it
-            also prevents <code>print()</code> from modifying
-            the <code class="prettyprint">string</code>.  So the
-            following code would also not compile because it modifies
-            the parameter that is marked as unchangeable:
-          </p>
-          <pre class="prettyprint">
+          Marking it as <code class="prettyprint">const</code>
+          allows it to work.  This shows us an important aspect
+          of <code class="prettyprint">const</code> references: they
+          allow the code to use temporary variables as arguments.
+        </p>
+        <p>
+          Since the parameter is taken as
+          a <code class="prettyprint">const</code> reference, it
+          also prevents <code>print()</code> from modifying
+          the <code class="prettyprint">string</code>.  So the
+          following code would also not compile because it modifies
+          the parameter that is marked as unchangeable:
+        </p>
+        <pre class="prettyprint">
 void append(string <u style="color:red">const</u>&amp; str) {
     str += " for you!";
-}
-          </pre>
-          <p>
-            Note that <code class="prettyprint">const&amp;</code>
-            parameters only mean that the access to the variable will
-            be constant, not that the actual variable
-            is <code class="prettyprint">const</code>.
-          </p>
-        </div>
+}</pre>
+        <p>
+          Note that <code class="prettyprint">const&amp;</code>
+          parameters only mean that the access to the variable will
+          be constant, not that the actual variable
+          is <code class="prettyprint">const</code>.
+        </p>
       </div>
     </div>
   </body>

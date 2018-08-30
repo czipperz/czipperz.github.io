@@ -1,73 +1,119 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>Java to C++ - Hello World</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="java_to_cpp_1.html">
-              Java to C++ - Hello World. </a></h2>
-          <h4 class="date">9/21/2015</h4>
-          <p>
-            What is the difference between C++ and Java?  People
-            experienced with both languages will give you a list of
-            their favorite features not available in the other.  But it
-            doesn't really matter.  What I care about are the features
-            that make it so that my code makes sense.  Maybe not as
-            readable <i>at first</i>, but makes sense once you
-            understand it.  Lets look at some simple Java code then
-            translate it to C++:
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="java_to_cpp_1.html"><h2 class="title"> Java to C++ - Hello World </h2></a>
+        <p class="description">9/21/2015</p>
+        <p>
+          What is the difference between C++ and Java?  People
+          experienced with both languages will give you a list of
+          their favorite features not available in the other.  But it
+          doesn't really matter.  What I care about are the features
+          that make it so that my code makes sense.  Maybe not as
+          readable <i>at first</i>, but makes sense once you
+          understand it.  Lets look at some simple Java code then
+          translate it to C++:
+        </p>
+        <pre class="prettyprint">
 // Java
 public class Begin {
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
-}
-          </pre>
-          <pre class="prettyprint">
+}</pre>
+        <pre class="prettyprint">
 // C++
 #include &lt;iostream&gt;
 int main() {
-    std::cout << "Hello World!" << std::endl;
-}
-          </pre>
-          <p>
-            This code is honestly fairly similar.  The main difference
-            is that printing is done by using the
-            overloaded <code>&lt;&lt;</code> operator of the global
-            variable <code>std::cout</code>.  Overloading this operator
-            makes the code much more understandable: just push the bits
-            from the <code>"Hello World!"</code> string into the output.
-            You will also notice that you don't need to have a class
-            wrapped around the main statement for it to work!  C++ has
-            objects, they look and work very similar to those in Java,
-            but it discourages you from using them when it doesn't make
-            sense to do so.
-          </p>
-          <br />
-          <p>
-            You'll also notice the weird <code>#include</code> line.
-            This informs the compiler that you want to use the functions
-            provided by the iostream header provided in the standard
-            library.  It literally means that the compiler will just
-            substitute in the entire file at that point then actually
-            compile the program.
-          </p>
-          <br />
-          <p>
-            C++ really isn't very complicated compared to Java, it just
-            does things differently and faster.
-          </p>
-        </div>
+    std::cout &lt;&lt; "Hello World!" &lt;&lt; std::endl;
+}</pre>
+        <p>
+          This code is honestly fairly similar.  The main difference
+          is that printing is done by using the
+          overloaded <code>&lt;&lt;</code> operator of the global
+          variable <code>std::cout</code>.  Overloading this operator
+          makes the code much more understandable: just push the bits
+          from the <code>"Hello World!"</code> string into the output.
+          You will also notice that you don't need to have a class
+          wrapped around the main statement for it to work!  C++ has
+          objects, they look and work very similar to those in Java,
+          but it discourages you from using them when it doesn't make
+          sense to do so.
+        </p>
+        <p>
+          You'll also notice the weird <code>#include</code> line.
+          This informs the compiler that you want to use the functions
+          provided by the iostream header provided in the standard
+          library.  It literally means that the compiler will just
+          substitute in the entire file at that point then actually
+          compile the program.
+        </p>
+        <p>
+          C++ really isn't very complicated compared to Java, it just
+          does things differently and faster.
+        </p>
       </div>
     </div>
   </body>

@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../style.css" />
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-    <title> Czipperz's Blog - C++ galore </title>
+    <base href=".." />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#388e3c">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#388e3c">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+    <title>C++ Tutorial 2 - Getting user input</title>
   </head>
+
   <body>
-    <div id="page">
-      <div id="top">
-        <a href="index.html"><h1 id="title"> Czipperz's Blog - C++ galore </h1></a>
-      </div>
-      <div id="content">
-        <div class="article" id="main_article">
-          <h2><a href="cpp_tutorial_2.html">
-              C++ Tutorial 2 - Getting user input. </a></h2>
-          <h4 class="date">12/19/2016</h4>
-          <p>
-            In this tutorial we will look at getting user input.  We
-            will start by getting the user's name.  First we will ask
-            the user to input their name.  Then we will store their
-            name into a variable and greet them.
-          </p>
-          <pre class="prettyprint">
+    <div id="topbar">
+      <h1 class="name">
+        Chris Gregory
+      </h1>
+      <a class="link"
+         href="index.html">
+        Home
+      </a>
+      <a class="link"
+         href="workExperience.html">
+        Work Experience
+      </a>
+      <a class="link"
+         href="projects.html">
+        Projects
+      </a>
+      <a class="link selected"
+         href="blog">
+        Blog
+      </a>
+      <a class="link"
+         href="https://linkedin.com/in/czipperz">
+        LinkedIn
+      </a>
+      <a class="link"
+         href="https://github.com/czipperz">
+        Github
+      </a>
+    </div>
+
+    <div id="projects">
+      <div class="project article">
+        <a href="cpp_tutorial_2.html"><h2 class="title"> C++ Tutorial 2 - Getting user input </h2></a>
+        <p class="description">12/19/2016</p>
+        <p>
+          In this tutorial we will look at getting user input.  We
+          will start by getting the user's name.  First we will ask
+          the user to input their name.  Then we will store their
+          name into a variable and greet them.
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
@@ -43,38 +94,34 @@ int main() {
     // Visual Studio only for the following line.
     getchar();
     return 0;
-}
-          </pre>
-          <p>
-            To declare a variable, write <code class="prettyprint">Type
+}</pre>
+        <p>
+          To declare a variable, write <code class="prettyprint">Type
             variable_name;</code>.  On line 7, <code class="prettyprint">Type</code>
-            is <code class="prettyprint">string</code> and <code class="prettyprint">variable_name</code>
-            is <code class="prettyprint">name</code>.
-          </p>
-          <br />
-          <p>
-            To get input from the user, use <code class="prettyprint">cin</code>
-            and <code class="prettyprint">&gt;&gt;</code> in conjunction with the variable
-            to store the input in.  To get a string from the user,
-            their name, we wrote <code class="prettyprint">cin >> name</code>.
-          </p>
-          <br />
-          <p>
-            We can use multiple <code class="prettyprint">&lt;&lt;</code> s to print out
-            more data without having to rewrite the name of the
-            stream, <code class="prettyprint">cout</code>.  The <code class="prettyprint">"\n"</code>s tell
-            the computer to print out a new line.  This helps us read
-            the output.
-          </p>
-          <br />
-          <p>
-            Now let us in addition get the age of the user.  We need
-            to declare an integer to store their age, read it
-            from <code class="prettyprint">cin</code>, and finally use it in some way.
-            Let's print out a special message depending on if their
-            age is less than 18.
-          </p>
-          <pre class="prettyprint">
+          is <code class="prettyprint">string</code> and <code class="prettyprint">variable_name</code>
+          is <code class="prettyprint">name</code>.
+        </p>
+        <p>
+          To get input from the user, use <code class="prettyprint">cin</code>
+          and <code class="prettyprint">&gt;&gt;</code> in conjunction with the variable
+          to store the input in.  To get a string from the user,
+          their name, we wrote <code class="prettyprint">cin >> name</code>.
+        </p>
+        <p>
+          We can use multiple <code class="prettyprint">&lt;&lt;</code> s to print out
+          more data without having to rewrite the name of the
+          stream, <code class="prettyprint">cout</code>.  The <code class="prettyprint">"\n"</code>s tell
+          the computer to print out a new line.  This helps us read
+          the output.
+        </p>
+        <p>
+          Now let us in addition get the age of the user.  We need
+          to declare an integer to store their age, read it
+          from <code class="prettyprint">cin</code>, and finally use it in some way.
+          Let's print out a special message depending on if their
+          age is less than 18.
+        </p>
+        <pre class="prettyprint">
 #include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
@@ -110,27 +157,24 @@ int main() {
     // Visual Studio only for the following line.
     getchar();
     return 0;
-}
-          </pre>
-          <p>
-            We now see usage of another type of variable, the
-            <code class="prettyprint">int</code>.  An
-            <code class="prettyprint">int</code> stores non-fractional
-            numbers.
-          </p>
-          <br />
-          <p>
-            We also see usage of
-            an <code class="prettyprint">if</code> statement: a
-            statement that branches our code based on the condition
-            given.  Here we test if the user is a child by comparing
-            their <code class="prettyprint">age</code>
-            with <code class="prettyprint">18</code>.  If they are a
-            child, we tell them to go back to school.  If they are an
-            adult we predict how many years they have left to live,
-            assuming they die at 100.
-          </p>
-        </div>
+}</pre>
+        <p>
+          We now see usage of another type of variable, the
+          <code class="prettyprint">int</code>.  An
+          <code class="prettyprint">int</code> stores non-fractional
+          numbers.
+        </p>
+        <p>
+          We also see usage of
+          an <code class="prettyprint">if</code> statement: a
+          statement that branches our code based on the condition
+          given.  Here we test if the user is a child by comparing
+          their <code class="prettyprint">age</code>
+          with <code class="prettyprint">18</code>.  If they are a
+          child, we tell them to go back to school.  If they are an
+          adult we predict how many years they have left to live,
+          assuming they die at 100.
+        </p>
       </div>
     </div>
   </body>
