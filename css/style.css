@@ -89,8 +89,8 @@ Primary Dark #00600f
     margin-top: 14px;
 }
 
-.project:hover {
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12), 0 6px 12px rgba(0,0,0,0.24);
+.project:hover, .article {
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12), 0 5px 12px rgba(0,0,0,0.24);
 }
 
 .workExperience, .activity, .article {
@@ -153,6 +153,10 @@ pre.prettyprint {
     box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 5px rgba(0,0,0,0.24);
     border-radius: 10px;
     padding: 7px !important;
+}
+
+*:not(.answer) pre.prettyprint {
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12), 0 5px 12px rgba(0,0,0,0.24);
 }
 
 .answer pre.prettyprint {
