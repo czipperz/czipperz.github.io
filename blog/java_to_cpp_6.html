@@ -91,7 +91,7 @@
           in C++.  Next post I'll look at <code>template metaprogramming</code>
           which is like generic programming in Java on steroids.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class printable {
   public:
     virtual void print() = 0;
@@ -149,7 +149,7 @@ class two : public printable {
           putting braces in C++ enters a "sub scope".  It's like
           an <code>if(true) {}</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 int main() {
     // Error!  Can't use a abstract class as value type!
     // printable x = sub();

@@ -89,7 +89,7 @@ class linked_list {};</pre>
           matches the lifetime of the owner.  This means that if the
           node was represented as:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class linked_list {
 public:
     using element = int;
@@ -126,7 +126,7 @@ private:
           must specify the type it encloses
           via <code class="prettyprint">&lt;&gt;</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;memory&gt;
 class linked_list {
 public:
@@ -173,7 +173,7 @@ linked_list::node::node(const element& e) : elem(e) {}</pre>
           a <code class="prettyprint">unique_ptr</code> to represent
           the first <code class="prettyprint">node</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class linked_list {
 public:
     using element = int;
@@ -227,7 +227,7 @@ linked_list::linked_list() : head(nullptr) {}</pre>
           ownership by using the
           function <code class="prettyprint">move</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     // in class linked_list
     void push_front(element const&amp;);
 
@@ -312,7 +312,7 @@ void linked_list::clear() {
           references because we wish to redirect the pointers to
           different elements and nodes.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     // inside linked_list
 public:
     class iterator {
@@ -340,7 +340,7 @@ public:
           constructor that takes the two pointers.  We also want a
           public default constructor that does nothing.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
         // in iterator
         friend class linked_list;
           </pre>
@@ -395,7 +395,7 @@ linked_list::iterator::iterator() {}</pre>
           it doesn't change
           the <code class="prettyprint">iterator.</code>
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
         // in iterator
         bool operator==(const iterator&) const;
         bool operator!=(const iterator&) const;
@@ -441,7 +441,7 @@ element& linked_list::iterator::operator*() { return *elem; }</pre>
               around the increment operator to fix this.  A non-null
               pointer is true.
             </p>
-            <pre class="prettyprint">
+            <pre class="prettyprint linenums">
 iterator& linked_list::iterator::operator++() {
     if (<span class="nocode">next</span>) {
         elem = <span class="nocode">next</span>-&gt;elem;
@@ -486,7 +486,7 @@ iterator& linked_list::iterator::operator++() {
           different <code class="prettyprint">node</code>s, it must
           be a pointer.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     class iterator {
         node* current;
         iterator(node*);
@@ -521,7 +521,7 @@ element& operator*(const iterator& other) const {
           the <code class="prettyprint">insert_after()</code>
           method.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     // in linked_list
     void insert_after(iterator, element const&amp;);
 

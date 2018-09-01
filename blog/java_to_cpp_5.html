@@ -79,7 +79,7 @@
           methods.  Last time we showed two methods that retrieve
           elements from the <code>Array</code>:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 // unchecked const access
 T&amp; operator[](int index) {
     return array_start[index];
@@ -99,7 +99,7 @@ T&amp; at(int index) {
           a <code>const</code> reference rather than a normal
           reference.  Let's implement that:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 // unchecked const access
 const T&amp; operator[](int index) const {
     return array_start[index];

@@ -87,7 +87,7 @@
           to show how code repetition is bad (underlined are the
           only changes):
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 <u>int</u> max(<u>int</u> x, <u>int</u> y) {
     return x &gt; y ? x : y;
 }
@@ -104,7 +104,7 @@
           on <i>any type</i> that implements the greater than
           operator!
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 template&lt;class T&gt;
 T max(const T& x, const T& y) {
     return x &gt; y ? x : y;
@@ -123,7 +123,7 @@ T max(const T& x, const T& y) {
           only works in C++11 and beyond because of the time that
           the standard library incorporated it in.)
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;type_traits&gt;
 
 template&lt;class T&gt;
@@ -163,7 +163,7 @@ max(T x, T y) {
           implementing a copy assignment operator and copy
           constructor.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 template&lt;class T&gt;
 void swap(T& a, T& b) {
     T temp = a;
@@ -179,7 +179,7 @@ void swap(T& a, T& b) {
           though, I will show you a side by side comparison of
           template meta programming with interfaces in C++.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class incrementable {
     virtual incrementable& operator++() = 0;
     virtual incrementable& operator--() = 0;
@@ -205,7 +205,7 @@ void add_five_times(incrementable& a) {
           down if you want to intersperse classes and arithmetic
           types.  Let's implement something similar using templates.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;type_traits&gt;
 
 template&lt;class T, class = void&gt;

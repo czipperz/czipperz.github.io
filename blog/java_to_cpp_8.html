@@ -84,7 +84,7 @@
           First lets start with a basic example of a class with a
           controlled pointer:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class SwapExample {
     int* my_int;
 public:
@@ -107,7 +107,7 @@ int main() {
           you need to also make a copy constructor and copy
           assignment operator.  Here is an example of this:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class SwapExample {
     int* my_int;
 public:
@@ -157,7 +157,7 @@ int main() {
           values, we would solve both the repetition problem and the
           exception unsafety.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class SwapExample {
     int* my_int;
 public:
@@ -199,7 +199,7 @@ void swap(SwapExample&amp; first, SwapExample&amp; second) {
           same semantic meaning, but has more boilerplate (that I
           underlined):
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 SwapExample&amp; operator=(<u>const SwapExample&amp; other</u>) {
     SwapExample copy<u>(other)</u>;
     swap(copy);

@@ -75,7 +75,7 @@
           dangerous to use in certain situations.
           Let's look at an example of a pointer:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;iostream&gt;
 
 int main() {
@@ -114,7 +114,7 @@ int main() {
           pointer and int pair is all that an array really is!
           Let's implement a simple class to represent an array:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;stdexcept&gt;   // std::out_of_range
 
 // forces generic usage of this like Array&lt;int&gt; for
@@ -161,7 +161,7 @@ class Array {
           values were <code>const</code>, then it would be a syntax
           error!  Let's fix the constructors:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 Array() : array_start(new T[10])
         , length(10) { }</pre>
         <p>
@@ -185,7 +185,7 @@ Array() : array_start(new T[10])
           reference to the type, such as <code>const
             Array&amp;</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;algorithm&gt;   // std::copy
 
 // copy constructor

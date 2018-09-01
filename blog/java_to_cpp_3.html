@@ -99,7 +99,7 @@
           variable tells the compiler that it is a reference.  Let's
           look at an example.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;assert.h&gt;
 #include &lt;string&gt;
 
@@ -150,7 +150,7 @@ int main() {
           there won't be a change to the object passed in while
           maintaining high performance.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;string&gt;
 
 std::string concat(std::string a, std::string b) {
@@ -163,7 +163,7 @@ std::string concat(std::string a, std::string b) {
           performance boost, all we have to change is the
           declaration of the function!
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 std::string concat(const std::string& a, const std::string& b) {
     return a + b;
 }</pre>

@@ -72,7 +72,7 @@
         <p>
           Here we will go over the <code class="prettyprint">const</code> keyword.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
 
@@ -94,7 +94,7 @@ int main() {
             you!"</code>.  Let's extract out this appendage to a
           function.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 void append(string&amp; str) {
     str += " for you!";
 }
@@ -111,7 +111,7 @@ void append(string&amp; str) {
             data into it.  Let's make a print function to see why we
             would want read-only access.
           </p>
-          <pre class="prettyprint">
+          <pre class="prettyprint linenums">
 #include &lt;iostream&gt;
 void <span class="nocode">print</span>(string&amp; str) {
     cout &lt;&lt; str;
@@ -126,7 +126,7 @@ void <span class="nocode">print</span>(string&amp; str) {
           add the keyword <code class="prettyprint">const</code>
           before the ampersand marking it as a reference:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 void <span class="nocode">print</span>(string const&amp; str) {
     cout &lt;&lt; str;
 }</pre>
@@ -148,7 +148,7 @@ void <span class="nocode">print</span>(string const&amp; str) {
           following code would also not compile because it modifies
           the parameter that is marked as unchangeable:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 void append(string <u style="color:red">const</u>&amp; str) {
     str += " for you!";
 }</pre>

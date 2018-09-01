@@ -71,7 +71,7 @@
         <p>
           Here we will go over references.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;cstdio&gt;
 #include &lt;vector&gt;
 
@@ -94,7 +94,7 @@ int main() {
         <p>
           What is the value of list and list2 after the following code?
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     vector&lt;int&gt; list2 = list;
     list2.push_back(2);</pre>
         <p>
@@ -120,7 +120,7 @@ int main() {
           into an reference, it will instead become an alias of
           our <code class="prettyprint">list</code>:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     vector&lt;int&gt;&amp; list2 = list;
     list2.push_back(2);</pre>
         <p>
@@ -135,7 +135,7 @@ int main() {
           What does vector contain at the end
           of <code class="prettyprint">test</code>?
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 void push_back_32(vector&lt;int&gt; vector) {
     vector.push_back(32);
 }
@@ -158,7 +158,7 @@ void test() {
           insert <code class="prettyprint">32</code> into the
           caller's vector, we must take our parameter by reference:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 void push_back_32(vector&lt;int&gt;&amp; vector) {
     vector.push_back(32);
 }</pre>

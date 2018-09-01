@@ -71,7 +71,7 @@
         <p>
           Here we will go over making a class.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;cstdio&gt;
 
 using namespace std;
@@ -97,7 +97,7 @@ int main() {
           an <code class="prettyprint">integer</code> variable
           inside <code class="prettyprint">main()</code>.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class integer { int value; };
 
 int main() {
@@ -118,7 +118,7 @@ int main() {
           functions, and then separately define them.  Here we will
           declare them:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class integer {
     int value;
 
@@ -132,7 +132,7 @@ class integer {
           add <code class="prettyprint">public:</code> between the
           member variable and the methods:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 class integer {
     int value;
 public:
@@ -142,7 +142,7 @@ public:
         <p>
           Now we will define them, outside of the class body:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 int integer::<span class="nocode">get</span>() { return value; }
 void integer::<span class="nocode">set</span>(int new_value) { value = new_value; }</pre>
         <p>
@@ -154,7 +154,7 @@ void integer::<span class="nocode">set</span>(int new_value) { value = new_value
         <p>
           Now we can try using our integer class.
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 #include &lt;iostream&gt;
 
 int main() {
@@ -206,10 +206,10 @@ integer::integer(int initial_value) : value(initial_value) {}</pre>
           description of this method.  We change it both in the
           declaration and the definition:
         </p>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
     // in class integer:
     int <span class="nocode">get</span>() const;</pre>
-        <pre class="prettyprint">
+        <pre class="prettyprint linenums">
 // outside the class integer:
 int integer::<span class="nocode">get</span>() const { return value; }</pre>
       </div>
