@@ -1,0 +1,142 @@
+body {
+    background: #e2e1e0;
+    height: 100%;
+    margin: 0;
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    min-width: 370px;
+}
+
+/*
+Primary #388e3c
+Primary Light #6abf69
+Primary Dark #00600f
+*/
+
+.hideContent {
+    display: none;
+}
+
+#topbar {
+    text-align: left;
+    background-color: #388e3c;/*#00600f;*/
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-bottom: 0;
+    overflow: hidden;
+
+    position: sticky;
+    top: 0;
+
+    box-shadow: 0 0 16px rgba(0,0,0,0.5);
+
+    z-index: 2;
+}
+
+#topbar .name {
+    margin-top: 0;
+    margin-bottom: .3em;
+}
+
+#topbar .link {
+    float: left;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 16px;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+}
+
+#topbar .link:hover:not(.selected) {
+    background-color: #00600f;
+}
+
+#topbar .selected {
+    background-color: #6abf69;
+    color: white;
+}
+
+#maincard {
+    margin-right: 28px;
+    margin-bottom: 14px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1000px;
+    display: inline-block;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.16), 0 0px 20px rgba(0,0,0,0.3);
+    vertical-align: top;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+
+#maincard #cardtop {
+    position: relative;
+}
+
+#maincard #cardtop #cardtopimg {
+    background-size: cover;
+    background-position-y: 20%;
+
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+    max-height: 400px;
+    overflow: hidden;
+}
+#maincard #cardtop #cardtopimg > img {
+    border-radius: 10px 10px 0 0;
+    max-width: 100%;
+    visibility: hidden;
+}
+
+#maincard #cardtop .textdiv {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+#maincard #cardtop > div h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 3em;
+}
+
+#maincard #cardtop > div h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+#maincard #cardtop > div h3 {
+    margin-top: .5em;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+#maincard #rest {
+    padding: 15px;
+    padding-top: 0;
+}
+
+#maincard h2 {
+    margin-bottom: 0.2em;
+    color: #6abf69;
+}
+
+#maincard h4 {
+    margin: 0;
+    display: inline-block;
+    color: #00600f;
+}
+
+#maincard p {
+    margin: 0;
+}
