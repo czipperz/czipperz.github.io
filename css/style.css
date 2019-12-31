@@ -68,6 +68,9 @@ Primary Dark #00600f
     color: #00600f;
     padding-left: 7px;
 }
+#contents > h1:first-child {
+    margin-top: 0;
+}
 
 .project {
     padding: 15px;
