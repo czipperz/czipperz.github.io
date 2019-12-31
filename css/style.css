@@ -63,7 +63,7 @@ Primary Dark #00600f
     padding-left: 7px;
 }
 
-.projectGroupTitle {
+#contents > h1 {
     width: 100%;
     color: #00600f;
     padding-left: 7px;
