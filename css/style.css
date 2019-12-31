@@ -91,6 +91,9 @@ Primary Dark #00600f
 .answer {
     margin-top: 14px;
 }
+.answer pre.prettyprint {
+    margin-left: -15px !important;
+}
 
 .project:hover, .article {
     box-shadow: 0 5px 12px rgba(0,0,0,0.12), 0 5px 12px rgba(0,0,0,0.24);
