@@ -72,7 +72,7 @@ Primary Dark #00600f
     margin-top: 0;
 }
 
-.project {
+.card {
     padding: 15px;
     text-align: left;
     background: #fff;
@@ -95,7 +95,7 @@ Primary Dark #00600f
     margin-left: -15px !important;
 }
 
-.project:hover, .article {
+.card:hover {
     box-shadow: 0 5px 12px rgba(0,0,0,0.12), 0 5px 12px rgba(0,0,0,0.24);
 }
 
@@ -106,14 +106,14 @@ Primary Dark #00600f
 
 a { text-decoration: none; }
 
-.project .title {
+.card .title {
     color: #388e3c;
     display: inline-block;
     margin: 0;
     margin-bottom: 10px;
     margin-top: -4px;
 }
-.project a .title:hover {
+.card a .title:hover {
     color: #00600f;
 }
 
@@ -135,25 +135,25 @@ a { text-decoration: none; }
     color: #388e3c;
 }
 
-.project .description {
+.card .description {
     margin: 0;
     color: #00600f;
     font-style: italic;
 }
 
-.project p {
+.card p {
     margin-top: .7em;
     margin-bottom: 0;
 }
 
-.project p a {
+.card p a {
     color: #388e3c;
 }
-.project p a:hover {
+.card p a:hover {
     color: #00600f;
 }
 
-.project h3 {
+.card h3 {
     margin-bottom: 0;
 }
 

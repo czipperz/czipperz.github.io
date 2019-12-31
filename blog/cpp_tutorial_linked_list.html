@@ -65,7 +65,7 @@
     </div>
 
     <div id="contents">
-      <div class="project article">
+      <div class="card article">
         <a href="cpp_tutorial_8.html"><h2 class="title"> C++ Tutorial 9 - Linked List </h2></a>
         <p class="description">12/19/2016</p>
         <p>
@@ -143,7 +143,7 @@ private:
           Now declare and define a constructor for the node that
           takes an element by constant reference.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
         // in class node
@@ -192,7 +192,7 @@ private:
           constructor, which will start the list out with no
           elements.  Try to do this yourself without reading ahead!
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
 class linked_list {
@@ -261,7 +261,7 @@ void linked_list::push_front(element const&amp; elem) {
           will take ownership of the second element, then replace
           the head with it.  Try to express this yourself.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
     // in class linked_list
@@ -285,7 +285,7 @@ void linked_list::pop_front() {
           recap on how to acquire ownership of a resource.  We will
           extend the implementation later.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
     // in class linked_list
@@ -344,7 +344,7 @@ public:
         // in iterator
         friend class linked_list;
           </pre>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
         // in iterator, private
@@ -430,7 +430,7 @@ element& linked_list::iterator::operator*() { return *elem; }</pre>
           <code class="prettyprint">linked_list</code>'s final
           element.  Try to find it yourself.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <div class="content hideContent">
             <p>
@@ -498,7 +498,7 @@ iterator& linked_list::iterator::operator++() {
         iterator& operator++();
         element& operator*(const iterator&) const;
     };</pre>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
 bool operator==(const iterator& other) const {
@@ -531,7 +531,7 @@ void linked_list::push_front(element const&amp; e) {
     node-&gt;<span class="nocode">next</span> = move(head);
     head = node;
 }</pre>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
 void linked_list::insert_after(iterator it, element const&amp; e) {
@@ -543,7 +543,7 @@ void linked_list::insert_after(iterator it, element const&amp; e) {
         <p>
           Now implement <code class="prettyprint">erase_after()</code>.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
 void linked_list::erase_after(iterator it) {
@@ -564,7 +564,7 @@ void linked_list::erase_after(iterator it) {
           points to the object after the last -- in this case,
           looking at the diagram, null.
         </p>
-        <div class="project answer">
+        <div class="card answer">
           <div class="answerShowMore"><a href="javascript:void(0)">Show Answer</a></div>
           <pre class="prettyprint linenums content hideContent">
     // in linked_list
