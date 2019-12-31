@@ -147,6 +147,10 @@ a { text-decoration: none; }
     color: #00600f;
 }
 
+.project h3 {
+    margin-bottom: 0;
+}
+
 .linenums li {
     list-style-type: decimal !important;
     background: none !important;
