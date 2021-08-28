@@ -56,9 +56,11 @@ Primary Dark #00600f
 }
 
 #contents {
+/*
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+*/
     padding-right: 7px;
     padding-left: 7px;
 }
@@ -74,14 +76,14 @@ Primary Dark #00600f
 
 .card {
     padding: 15px;
-    text-align: left;
+    /*text-align: left;*/
     background: #fff;
     border-radius: 10px;
-    display: inline-block;
+    /*display: inline-block;*/
     margin-left: 7px;
     margin-right: 7px;
     margin-bottom: 14px;
-    max-width: 400px;
+    /*width: 100%;*/
     /*position: relative;*/
 
     box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
@@ -100,8 +102,8 @@ Primary Dark #00600f
 }
 
 .workExperience, .activity, .article {
-    max-width: none;
-    width: 100%;
+    /*max-width: none;
+    width: 100%;*/
 }
 
 a { text-decoration: none; }

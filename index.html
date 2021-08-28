@@ -41,14 +41,6 @@
         Home
       </a>
       <a class="link"
-         href="workExperience.html">
-        Work Experience
-      </a>
-      <a class="link"
-         href="projects.html">
-        Projects
-      </a>
-      <a class="link"
          href="blog">
         Blog
       </a>
@@ -62,32 +54,181 @@
       </a>
     </div>
 
-    <div id="idcard">
-      <h1 style="margin: 0;">Chris Gregory</h1>
-      <br />
-      <h2 style="color:#00600f;">Computer Science Major</h2>
-      <br />
-      <h2>Rose-Hulman Institute of Technology</h2>
-      <br />
-      <h4>Junior, Class of 2021, 3.87 GPA</h4>
-      <p>
-        Freelance software engineer. Programming language
-        connoisseur. Brother of Lambda Chi Alpha, Theta-Kappa
-        Zeta. FRC Team 5188 Controls Mentor. Creedence Clearwater
-        Revival fan.
-      </p>
-      <p />
-      <h4>Completed course work:</h4>
-      Programming Languages,
-      Static Analysis,
-      Computer Architecture,
-      Data Structures,
-      Software Requirements Engineering,
-      Discrete Algebra,
-      Technical Communications.
-      <p />
-      <h4>Contact information:</h4>
-      gregorcj AT rose-hulman DOT edu; czipperz AT gmail DOT com.
+    <div id="contents">
+      <div>
+        <div class="card">
+          <p style="margin-top: 0">
+            Contact information: czipperz AT gmail DOT com.
+          </p>
+        </div>
+      </div>
+
+<!-- Start of work experience -->
+
+      <h1>
+        Work Experience
+      </h1>
+
+      <div>
+        <div class="card">
+          <h2 class="title">
+            Software Engineer at Green Hills Software
+          </h2>
+          <p class="description">
+            February 2021 &mdash; Present
+          </p>
+          <p>
+            Working on <a href="https://dawnproject.com/">The Dawn Project</a>.
+          </p>
+        </div>
+      </div>
+
+<!-- End of work experience -->
+
+<!-- Start of projects -->
+
+      <h1>
+        Self Directed Projects
+      </h1>
+
+      <div>
+        <div class="card">
+          <a href="https://github.com/czipperz/mag">
+            <h2 class="title">
+              Mag
+            </h2>
+          </a>
+          <!-- <div class="showMore"><a href="javascript:void(0)">Show more</a></div> -->
+          <p class="description">
+            A text editor.
+          </p>
+          <div class="content">
+            <p>
+              Mag is designed to be fast and configurable.  Users of Mag are
+              encouraged to edit the source code of the editor to customize it to
+              fit their usages.
+            </p>
+            <p>
+              Mag supports many programming languages, including C, C++, CMake, Go, HTML, CSS, JS,
+              Markdown, and Shell / Bash.  It also supports graphical and console rendering,
+              multiple cursors, file name completion, animated scrolling, and many other features.
+            </p>
+            <p>
+              Check out the <a href="https://github.com/czipperz/mag">Github
+              page</a> for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <a href="https://github.com/czipperz/cz">
+            <h2 class="title">
+              cz
+            </h2>
+          </a>
+          <!-- <div class="showMore"><a href="javascript:void(0)">Show more</a></div> -->
+          <p class="description">
+            A common library for building data-oriented C++ applications.
+          </p>
+          <div class="content">
+            <p>
+              Cz provides you with the building blocks to make an efficient
+              and easily optimizable application.  Cz provides memory
+              allocators and custom data structures with allocator support.
+            </p>
+            <p>
+              Cz also provides a simple, low level, cross-platform interface to system
+              resources.  It provides file system, threading, and process control layers.
+              Cz also integrates with <a href="https://github.com/wolfpld/tracy">The Tracy
+              Profiler</a> allowing easy analysis and optimization of your application.
+            </p>
+            <p>
+              Cz also provides high level interfaces to many system functions
+              allowing you to write simple "C++ scripts" that are then easy
+              to optimize and refactor into the low level utilities.
+            </p>
+            <p>
+              Check out the <a href="https://github.com/czipperz/cz">Github
+              page</a> for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <a href="https://github.com/czipperz/base-project">
+            <h2 class="title">
+              base-project
+            </h2>
+          </a>
+          <!-- <div class="showMore"><a href="javascript:void(0)">Show more</a></div> -->
+          <p class="description">
+            A C++ base project with CMake, cz, Tracy, GNU Global, Catch2,
+            and simple cross-platform build scripts out of the box.
+          </p>
+          <div class="content">
+            <p>
+              This project is explicitly designed to make it easy to start a
+              new C++ project.  Just clone the repository, follow the
+              instructions in the readme, and then build out your application.
+            </p>
+            <p>
+              Check out the <a href="https://github.com/czipperz/base-project">Github
+              page</a> for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <a href="https://github.com/czipperz/git-shorthand">
+            <h2 class="title">
+              git-shorthand
+            </h2>
+          </a>
+          <!-- <div class="showMore"><a href="javascript:void(0)">Show more</a></div> -->
+          <p class="description">
+            git-shorthand provides an extremely terse syntax for interacting with git
+            urls via the <code>git clone</code> and <code>git remote</code> commands.
+          </p>
+          <div class="content">
+            <p>
+              git-shorthand supports:
+              <ol>
+                <li>
+                  Acronyms for remote subcommonds.  For example
+                  <code>so</code> is aliased to <code>show origin</code>.
+                </li>
+                <li>
+                  Acronyms for urls.  Configured in <code>~/.git-remotes</code>.
+            <p>
+              For example, with the configuration file:
+<pre>
+git@github.com/
+c:git@github.com:czipperz/
+</pre>
+              <ol type="a">
+                <li><code>git-shorthand clone torvalds/linux</code> clones <code>git@github.com/torvalds/linux</code></li>
+                <li><code>git-shorthand clone c:cz</code> clones <code>git@github.com:czipperz/cz</code></li>
+              </ol>
+            </p>
+                </li>
+              </ol>
+            </p>
+            <p>
+              Check out the <a href="https://github.com/czipperz/git-shorthand">Github
+              page</a> for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+<!-- End of projects -->
+
     </div>
   </body>
 </html>
